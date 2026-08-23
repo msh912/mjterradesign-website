@@ -1,14 +1,22 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { getProject } from '@/content/projects'
 import { sizeOf } from '@/content/image-sizes'
+
+/** The hero plate. Landscape format — the render is 4:3. */
+const HERO = {
+  src: '/images/healing-garden/pavilion.jpg',
+  alt: 'Axonometric render of a garden pavilion — slender posts carrying pale fabric sail canopies over raised timber planting beds, boardwalks threading between them, people tending the beds and sitting on the planter edges in an orchard of young trees.',
+  // UNCONFIRMED — taken from MJ's own folder and file names, not yet proofed.
+  title: 'Healing Garden',
+  place: 'Collegno, Italy',
+}
 
 /**
  * Gallery opening: the plate bleeds toward the edge and the headline rises
  * line by line out from behind its own baseline.
  */
 export default function Hero() {
-  const lead = getProject('hidden-illusion-of-bygone-landscape')
+  const size = sizeOf(HERO.src)
 
   return (
     <section className="relative">
@@ -16,7 +24,7 @@ export default function Hero() {
         <div className="lg:col-span-6 xl:col-span-5">
           <h1
             data-anim="lines"
-            className="font-display text-[clamp(2.6rem,6.6vw,5.4rem)] leading-[0.93] tracking-[-0.04em]"
+            className="font-display text-[clamp(2.5rem,5.4vw,4.6rem)] leading-[0.95] tracking-[-0.04em]"
           >
             Landscape architecture, drawn by the hand that designed it.
           </h1>
@@ -46,26 +54,23 @@ export default function Hero() {
           </div>
         </div>
 
-        {lead && (
-          <figure className="lg:col-span-6 lg:col-start-7 xl:col-span-7">
-            <div data-anim="plate" className="overflow-hidden bg-ground-2">
-              <Image
-                src={lead.cover}
-                alt={lead.coverAlt}
-                width={sizeOf(lead.cover).width}
-                height={sizeOf(lead.cover).height}
-                priority
-                sizes="(max-width: 1024px) 100vw, 52vw"
-                className="h-auto w-full"
-              />
-            </div>
-            <figcaption data-anim="meta" className="meta mt-3 flex flex-wrap gap-x-3 gap-y-1">
-              <span className="text-ink">{lead.title}</span>
-              <span>{lead.location}</span>
-              <span>{lead.yearLabel ?? lead.year}</span>
-            </figcaption>
-          </figure>
-        )}
+        <figure className="lg:col-span-6 lg:col-start-7 xl:col-span-7 xl:col-start-6">
+          <div data-anim="plate" className="overflow-hidden bg-ground-2">
+            <Image
+              src={HERO.src}
+              alt={HERO.alt}
+              width={size.width}
+              height={size.height}
+              priority
+              sizes="(max-width: 1024px) 100vw, 62vw"
+              className="h-auto w-full"
+            />
+          </div>
+          <figcaption data-anim="meta" className="meta mt-3 flex flex-wrap gap-x-3 gap-y-1">
+            <span className="text-ink">{HERO.title}</span>
+            <span>{HERO.place}</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   )
