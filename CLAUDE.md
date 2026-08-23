@@ -27,16 +27,34 @@ public/         images/ videos/
 **All portfolio content lives in `content/projects.ts`.** Pages read from it —
 adding work means adding entries there, not writing new pages.
 
-## Design system (current, provisional)
+## Agreed direction (supersedes what is currently in the code)
 
-- **Colour — committed/drenched dark.** Deep brand-tinted ground
-  (`oklch(0.148 0.017 168)`), one luminous mineral accent
-  (`oklch(0.795 0.168 150)`), ochre counterpoint under 5%. All tokens are OKLCH
-  and live in one place: the `@theme` block in `app/globals.css`.
-  Explicitly **not** a warm cream/sand near-white — that palette is the AI tell.
-- **Type.** Display: Bricolage Grotesque. Body: Hanken Grotesk. Mono: Martian Mono
-  (small structural labels only). Paired on a contrast axis; none are on the
-  reject-list in the transfer doc.
+MJ locked these in on 2026-08-23. **The committed scaffold predates them** — it
+ships a dark green palette and placeholder projects. Replace, don't build on.
+
+1. **Architecture-led.** Landscape architecture is the headline; graphic design
+   is a strong secondary section. Not a 50/50 split, not two separate doors.
+2. **Individual projects** are the unit of work — not the three Behance
+   portfolio books. The books get broken apart into ~10-15 named projects.
+3. **White / gallery ground.** Near-white, black type, minimal — "mostly black
+   and white". Subtle, sophisticated art direction; subtle animation on buttons
+   and icons throughout.
+4. **Crop the artwork** out of the Behance book mockups (grey backdrop, drop
+   shadow and page curl removed).
+
+Goal: impress visitors enough that they start a project with him.
+
+## Design system (dark palette below is SUPERSEDED — see above)
+
+- **Colour.** All tokens are OKLCH and live in one place: the `@theme` block in
+  `app/globals.css`. Currently a drenched dark green; must be re-tokenised to
+  the white gallery ground. Avoid warm cream/sand near-whites — that specific
+  palette is the AI tell, per the transfer doc §5. A true off-white at chroma ~0
+  is the safe reading of "white".
+- **Type.** Display: Bricolage Grotesque. Body: Hanken Grotesk. Mono: Martian
+  Mono (small structural labels only). Paired on a contrast axis; none are on
+  the reject-list. Note `ui-ux-pro-max` recommends Space Grotesk for this brief
+  — it is on the transfer doc's reject-list, so the doc wins.
 - **Motion.** `expo.out` / `power3.out` only, no bounce. Every animation checks
   `prefersReducedMotion()` from `lib/motion.ts`, and every reveal *enhances* an
   already-painted default so a headless render never ships blank.
@@ -55,16 +73,54 @@ adding work means adding entries there, not writing new pages.
 
 ## Workflow
 
-- `npm run dev` (or `START.bat`, port 3000). **Node is not yet installed on this
-  machine** — install Node 20+ LTS before the first `npm install`.
+- `npm run dev` (or `START.bat`, port 3000). Node 24 / Python 3.12 / gh 2.98 are
+  installed but **not on the Bash tool's PATH** — prefix in PowerShell:
+  `$env:PATH = "C:\Program Files\nodejs;$env:LOCALAPPDATA\Programs\Python\Python312;C:\Program Files\GitHub CLI;$env:PATH"`
 - Always `npm run build` before committing nontrivial changes.
 - Focused commits, descriptive subject + body, Co-Authored-By trailer.
 - CRLF warnings on Windows commits are harmless.
 
-## Open placeholders
+## Skills
 
-- `content/projects.ts` — three dummy projects, replace with the real archive.
-- `content/site.ts` — tagline, real socials, real domain.
-- `app/about/page.tsx` — bio copy and location.
-- Palette + fonts are a defensible starting point, not a brand decision. Re-token
-  in `globals.css` once the actual work is in view.
+Nine skills are installed at `.claude/skills/` (gitignored): `impeccable` v4.1.1,
+`frontend-design`, `ui-ux-pro-max`, plus `design-taste-frontend`,
+`high-end-visual-design`, `minimalist-ui`, `redesign-existing-projects`,
+`full-output-enforcement`, `imagegen-frontend-web`. `npx impeccable update`
+manages the install and wrote the anti-slop hook into `.claude/settings.local.json`
+— don't hand-edit that file. Unused taste-skill variants are in
+`assets/taste-skill-bundle/`.
+
+Impeccable reports `NO_PRODUCT_MD`: a from-scratch build must load
+`reference/init.md` and write PRODUCT.md first.
+
+## Status — nothing of MJ's work is in the site yet
+
+The site is verified scaffolding, not a portfolio. All routes serve 200, the
+build is clean, but `content/projects.ts` still holds three dummy projects and
+`public/images/` is empty.
+
+Source material, all gitignored under `assets/`:
+
+- `assets/behance/` — 49 images at 2800px (graphic 11, landscape 26, logofolio 12)
+- `assets/PROFILE-EXTRACTED.md` — MJ's CV, education, six roles, tools, contacts,
+  transcribed from a mockup spread. **Unverified — have MJ proof it.**
+
+## Next steps
+
+1. `/impeccable init` → write PRODUCT.md (positioning, audience, the
+   "start a project with me" goal).
+2. **Identify the individual projects.** The single biggest blocker. Only two are
+   known by name so far — *Purification Movement* (Lugano, Landscape Design
+   Studio 2, 2024) and *8th Asian Men's Beach Handball Championship* (Iran, 2022).
+   The remaining ~10-13 need mining out of the 49 spreads, then MJ's correction.
+3. Re-tokenise `globals.css` to the white gallery ground.
+4. Crop artwork out of the book mockups into `public/images/`.
+5. Rewrite `content/projects.ts` from placeholders to the real archive.
+6. `content/site.ts` — tagline, real socials, real domain.
+   `app/about/page.tsx` — bio from the extracted profile.
+
+## Blocked on MJ
+
+- **Google Drive** connector is unauthorized (claude.ai connector settings). Once
+  live, pull originals instead of cropping mockups.
+- **`gh` is not authenticated** (`gh auth login`) — only matters for repos/PRs.
