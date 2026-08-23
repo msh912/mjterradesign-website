@@ -1,24 +1,33 @@
-import Reveal from '@/components/Reveal'
 import { site } from '@/content/site'
+import Reveal from '@/components/Reveal'
 
 export default function ContactCta() {
   return (
-    <section className="section section--veiled">
+    <section className="section border-t border-line">
       <div className="shell">
-        <Reveal stagger className="flex flex-col items-start gap-8">
-          <h2 className="max-w-[16ch] font-display text-[clamp(2.4rem,7vw,5.5rem)] leading-[0.94]">
-            Have something that needs building?
+        <Reveal>
+          <h2 className="max-w-[18ch] font-display text-[clamp(2.2rem,6vw,4.6rem)] leading-[0.95] tracking-[-0.04em]">
+            Have a site, a brief, or a problem with a landscape in it?
           </h2>
 
-          <a
-            href={`mailto:${site.email}`}
-            className="group inline-flex items-center gap-4 rounded-full border border-accent/60 px-7 py-4 text-ink transition-colors duration-500 hover:bg-accent hover:text-ground"
-          >
-            <span>{site.email}</span>
-            <span className="transition-transform duration-500 group-hover:translate-x-1.5">
-              →
-            </span>
-          </a>
+          <div className="mt-10 flex flex-col gap-3">
+            <a
+              href={`mailto:${site.email}`}
+              className="link-underline w-fit font-display text-[clamp(1.3rem,3vw,2rem)] tracking-[-0.03em] text-accent"
+            >
+              {site.email}
+            </a>
+            <a
+              href={`tel:${site.phoneHref}`}
+              className="link-underline tnum w-fit text-ink-muted hover:text-ink"
+            >
+              {site.phone}
+            </a>
+          </div>
+
+          <p className="meta mt-8">
+            {site.location} — {site.availability}
+          </p>
         </Reveal>
       </div>
     </section>

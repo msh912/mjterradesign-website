@@ -1,31 +1,33 @@
 @import 'tailwindcss';
 
 /* ---------------------------------------------------------------------------
-   Design tokens — OKLCH only.
-   Strategy: COMMITTED / drenched dark. One deep brand-tinted ground carries the
-   whole site; one luminous mineral accent does the talking; ochre is a <5%
-   counterpoint. Deliberately NOT a warm near-white (cream/sand/paper is the tell).
-   Provisional until the real brand + work is in — swap here, nowhere else.
+   Design tokens — OKLCH only, one place.
+
+   World: a gallery. Near-white ground, black type, hairline rules, and the work
+   supplying every colour on the page. The ground is a TRUE neutral (chroma 0) —
+   warm cream/sand near-whites are the AI tell and are deliberately avoided.
+
+   The one accent is not invented: it is sampled from the brick red MJ already
+   prints in both portfolio books (#9c5051–#af5556), darkened to clear 4.5:1 on
+   the white ground.
 --------------------------------------------------------------------------- */
 @theme {
   /* Ground */
-  --color-ground: oklch(0.148 0.017 168);
-  --color-ground-2: oklch(0.191 0.019 168);
-  --color-surface: oklch(0.232 0.02 170);
-  --color-line: oklch(0.315 0.019 170);
+  --color-ground: oklch(0.985 0 0);
+  --color-ground-2: oklch(0.962 0 0);
+  --color-surface: oklch(0.938 0 0);
+  --color-line: oklch(0.885 0 0);
+  --color-line-strong: oklch(0.78 0 0);
 
   /* Ink */
-  --color-ink: oklch(0.968 0.006 170);
-  --color-ink-muted: oklch(0.76 0.014 170);
-  --color-ink-faint: oklch(0.585 0.016 170);
+  --color-ink: oklch(0.155 0 0);
+  --color-ink-muted: oklch(0.42 0 0);
+  --color-ink-faint: oklch(0.58 0 0);
 
-  /* Accent — the committed voice */
-  --color-accent: oklch(0.795 0.168 150);
-  --color-accent-deep: oklch(0.56 0.13 152);
-  --color-accent-soft: oklch(0.88 0.09 150);
-
-  /* Counterpoint — used sparingly */
-  --color-ember: oklch(0.75 0.15 62);
+  /* Accent — MJ's own printed red */
+  --color-accent: oklch(0.47 0.115 28);
+  --color-accent-print: oklch(0.545 0.115 28);
+  --color-accent-wash: oklch(0.955 0.012 28);
 
   /* Type */
   --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
@@ -38,11 +40,10 @@
   --z-sticky: 20;
   --z-header: 30;
   --z-overlay: 40;
-  --z-modal: 50;
 
   /* Rhythm */
   --space-gutter: clamp(1.25rem, 4vw, 4.5rem);
-  --space-section: clamp(6rem, 14vh, 11rem);
+  --space-section: clamp(5.5rem, 12vh, 9.5rem);
 }
 
 /* --------------------------------------------------------------------------
@@ -56,18 +57,19 @@
 
 html {
   background-color: var(--color-ground);
-  color-scheme: dark;
+  color-scheme: light;
   -webkit-text-size-adjust: 100%;
+  scrollbar-color: var(--color-line-strong) var(--color-ground);
 }
 
 body {
   margin: 0;
   min-height: 100svh;
-  background-color: transparent;
+  background-color: var(--color-ground);
   color: var(--color-ink);
   font-family: var(--font-body);
   font-size: clamp(1rem, 0.96rem + 0.2vw, 1.075rem);
-  line-height: 1.6;
+  line-height: 1.62;
   letter-spacing: -0.006em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -79,8 +81,8 @@ h2,
 h3 {
   font-family: var(--font-display);
   font-weight: 600;
-  line-height: 0.92;
-  letter-spacing: -0.04em;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
   text-wrap: balance;
   margin: 0;
 }
@@ -103,6 +105,7 @@ svg {
   max-width: 100%;
 }
 
+/* Browser surfaces belong to the design system too. */
 ::selection {
   background: var(--color-accent);
   color: var(--color-ground);
@@ -114,12 +117,46 @@ svg {
   border-radius: 2px;
 }
 
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ground);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line-strong);
+  border: 3px solid var(--color-ground);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-faint);
+}
+
+input,
+textarea {
+  caret-color: var(--color-accent);
+}
+
+/* Tabular data and any figure that should not jitter. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
 /* --------------------------------------------------------------------------
-   Utilities used across sections
+   Layout utilities
 -------------------------------------------------------------------------- */
 .shell {
   width: 100%;
-  max-width: 90rem;
+  max-width: 88rem;
+  margin-inline: auto;
+  padding-inline: var(--space-gutter);
+}
+
+.shell-narrow {
+  width: 100%;
+  max-width: 46rem;
   margin-inline: auto;
   padding-inline: var(--space-gutter);
 }
@@ -130,38 +167,86 @@ svg {
   padding-block: var(--space-section);
 }
 
-/* Sections sit transparent so the living shader ground reads through. */
-.section--veiled {
-  background: linear-gradient(
-    to bottom,
-    color-mix(in oklch, var(--color-ground) 0%, transparent),
-    color-mix(in oklch, var(--color-ground) 62%, transparent) 22%,
-    color-mix(in oklch, var(--color-ground) 62%, transparent) 78%,
-    color-mix(in oklch, var(--color-ground) 0%, transparent)
-  );
-}
-
 .rule {
   height: 1px;
-  background: linear-gradient(
-    to right,
-    color-mix(in oklch, var(--color-line) 90%, transparent),
-    transparent
-  );
+  background: var(--color-line);
   border: 0;
+  margin: 0;
 }
 
-.label {
+/* Small structural metadata — location, year, studio. Measurement, not costume. */
+.meta {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--color-ink-faint);
+  color: var(--color-ink-muted);
+  font-variant-numeric: tabular-nums;
 }
 
-/* Reveals ENHANCE a visible default — the element is fully painted without JS. */
-.reveal {
-  will-change: transform, opacity, filter;
+/* Long-form reading measure. */
+.prose p {
+  max-width: 68ch;
+}
+.prose p + p {
+  margin-top: 1.15em;
+}
+
+/* --------------------------------------------------------------------------
+   The one authored motion moment: artwork resolves from a soft, slightly
+   over-scaled state into place. Enhances an already-painted element — with no
+   JS, no support, or reduced motion, the image is simply there.
+-------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .plate-in {
+      animation: plate-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 62%;
+    }
+
+  }
+}
+
+/* The artwork settles into place: it is always present and always legible —
+   the un-entered state is a soft, slightly over-scaled version of the image,
+   never an empty frame. A render that never scrolls still shows the work. */
+@keyframes plate-in {
+  from {
+    opacity: 0.72;
+    transform: scale(1.028);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+/* Artwork never animates away to nothing — a non-scrolling render (print, a
+   crawler, a screenshot service) still shows the plate. */
+@media print {
+  .plate-in {
+    animation: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}
+
+/* Underline that draws itself on hover, from the text baseline outward. */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size 620ms cubic-bezier(0.16, 1, 0.3, 1);
+  padding-bottom: 0.12em;
+}
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1px;
 }
 
 /* --------------------------------------------------------------------------
@@ -178,15 +263,8 @@ svg {
   }
 }
 
-/* --------------------------------------------------------------------------
-   Mobile overrides live here so desktop is untouched.
--------------------------------------------------------------------------- */
 @media (max-width: 680px) {
   body {
     letter-spacing: -0.004em;
-  }
-  /* iOS Safari re-rasters fixed backgrounds inside transformed containers. */
-  [data-parallax] {
-    background-attachment: scroll !important;
   }
 }

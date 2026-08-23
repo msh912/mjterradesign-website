@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import Link from 'next/link'
-import PageHeading from '@/components/sections/PageHeading'
 import ContactCta from '@/components/sections/ContactCta'
 import Reveal from '@/components/Reveal'
-import { getProject, projects } from '@/content/projects'
+import { getProject, projects, sorted } from '@/content/projects'
+import { sizeOf } from '@/content/image-sizes'
+import { cn } from '@/lib/utils'
 
 type Params = { params: Promise<{ slug: string }> }
 
@@ -24,69 +26,155 @@ export default async function ProjectPage({ params }: Params) {
   const project = getProject(slug)
   if (!project) notFound()
 
-  const index = projects.findIndex((p) => p.slug === slug)
-  const next = projects[(index + 1) % projects.length]
+  const order = sorted()
+  const index = order.findIndex((p) => p.slug === slug)
+  const next = order[(index + 1) % order.length]
+
+  const facts: { label: string; value: string }[] = [
+    { label: 'Location', value: project.location },
+    { label: 'Year', value: project.yearLabel ?? String(project.year) },
+    ...(project.context ? [{ label: project.academic ? 'Studio' : 'Client', value: project.context }] : []),
+    ...(project.professors?.length
+      ? [{ label: project.professors.length > 1 ? 'Professors' : 'Professor', value: project.professors.join(' · ') }]
+      : []),
+    ...(project.collaboration ? [{ label: 'Format', value: project.collaboration }] : []),
+    { label: 'My role', value: project.role.join(' · ') },
+    { label: 'Tools', value: project.tools.join(' · ') },
+  ]
 
   return (
     <>
-      <PageHeading
-        title={project.title}
-        lede={project.summary}
-        meta={[
-          { label: 'Year', value: String(project.year) },
-          { label: 'Role', value: project.role },
-          ...(project.client ? [{ label: 'Client', value: project.client }] : []),
-          { label: 'Discipline', value: project.disciplines.join(', ') },
-        ]}
-      />
+      <article>
+        <header className="pt-32 sm:pt-40">
+          <div className="shell">
+            <h1 className="max-w-[18ch] font-display text-[clamp(2.4rem,7vw,5.5rem)] leading-[0.92] tracking-[-0.04em]">
+              {project.title}
+            </h1>
+            {project.subtitle && (
+              <p className="mt-4 max-w-[34ch] font-display text-[clamp(1.2rem,2.6vw,1.9rem)] tracking-[-0.03em] text-ink-faint">
+                {project.subtitle}
+              </p>
+            )}
+            <p className="mt-7 max-w-[58ch] text-[1.08rem] text-ink-muted">{project.summary}</p>
+          </div>
 
-      <section className="section">
-        <div className="shell">
-          <Reveal stagger className="flex max-w-2xl flex-col gap-6 text-ink-muted">
-            {project.body.map((para, i) => (
-              <p key={i}>{para}</p>
-            ))}
-          </Reveal>
-
-          {project.facts && project.facts.length > 0 && (
-            <Reveal className="mt-16">
-              <dl className="flex flex-wrap gap-x-16 gap-y-6 border-t border-line/60 pt-8">
-                {project.facts.map((f) => (
-                  <div key={f.label}>
-                    <dt className="label">{f.label}</dt>
-                    <dd className="mt-2 font-display text-3xl">{f.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </Reveal>
-          )}
-
-          {project.gallery && project.gallery.length > 0 && (
-            <div className="mt-20 grid gap-8 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
-              {project.gallery.map((item) => (
-                <Reveal key={item.src}>
-                  <figure>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={item.src} alt={item.alt} className="w-full" />
-                    {item.caption && (
-                      <figcaption className="label mt-3">{item.caption}</figcaption>
-                    )}
-                  </figure>
-                </Reveal>
-              ))}
+          <figure className="shell mt-14">
+            <div className="mx-auto max-w-6xl overflow-hidden bg-ground-2">
+              <Image
+                src={project.cover}
+                alt={project.coverAlt}
+                width={sizeOf(project.cover).width}
+                height={sizeOf(project.cover).height}
+                priority
+                sizes="(max-width: 1152px) 100vw, 72rem"
+                className="h-auto w-full"
+              />
             </div>
-          )}
-        </div>
-      </section>
+          </figure>
+        </header>
 
-      <section className="section pt-0">
+        <section className="section pt-16">
+          <div className="shell grid gap-x-12 gap-y-14 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <Reveal>
+                <div className="prose text-[1.06rem]">
+                  {project.body.map((para, i) => (
+                    <p key={i} className={i === 0 ? 'text-ink' : 'text-ink-muted'}>
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+
+            <div className="lg:col-span-4 lg:col-start-9">
+              <Reveal>
+                <dl className="border-t border-line">
+                  {facts.map((f) => (
+                    <div key={f.label} className="flex flex-col gap-1 border-b border-line py-4">
+                      <dt className="meta">{f.label}</dt>
+                      <dd className="text-[0.95rem]">{f.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+                {project.academic && (
+                  <p className="mt-5 text-[0.85rem] text-ink-muted">
+                    Academic work. My contribution is listed above; the rest of the
+                    studio group did the rest.
+                  </p>
+                )}
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {project.marks && project.marks.length > 0 && (
+          <section className="section pt-0">
+            <div className="shell">
+              <ul className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+                {project.marks.map((m) => (
+                  <li key={m.src}>
+                    <Reveal>
+                      <div className="relative aspect-[16/10] overflow-hidden bg-ink">
+                        <Image
+                          src={m.src}
+                          alt={`${m.name} logo — ${m.category.toLowerCase()}`}
+                          fill
+                          sizes="(max-width: 640px) 100vw, 28rem"
+                          className="object-contain"
+                        />
+                      </div>
+                      <p className="mt-3 text-[0.95rem]">{m.name}</p>
+                      <p className="meta mt-1 flex gap-3">
+                        <span>{m.category}</span>
+                        <span className="tnum">{m.year}</span>
+                      </p>
+                    </Reveal>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
+        {project.gallery.length > 0 && (
+          <section className="section pt-0">
+            <div className="shell grid gap-x-10 gap-y-16 sm:grid-cols-2">
+              {project.gallery.map((item) => {
+                const size = sizeOf(item.src)
+                const wide = size.width / size.height >= 1.35
+                return (
+                <figure
+                  key={item.src}
+                  className={cn(wide && 'sm:col-span-2')}
+                >
+                  <Reveal>
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      width={size.width}
+                      height={size.height}
+                      sizes={wide ? '(max-width: 640px) 100vw, 88rem' : '(max-width: 640px) 100vw, 44rem'}
+                      className="plate-in h-auto w-full bg-ground-2"
+                    />
+                    {item.caption && <figcaption className="meta mt-3">{item.caption}</figcaption>}
+                  </Reveal>
+                </figure>
+                )
+              })}
+            </div>
+          </section>
+        )}
+      </article>
+
+      <section className="pb-4">
         <div className="shell">
           <Link
             href={`/work/${next.slug}`}
-            className="group flex flex-col gap-2 border-t border-line/60 pt-8"
+            className="group flex flex-col gap-2 border-t border-line pt-8"
           >
-            <span className="label">Next</span>
-            <span className="font-display text-[clamp(1.9rem,5vw,3.4rem)] leading-[0.95] transition-colors duration-500 group-hover:text-accent">
+            <span className="meta">Next project</span>
+            <span className="font-display text-[clamp(1.9rem,5vw,3.4rem)] leading-[0.95] tracking-[-0.035em] transition-colors duration-500 group-hover:text-accent">
               {next.title}
             </span>
           </Link>

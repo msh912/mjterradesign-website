@@ -11,7 +11,7 @@ export default function SiteHeader() {
   const [lifted, setLifted] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setLifted(window.scrollY > 24)
+    const onScroll = () => setLifted(window.scrollY > 16)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -19,38 +19,30 @@ export default function SiteHeader() {
 
   return (
     <header
-      className="fixed inset-x-0 top-0"
+      className={cn(
+        'fixed inset-x-0 top-0 border-b transition-[background-color,border-color] duration-500',
+        lifted ? 'border-line bg-ground/92 backdrop-blur-md' : 'border-transparent bg-transparent',
+      )}
       style={{ zIndex: 'var(--z-header)' }}
     >
-      <div className="shell flex items-center justify-between gap-6 py-4 sm:py-5">
-        <Link
-          href="/"
-          className="font-mono text-[0.72rem] tracking-[0.22em] uppercase text-ink"
-        >
-          {site.shortName}
-          <span className="text-accent">.</span>
+      <div className="shell flex items-baseline justify-between gap-6 py-5">
+        <Link href="/" className="group font-display text-[1.05rem] font-semibold tracking-[-0.03em]">
+          {site.name}
         </Link>
 
-        {/* The one deliberate glass surface on the site. */}
-        <nav
-          className={cn(
-            'flex items-center gap-1 rounded-full px-1.5 py-1.5 transition-[background-color,border-color,backdrop-filter] duration-500',
-            lifted
-              ? 'border border-line/70 bg-ground-2/55 backdrop-blur-[22px] backdrop-saturate-150'
-              : 'border border-transparent bg-transparent',
-          )}
-        >
+        <nav className="flex items-baseline gap-6 sm:gap-8">
           {nav.map((item) => {
             const active = pathname === item.href || pathname.startsWith(`${item.href}/`)
             return (
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={active ? 'page' : undefined}
                 className={cn(
-                  'rounded-full px-3.5 py-1.5 text-[0.82rem] transition-colors duration-300',
-                  active ? 'text-ground' : 'text-ink-muted hover:text-ink',
+                  'link-underline text-[0.9rem] transition-colors duration-300',
+                  active ? 'text-accent' : 'text-ink-muted hover:text-ink',
                 )}
-                style={active ? { backgroundColor: 'var(--color-accent)' } : undefined}
+                style={active ? { backgroundSize: '100% 1px' } : undefined}
               >
                 {item.label}
               </Link>

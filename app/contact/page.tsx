@@ -9,35 +9,68 @@ export default function ContactPage() {
   return (
     <>
       <PageHeading
-        title="Get in touch"
-        lede="Commissions, collaborations, or a question about a project below."
+        title="Start a project"
+        lede="Commissions, collaborations, competition teams, or a question about something in the archive. Email is the fastest way to reach me."
       />
 
-      <section className="section">
-        <div className="shell grid gap-12 md:grid-cols-2">
-          <Reveal>
-            <a
-              href={`mailto:${site.email}`}
-              className="font-display text-[clamp(1.6rem,4vw,2.8rem)] leading-[1] text-accent underline-offset-8 hover:underline"
-            >
-              {site.email}
-            </a>
-          </Reveal>
-
-          <Reveal stagger className="flex flex-col gap-3">
-            <span className="label">Elsewhere</span>
-            {socials.map((s) => (
+      <section className="section pt-12">
+        <div className="shell grid gap-x-12 gap-y-14 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <Reveal>
               <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                className="w-fit text-ink-muted transition-colors hover:text-ink"
+                href={`mailto:${site.email}`}
+                className="link-underline block w-fit font-display text-[clamp(1.5rem,4.4vw,3rem)] leading-[1.05] tracking-[-0.035em] text-accent"
               >
-                {s.label}
+                {site.email}
               </a>
-            ))}
-          </Reveal>
+              <a
+                href={`tel:${site.phoneHref}`}
+                className="link-underline tnum mt-6 block w-fit text-[1.1rem] text-ink-muted hover:text-ink"
+              >
+                {site.phone}
+              </a>
+
+              <p className="prose mt-10 text-ink-muted">
+                <span>
+                  If you are writing about a site, tell me where it is and what is
+                  wrong with it now. If you are writing about a role, the CV is on
+                  the about page and I am happy to send a PDF portfolio.
+                </span>
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="flex flex-col gap-10 lg:col-span-4 lg:col-start-9">
+            <Reveal>
+              <h2 className="meta">Elsewhere</h2>
+              <ul className="mt-4 border-t border-line">
+                {socials.map((s) => (
+                  <li key={s.label} className="border-b border-line">
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-between gap-4 py-3.5 text-[0.98rem] text-ink-muted transition-colors duration-300 hover:text-ink"
+                    >
+                      {s.label}
+                      <span
+                        aria-hidden
+                        className="text-ink-faint transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      >
+                        &#8599;
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+
+            <Reveal>
+              <h2 className="meta">Based</h2>
+              <p className="mt-3 text-[0.98rem]">{site.location}</p>
+              <p className="mt-1 text-[0.9rem] text-ink-muted">{site.availability}</p>
+            </Reveal>
+          </div>
         </div>
       </section>
     </>

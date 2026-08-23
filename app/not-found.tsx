@@ -2,20 +2,25 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <section className="section flex min-h-[70svh] items-center pt-36">
+    <section className="flex min-h-[76svh] items-center pt-36 pb-24">
       <div className="shell">
-        <h1 className="font-display text-[clamp(3rem,10vw,8rem)] leading-[0.9]">
+        <h1 className="font-display text-[clamp(3rem,10vw,8rem)] leading-[0.9] tracking-[-0.04em]">
           Not here
         </h1>
-        <p className="mt-6 max-w-md text-ink-muted">
+        <p className="mt-6 max-w-[46ch] text-ink-muted">
           That page does not exist — it may have been renamed or retired.
         </p>
         <Link
           href="/work"
-          className="mt-8 inline-flex items-center gap-3 border-b border-line pb-2 transition-colors hover:border-accent"
+          className="group mt-9 inline-flex items-center gap-3 border-b border-ink pb-1 transition-colors duration-300 hover:border-accent hover:text-accent"
         >
           <span>Back to the work</span>
-          <span className="text-accent">→</span>
+          <span
+            aria-hidden
+            className="transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1.5"
+          >
+            &rarr;
+          </span>
         </Link>
       </div>
     </section>

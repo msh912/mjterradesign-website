@@ -1,50 +1,43 @@
-'use client'
-
-import { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
-import { gsap } from '@/lib/gsap'
-import { prefersReducedMotion, EASE } from '@/lib/motion'
-
-const TEXT =
-  'I design things that have to stand up in the real world — and then I build them.'
+import Link from 'next/link'
+import Reveal from '@/components/Reveal'
 
 export default function Statement() {
-  const scope = useRef<HTMLElement>(null)
-
-  useGSAP(
-    () => {
-      if (prefersReducedMotion()) return
-
-      // Words resolve from dim to full as the block crosses the viewport.
-      gsap.fromTo(
-        '[data-word]',
-        { opacity: 0.16 },
-        {
-          opacity: 1,
-          ease: 'none',
-          stagger: 0.5,
-          scrollTrigger: {
-            trigger: scope.current,
-            start: 'top 78%',
-            end: 'bottom 58%',
-            scrub: 0.6,
-          },
-        },
-      )
-    },
-    { scope },
-  )
-
   return (
-    <section ref={scope} className="section section--veiled">
-      <div className="shell">
-        <p className="max-w-[24ch] font-display text-[clamp(1.9rem,5.2vw,4.2rem)] leading-[1.02] tracking-[-0.04em] md:max-w-[18ch]">
-          {TEXT.split(' ').map((word, i) => (
-            <span key={`${word}-${i}`} data-word className="inline-block">
-              {word}&nbsp;
-            </span>
-          ))}
-        </p>
+    <section className="section border-t border-line">
+      <div className="shell grid gap-x-12 gap-y-10 lg:grid-cols-12">
+        <div className="lg:col-span-7">
+          <Reveal>
+            <p className="font-display text-[clamp(1.6rem,3.4vw,2.75rem)] leading-[1.12] tracking-[-0.035em]">
+              Most landscape practices send their drawings out to be made
+              presentable. Most people who can make a drawing presentable cannot
+              read a site plan. I do both, which is why the argument and the
+              image in my projects say the same thing.
+            </p>
+          </Reveal>
+        </div>
+
+        <div className="lg:col-span-4 lg:col-start-9">
+          <Reveal>
+            <div className="prose text-ink-muted">
+              <p>
+                I hold an M.Arch in Landscape Architecture from Politecnico di
+                Milano and have spent roughly seven years working as a graphic
+                designer alongside architecture practice — brand books, catalogues
+                and interfaces in the same weeks as masterplans and site analysis.
+              </p>
+              <p>
+                The work below runs from territorial strategy across the Po plain
+                to a playground under construction in Tehran.
+              </p>
+            </div>
+            <Link
+              href="/about"
+              className="link-underline mt-6 inline-block text-[0.95rem] text-accent"
+            >
+              More about how I work
+            </Link>
+          </Reveal>
+        </div>
       </div>
     </section>
   )
