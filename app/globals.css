@@ -1,0 +1,192 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Design tokens — OKLCH only.
+   Strategy: COMMITTED / drenched dark. One deep brand-tinted ground carries the
+   whole site; one luminous mineral accent does the talking; ochre is a <5%
+   counterpoint. Deliberately NOT a warm near-white (cream/sand/paper is the tell).
+   Provisional until the real brand + work is in — swap here, nowhere else.
+--------------------------------------------------------------------------- */
+@theme {
+  /* Ground */
+  --color-ground: oklch(0.148 0.017 168);
+  --color-ground-2: oklch(0.191 0.019 168);
+  --color-surface: oklch(0.232 0.02 170);
+  --color-line: oklch(0.315 0.019 170);
+
+  /* Ink */
+  --color-ink: oklch(0.968 0.006 170);
+  --color-ink-muted: oklch(0.76 0.014 170);
+  --color-ink-faint: oklch(0.585 0.016 170);
+
+  /* Accent — the committed voice */
+  --color-accent: oklch(0.795 0.168 150);
+  --color-accent-deep: oklch(0.56 0.13 152);
+  --color-accent-soft: oklch(0.88 0.09 150);
+
+  /* Counterpoint — used sparingly */
+  --color-ember: oklch(0.75 0.15 62);
+
+  /* Type */
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-martian), ui-monospace, monospace;
+
+  /* Semantic z-scale — never 9999 */
+  --z-backdrop: 0;
+  --z-content: 10;
+  --z-sticky: 20;
+  --z-header: 30;
+  --z-overlay: 40;
+  --z-modal: 50;
+
+  /* Rhythm */
+  --space-gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --space-section: clamp(6rem, 14vh, 11rem);
+}
+
+/* --------------------------------------------------------------------------
+   Base
+-------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--color-ground);
+  color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background-color: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.075rem);
+  line-height: 1.6;
+  letter-spacing: -0.006em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p {
+  text-wrap: pretty;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Utilities used across sections
+-------------------------------------------------------------------------- */
+.shell {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: var(--space-gutter);
+}
+
+.section {
+  position: relative;
+  z-index: var(--z-content);
+  padding-block: var(--space-section);
+}
+
+/* Sections sit transparent so the living shader ground reads through. */
+.section--veiled {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklch, var(--color-ground) 0%, transparent),
+    color-mix(in oklch, var(--color-ground) 62%, transparent) 22%,
+    color-mix(in oklch, var(--color-ground) 62%, transparent) 78%,
+    color-mix(in oklch, var(--color-ground) 0%, transparent)
+  );
+}
+
+.rule {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    color-mix(in oklch, var(--color-line) 90%, transparent),
+    transparent
+  );
+  border: 0;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+/* Reveals ENHANCE a visible default — the element is fully painted without JS. */
+.reveal {
+  will-change: transform, opacity, filter;
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion
+-------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile overrides live here so desktop is untouched.
+-------------------------------------------------------------------------- */
+@media (max-width: 680px) {
+  body {
+    letter-spacing: -0.004em;
+  }
+  /* iOS Safari re-rasters fixed backgrounds inside transformed containers. */
+  [data-parallax] {
+    background-attachment: scroll !important;
+  }
+}
