@@ -1,14 +1,22 @@
 # MjTerraDesign — portfolio site
 
-Full portfolio for MJ Terra Design. Elegant, sophisticated, modern, high-tech.
-Built on the house stack documented in `WEBSITE-STACK-TRANSFER.md` — **read that
-file before changing the stack, the design system, or adding an animation.**
+Portfolio for **MJ Terra Design** — Mohamadjavad Shoori, architect and graphic
+designer in Milan. Built on the house stack documented in
+`WEBSITE-STACK-TRANSFER.md` — **read that file before changing the stack, the
+design system, or adding an animation.**
+
+Product truth lives in `PRODUCT.md` (written via `/impeccable init`).
+The archive and its provenance live in `CONTENT-INVENTORY.md`.
 
 ## Stack
 
 Next.js 15 (App Router) · React 19 · TS strict · Tailwind 4 (`@theme` tokens) ·
-GSAP 3 + ScrollTrigger · Lenis · Motion 12 · R3F 9 / drei 10 / Rapier 2 / three 0.184 ·
-@phosphor-icons/react. Versions in `package.json` are pinned and known-compatible.
+GSAP 3 + ScrollTrigger · Lenis · Motion 12 · @phosphor-icons/react.
+Versions in `package.json` are pinned and known-compatible.
+
+three / R3F / drei / Rapier are still in `package.json` and `next.config.ts`
+but **nothing imports them any more** — the shader background was removed when
+the site moved to the white gallery ground. Safe to uninstall.
 
 ## Layout of the repo
 
@@ -16,60 +24,63 @@ GSAP 3 + ScrollTrigger · Lenis · Motion 12 · R3F 9 / drei 10 / Rapier 2 / thr
 app/            routes: / · /work · /work/[slug] · /about · /contact · not-found
 components/
   layout/       SmoothScroll (Lenis↔GSAP), SiteHeader, SiteFooter
-  effects/      ShaderBackground (+Client wrapper), AuroraEdge
   sections/     Hero, Statement, WorkIndex, PageHeading, ContactCta
-  ScrambleText.tsx, Reveal.tsx
-content/        site.ts (meta/nav/socials), projects.ts (the whole portfolio dataset)
+  ScrambleText.tsx (currently unused), Reveal.tsx
+content/        site.ts · projects.ts (the archive) · profile.ts (the CV)
 lib/            gsap.ts, utils.ts, motion.ts
-public/         images/ videos/
+public/images/  59 published images, cropped out of the book mockups
+assets/         gitignored source material — see below
 ```
 
-**All portfolio content lives in `content/projects.ts`.** Pages read from it —
-adding work means adding entries there, not writing new pages.
+**All portfolio content lives in `content/`.** Pages read from it — adding work
+means adding an entry to `content/projects.ts`, not writing a new page.
 
-## Agreed direction (supersedes what is currently in the code)
+## The design world (current, implemented)
 
-MJ locked these in on 2026-08-23. **The committed scaffold predates them** — it
-ships a dark green palette and placeholder projects. Replace, don't build on.
-
-1. **Architecture-led.** Landscape architecture is the headline; graphic design
-   is a strong secondary section. Not a 50/50 split, not two separate doors.
-2. **Individual projects** are the unit of work — not the three Behance
-   portfolio books. The books get broken apart into ~10-15 named projects.
-3. **White / gallery ground.** Near-white, black type, minimal — "mostly black
-   and white". Subtle, sophisticated art direction; subtle animation on buttons
-   and icons throughout.
-4. **Crop the artwork** out of the Behance book mockups (grey backdrop, drop
-   shadow and page curl removed).
-
-Goal: impress visitors enough that they start a project with him.
-
-## Design system (dark palette below is SUPERSEDED — see above)
-
-- **Colour.** All tokens are OKLCH and live in one place: the `@theme` block in
-  `app/globals.css`. Currently a drenched dark green; must be re-tokenised to
-  the white gallery ground. Avoid warm cream/sand near-whites — that specific
-  palette is the AI tell, per the transfer doc §5. A true off-white at chroma ~0
-  is the safe reading of "white".
+- **Gallery.** Near-white ground, black type, hairline rules, and the artwork
+  supplying every colour on the page. Impeccable mode: **Experience** — the work
+  leads from the first viewport and the interface recedes.
+- **Colour.** All tokens are OKLCH in the `@theme` block of `app/globals.css`.
+  The ground is a **true neutral (chroma 0)** — warm cream/sand near-whites are
+  the AI tell per transfer doc §5 and are deliberately avoided.
+  The single accent is **not invented**: it is sampled from the brick red MJ
+  already prints in both portfolio books (#9c5051–#af5556), darkened to
+  `oklch(0.47 0.115 28)` so it clears 4.5:1 on the white ground.
 - **Type.** Display: Bricolage Grotesque. Body: Hanken Grotesk. Mono: Martian
-  Mono (small structural labels only). Paired on a contrast axis; none are on
-  the reject-list. Note `ui-ux-pro-max` recommends Space Grotesk for this brief
-  — it is on the transfer doc's reject-list, so the doc wins.
-- **Motion.** `expo.out` / `power3.out` only, no bounce. Every animation checks
-  `prefersReducedMotion()` from `lib/motion.ts`, and every reveal *enhances* an
-  already-painted default so a headless render never ships blank.
-- **Bans in force:** gradient text, side-stripe accents, default glassmorphism
-  (the header pill is the one deliberate exception), hero-metric templates,
-  identical icon+heading card grids, an uppercase eyebrow over every section,
-  `01/02/03` scaffolding, `z-index: 9999`.
+  Mono — used only for genuine structural metadata (location, year, studio),
+  never as a decorative label. Note `ui-ux-pro-max` recommends Space Grotesk for
+  this brief; it is on the transfer doc's reject-list, so the doc wins.
+- **Motion.** One authored moment: `.plate-in`, a scroll-driven CSS
+  `animation-timeline: view()` reveal on artwork, behind both a
+  `prefers-reduced-motion` guard and an `@supports` guard. Everything else is a
+  hover transition. `expo.out` / `power3.out` only, no bounce.
+  Every reveal *enhances* an already-painted default, so a headless render never
+  ships blank.
+- **Bans in force** (impeccable craft-floor): gradient text, eyebrows/kickers
+  above headings, `01/02/03` scaffolding, identical icon+heading card grids,
+  hero-metric templates, side-stripe accents, decorative glassmorphism,
+  `z-index: 9999`.
 
 ## Gotchas already handled here
 
-- `ShaderBackground` is mounted via `ShaderBackgroundClient` — `ssr: false`
-  dynamic imports are illegal in a Server Component.
-- `transpilePackages` for three/r3f is in `next.config.ts`; the build fails without it.
+- `transpilePackages` for three/r3f is in `next.config.ts`; harmless now that
+  nothing imports them, but the build fails if you re-add them without it.
+- `images: { unoptimized: true }` in `next.config.ts` — `next/image` serves the
+  raw files, so published image weight is the real payload. Keep crops lean.
 - `ScrambleText` sizes each cell by its final glyph so line width can't jitter.
-- Ground colour is baked inline on `<html>` so first paint isn't white.
+- Ground colour is baked inline on `<html>` so first paint is the gallery ground.
+
+## Source material (gitignored under `assets/`)
+
+| Path | What |
+|---|---|
+| `assets/behance/` | the original 49 downloads (landscape only 1400px — superseded) |
+| `assets/behance-hires/` | **the good set** — same 49 re-pulled from Behance's `source` module: landscape 2550px, graphic 6405px, logofolio 3952px |
+| `assets/cropped/` | 111 page crops, backdrop and shadow removed |
+| `assets/PROFILE-EXTRACTED.md` | the **older, graphic-led** CV. Superseded by `content/profile.ts` |
+
+Behance serves larger originals off the same hash — `project_modules/source/<hash>.jpg`
+rather than `project_modules/1400/<hash>.jpg`. That is where the hi-res set came from.
 
 ## Workflow
 
@@ -82,45 +93,29 @@ Goal: impress visitors enough that they start a project with him.
 
 ## Skills
 
-Nine skills are installed at `.claude/skills/` (gitignored): `impeccable` v4.1.1,
+Nine skills at `.claude/skills/` (gitignored): `impeccable` v4.1.1,
 `frontend-design`, `ui-ux-pro-max`, plus `design-taste-frontend`,
 `high-end-visual-design`, `minimalist-ui`, `redesign-existing-projects`,
 `full-output-enforcement`, `imagegen-frontend-web`. `npx impeccable update`
 manages the install and wrote the anti-slop hook into `.claude/settings.local.json`
-— don't hand-edit that file. Unused taste-skill variants are in
-`assets/taste-skill-bundle/`.
+— don't hand-edit that file. `.impeccable/config.json` records `buildPath: code`.
+Unused taste-skill variants are in `assets/taste-skill-bundle/`.
 
-Impeccable reports `NO_PRODUCT_MD`: a from-scratch build must load
-`reference/init.md` and write PRODUCT.md first.
+## Status
 
-## Status — nothing of MJ's work is in the site yet
+The site is real. All 11 projects are MJ's actual work, named and described from
+his own books, with 59 cropped images published.
 
-The site is verified scaffolding, not a portfolio. All routes serve 200, the
-build is clean, but `content/projects.ts` still holds three dummy projects and
-`public/images/` is empty.
+**Open — needs MJ:**
 
-Source material, all gitignored under `assets/`:
-
-- `assets/behance/` — 49 images at 2800px (graphic 11, landscape 26, logofolio 12)
-- `assets/PROFILE-EXTRACTED.md` — MJ's CV, education, six roles, tools, contacts,
-  transcribed from a mockup spread. **Unverified — have MJ proof it.**
-
-## Next steps
-
-1. `/impeccable init` → write PRODUCT.md (positioning, audience, the
-   "start a project with me" goal).
-2. **Identify the individual projects.** The single biggest blocker. Only two are
-   known by name so far — *Purification Movement* (Lugano, Landscape Design
-   Studio 2, 2024) and *8th Asian Men's Beach Handball Championship* (Iran, 2022).
-   The remaining ~10-13 need mining out of the 49 spreads, then MJ's correction.
-3. Re-tokenise `globals.css` to the white gallery ground.
-4. Crop artwork out of the book mockups into `public/images/`.
-5. Rewrite `content/projects.ts` from placeholders to the real archive.
-6. `content/site.ts` — tagline, real socials, real domain.
-   `app/about/page.tsx` — bio from the extracted profile.
-
-## Blocked on MJ
-
-- **Google Drive** connector is unauthorized (claude.ai connector settings). Once
-  live, pull originals instead of cropping mockups.
-- **`gh` is not authenticated** (`gh auth login`) — only matters for repos/PRs.
+1. **Proof `CONTENT-INVENTORY.md`.** Ten specific conflicts are listed at the
+   bottom of it, all real disagreements between his own two books (semester
+   numbers, studio names, one logo caption). Nothing was guessed.
+2. **Proof `content/profile.ts`** — the CV, transcribed from a printed page.
+3. **Decide the production domain.** `content/site.ts` carries a provisional
+   `mjterradesign.com`.
+4. `git remote set-url origin https://github.com/msh912/MjTerraDesign_website.git`
+   — the account moved from `mjshoori`; pushes still work via redirect.
+5. `gh auth login` — installed, not authenticated. Only matters for repos/PRs.
+6. Google Drive connector is unauthorized. Only worth doing if original design
+   files exist; MJ said the Behance set is all there is.
