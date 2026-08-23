@@ -1,0 +1,72 @@
+/**
+ * Intrinsic dimensions of every published image.
+ *
+ * GENERATED — do not edit by hand. Regenerate after adding artwork.
+ * `next.config.ts` sets `images.unoptimized`, so next/image cannot infer
+ * these itself, and guessing one aspect ratio per slot crops wide spreads.
+ */
+
+export const imageSizes: Record<string, { width: number; height: number }> = {
+  '/images/architectural-graphics/boards.jpg': { width: 1700, height: 1202 },
+  '/images/architectural-graphics/exploded-diagrams.jpg': { width: 2200, height: 1555 },
+  '/images/architectural-graphics/postcards.jpg': { width: 1700, height: 1202 },
+  '/images/architectural-graphics/posters.jpg': { width: 1700, height: 1202 },
+  '/images/elahie-urban-playground/concept-sketch.jpg': { width: 933, height: 1364 },
+  '/images/elahie-urban-playground/isometric.jpg': { width: 934, height: 1364 },
+  '/images/four-and-seven/concept-to-built-form.jpg': { width: 1700, height: 1202 },
+  '/images/four-and-seven/identity.jpg': { width: 2200, height: 1555 },
+  '/images/heliotrope/campaign.jpg': { width: 2200, height: 1555 },
+  '/images/heliotrope/catalogue.jpg': { width: 1700, height: 1202 },
+  '/images/hidden-illusion-of-bygone-landscape/bicycle-station-art-gallery.jpg': { width: 933, height: 1364 },
+  '/images/hidden-illusion-of-bygone-landscape/cemetery-pathway.jpg': { width: 934, height: 1364 },
+  '/images/hidden-illusion-of-bygone-landscape/echoes-of-the-land.jpg': { width: 934, height: 1364 },
+  '/images/hidden-illusion-of-bygone-landscape/four-fingers-strategy.jpg': { width: 933, height: 1364 },
+  '/images/hidden-illusion-of-bygone-landscape/masterplan.jpg': { width: 934, height: 1364 },
+  '/images/hidden-illusion-of-bygone-landscape/public-space.jpg': { width: 933, height: 1364 },
+  '/images/hidden-illusion-of-bygone-landscape/territorial-exploration.jpg': { width: 934, height: 1364 },
+  '/images/logofolio/adelia.jpg': { width: 1200, height: 954 },
+  '/images/logofolio/asian-beach-handball.jpg': { width: 1200, height: 954 },
+  '/images/logofolio/currymo.jpg': { width: 1200, height: 954 },
+  '/images/logofolio/dejan.jpg': { width: 1200, height: 954 },
+  '/images/logofolio/doran.jpg': { width: 1200, height: 954 },
+  '/images/logofolio/jabe.jpg': { width: 1200, height: 954 },
+  '/images/logofolio/pars-magazine.jpg': { width: 1200, height: 954 },
+  '/images/logofolio/ropes-land.jpg': { width: 1200, height: 954 },
+  '/images/logofolio/roshan.jpg': { width: 1200, height: 954 },
+  '/images/logofolio/taravat-skin-care.jpg': { width: 1200, height: 954 },
+  '/images/logofolio/traffic-pc-store.jpg': { width: 1200, height: 955 },
+  '/images/purification-movement/concept.jpg': { width: 934, height: 1364 },
+  '/images/purification-movement/ecology.jpg': { width: 934, height: 1364 },
+  '/images/purification-movement/manifest.jpg': { width: 934, height: 1364 },
+  '/images/purification-movement/masterplan.jpg': { width: 1867, height: 1364 },
+  '/images/purification-movement/signature-moments.jpg': { width: 934, height: 1364 },
+  '/images/purification-movement/site-analysis.jpg': { width: 933, height: 1364 },
+  '/images/purification-movement/walkway-states.jpg': { width: 933, height: 1364 },
+  '/images/roboteos/book-covers.jpg': { width: 1700, height: 1202 },
+  '/images/roboteos/identity.jpg': { width: 2200, height: 1555 },
+  '/images/roboteos/ui-and-website.jpg': { width: 1700, height: 1202 },
+  '/images/selected-sketches/sketches-left.jpg': { width: 933, height: 1364 },
+  '/images/selected-sketches/sketches-right.jpg': { width: 934, height: 1364 },
+  '/images/selected-sketches/sketches.jpg': { width: 1867, height: 1364 },
+  '/images/studio/graphic-portfolio-cover.jpg': { width: 1700, height: 601 },
+  '/images/studio/landscape-portfolio-cover.jpg': { width: 932, height: 1442 },
+  '/images/to-the-lake-and-back/concept.jpg': { width: 933, height: 1364 },
+  '/images/to-the-lake-and-back/four-fingers.jpg': { width: 934, height: 1364 },
+  '/images/to-the-lake-and-back/harmony-of-nature-and-design.jpg': { width: 933, height: 1364 },
+  '/images/to-the-lake-and-back/masterplan.jpg': { width: 934, height: 1364 },
+  '/images/to-the-lake-and-back/strategy.jpg': { width: 933, height: 1364 },
+  '/images/to-the-lake-and-back/street-perception.jpg': { width: 934, height: 1364 },
+  '/images/to-the-lake-and-back/urban-isometrics.jpg': { width: 933, height: 1364 },
+  '/images/to-the-river-and-back/concept.jpg': { width: 933, height: 1364 },
+  '/images/to-the-river-and-back/existing-landscape.jpg': { width: 933, height: 1364 },
+  '/images/to-the-river-and-back/gridded-memories.jpg': { width: 933, height: 1364 },
+  '/images/to-the-river-and-back/if-we-were-the-creator.jpg': { width: 934, height: 1364 },
+  '/images/to-the-river-and-back/landscape-strategy.jpg': { width: 934, height: 1364 },
+  '/images/to-the-river-and-back/masterplan.jpg': { width: 1700, height: 1242 },
+  '/images/to-the-river-and-back/the-bridge.jpg': { width: 934, height: 1364 },
+  '/images/to-the-river-and-back/the-chess.jpg': { width: 933, height: 1364 },
+  '/images/to-the-river-and-back/the-tower.jpg': { width: 933, height: 1364 },
+}
+
+/** Falls back to a 3:2 box for anything not in the manifest. */
+export const sizeOf = (src: string) => imageSizes[src] ?? { width: 1500, height: 1000 }

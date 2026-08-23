@@ -1,12 +1,22 @@
+/**
+ * Site-level facts. Contact details are transcribed from MJ's own printed
+ * portfolios, where both books agree — see CONTENT-INVENTORY.md.
+ */
 export const site = {
   name: 'MJ Terra Design',
-  shortName: 'MjTerra',
-  // PLACEHOLDER — replace once the positioning is settled.
-  tagline: 'Design, engineered.',
+  shortName: 'MJ Terra',
+  person: 'Mohamadjavad Shoori',
+  role: 'Architect and graphic designer',
+  tagline: 'Landscape architecture and the drawings that argue for it',
   description:
-    'The full portfolio of MJ Terra Design — selected work across design, build and craft.',
+    'The portfolio of MJ Terra Design — landscape architecture, architecture and graphic design by Mohamadjavad Shoori, based in Milan.',
+  // PROVISIONAL: the production domain is not decided yet.
   url: 'https://mjterradesign.com',
-  email: 'msh911@gmail.com',
+  email: 'mjshoori.arch@gmail.com',
+  phone: '+39 351 886 0362',
+  phoneHref: '+393518860362',
+  location: 'Milan, Italy',
+  availability: 'Available for freelance and full-time work',
 } as const
 
 export const nav = [
@@ -16,8 +26,7 @@ export const nav = [
 ] as const
 
 export const socials = [
-  // PLACEHOLDER — fill in the real handles.
-  { href: 'https://github.com/mjshoori', label: 'GitHub' },
-  { href: '#', label: 'LinkedIn' },
-  { href: '#', label: 'Instagram' },
+  { href: 'https://www.behance.net/mjshoori', label: 'Behance' },
+  { href: 'https://www.instagram.com/mj.shoori', label: 'Instagram' },
+  { href: 'https://www.linkedin.com/in/mjshoori', label: 'LinkedIn' },
 ] as const
