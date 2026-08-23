@@ -4,6 +4,7 @@ import './globals.css'
 import SmoothScroll from '@/components/layout/SmoothScroll'
 import SiteHeader from '@/components/layout/SiteHeader'
 import SiteFooter from '@/components/layout/SiteFooter'
+import MotionRoot from '@/components/motion/MotionRoot'
 import { site } from '@/content/site'
 
 // Contrast axis: expressive variable display against a humanist body,
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <SmoothScroll>
+          <MotionRoot />
           <SiteHeader />
           <main id="main">{children}</main>
           <SiteFooter />

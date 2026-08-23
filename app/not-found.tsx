@@ -4,10 +4,13 @@ export default function NotFound() {
   return (
     <section className="flex min-h-[76svh] items-center pt-36 pb-24">
       <div className="shell">
-        <h1 className="font-display text-[clamp(3rem,10vw,8rem)] leading-[0.9] tracking-[-0.04em]">
+        <h1
+          data-anim="lines"
+          className="font-display text-[clamp(3rem,10vw,8rem)] leading-[0.9] tracking-[-0.04em]"
+        >
           Not here
         </h1>
-        <p className="mt-6 max-w-[46ch] text-ink-muted">
+        <p data-anim="rise" className="mt-6 max-w-[46ch] text-ink-muted">
           That page does not exist — it may have been renamed or retired.
         </p>
         <Link

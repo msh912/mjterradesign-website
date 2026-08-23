@@ -4,7 +4,7 @@ import { nav, site, socials } from '@/content/site'
 export default function SiteFooter() {
   return (
     <footer className="border-t border-line">
-      <div className="shell grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
+      <div data-anim="stagger" className="shell grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-2">
           <p className="font-display text-2xl font-semibold tracking-[-0.035em]">{site.name}</p>
           <p className="mt-3 max-w-sm text-ink-muted">

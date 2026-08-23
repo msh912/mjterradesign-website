@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import PageHeading from '@/components/sections/PageHeading'
-import Reveal from '@/components/Reveal'
 import { site, socials } from '@/content/site'
 
 export const metadata: Metadata = { title: 'Contact' }
@@ -16,7 +15,7 @@ export default function ContactPage() {
       <section className="section pt-12">
         <div className="shell grid gap-x-12 gap-y-14 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <Reveal>
+            <div data-anim="stagger">
               <a
                 href={`mailto:${site.email}`}
                 className="link-underline block w-fit font-display text-[clamp(1.5rem,4.4vw,3rem)] leading-[1.05] tracking-[-0.035em] text-accent"
@@ -29,19 +28,16 @@ export default function ContactPage() {
               >
                 {site.phone}
               </a>
-
               <p className="prose mt-10 text-ink-muted">
-                <span>
-                  If you are writing about a site, tell me where it is and what is
-                  wrong with it now. If you are writing about a role, the CV is on
-                  the about page and I am happy to send a PDF portfolio.
-                </span>
+                If you are writing about a site, tell me where it is and what is
+                wrong with it now. If you are writing about a role, the CV is on
+                the about page and I am happy to send a PDF portfolio.
               </p>
-            </Reveal>
+            </div>
           </div>
 
           <div className="flex flex-col gap-10 lg:col-span-4 lg:col-start-9">
-            <Reveal>
+            <div data-anim="stagger">
               <h2 className="meta">Elsewhere</h2>
               <ul className="mt-4 border-t border-line">
                 {socials.map((s) => (
@@ -63,13 +59,13 @@ export default function ContactPage() {
                   </li>
                 ))}
               </ul>
-            </Reveal>
+            </div>
 
-            <Reveal>
+            <div data-anim="stagger">
               <h2 className="meta">Based</h2>
               <p className="mt-3 text-[0.98rem]">{site.location}</p>
               <p className="mt-1 text-[0.9rem] text-ink-muted">{site.availability}</p>
-            </Reveal>
+            </div>
           </div>
         </div>
       </section>

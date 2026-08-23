@@ -20,10 +20,13 @@ export default function WorkIndex({
       <div className="shell">
         {heading && (
           <div className="mb-14 flex items-baseline justify-between gap-6 border-b border-line pb-5">
-            <h2 className="font-display text-[clamp(1.6rem,3.2vw,2.4rem)] tracking-[-0.035em]">
+            <h2
+              data-anim="lines"
+              className="font-display text-[clamp(1.6rem,3.2vw,2.4rem)] tracking-[-0.035em]"
+            >
               {heading}
             </h2>
-            <span className="meta tnum">
+            <span data-anim="meta" className="meta tnum">
               {projects.length} {projects.length === 1 ? 'project' : 'projects'}
             </span>
           </div>
@@ -39,7 +42,10 @@ export default function WorkIndex({
             return (
               <li key={p.slug} className={cn(wide && 'sm:col-span-2')}>
                 <Link href={`/work/${p.slug}`} className="group block">
-                  <div className={cn('overflow-hidden bg-ground-2', wide && 'mx-auto max-w-5xl')}>
+                  <div
+                    data-anim="plate"
+                    className={cn('overflow-hidden bg-ground-2', wide && 'mx-auto max-w-5xl')}
+                  >
                     <Image
                       src={p.cover}
                       alt={p.coverAlt}
@@ -47,11 +53,11 @@ export default function WorkIndex({
                       height={size.height}
                       priority={i === 0}
                       sizes={wide ? '(max-width: 640px) 100vw, 64rem' : '(max-width: 640px) 100vw, 40rem'}
-                      className="plate-in h-auto w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
+                      className="h-auto w-full transition-[filter] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:brightness-[1.04]"
                     />
                   </div>
 
-                  <div className={cn('mt-5', wide && 'mx-auto max-w-5xl')}>
+                  <div data-anim="stagger" className={cn('mt-5', wide && 'mx-auto max-w-5xl')}>
                     <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                       <h3
                         className={cn(

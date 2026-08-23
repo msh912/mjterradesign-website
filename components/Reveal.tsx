@@ -1,26 +1,27 @@
 import { cn } from '@/lib/utils'
 
+export type Anim = 'rise' | 'stagger' | 'lines' | 'plate' | 'rule' | 'meta'
+
 type Props = {
   children: React.ReactNode
   className?: string
-  /** Retained for call-site compatibility; grouping no longer changes behaviour. */
+  /** Which entrance this group uses. See components/motion/MotionRoot.tsx. */
+  anim?: Anim
+  /** Shorthand for anim="stagger". */
   stagger?: boolean
 }
 
 /**
- * A plain grouping wrapper. Text on this site does not animate in.
+ * Declares a scroll entrance for its children.
  *
- * Two earlier versions were removed for good reasons, both worth keeping:
- *
- * 1. A GSAP `gsap.from()` reveal set opacity 0 on mount and left everything
- *    below the fold invisible until ScrollTrigger fired.
- * 2. A CSS `animation-timeline: view()` reveal had the same effect in any
- *    render that never scrolls — print, crawlers, full-page screenshots.
- *
- * Both also broke the craft floor's rule against one identical entrance on
- * every section. The single authored motion moment is `.plate-in` on artwork;
- * copy is simply painted, which is what a gallery does.
+ * This only marks the element; the animation itself is built by MotionRoot,
+ * which keeps every page a server component. The resting state is the visible
+ * state, so if JS never runs the content is simply there.
  */
-export default function Reveal({ children, className }: Props) {
-  return <div className={cn(className)}>{children}</div>
+export default function Reveal({ children, className, anim, stagger }: Props) {
+  return (
+    <div data-anim={anim ?? (stagger ? 'stagger' : 'rise')} className={cn(className)}>
+      {children}
+    </div>
+  )
 }

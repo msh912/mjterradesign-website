@@ -193,45 +193,43 @@ textarea {
 }
 
 /* --------------------------------------------------------------------------
-   The one authored motion moment: artwork resolves from a soft, slightly
-   over-scaled state into place. Enhances an already-painted element — with no
-   JS, no support, or reduced motion, the image is simply there.
+   Motion
+
+   Scroll animation is driven by components/motion/MotionRoot.tsx through
+   `data-anim` attributes, so sections stay server components.
+
+   Everything below is a RESTING state, and the resting state is always the
+   visible one. The hidden start state exists only inside a GSAP tween, which
+   is created in the same call that applies it, reduced motion skips the whole
+   system, and MotionRoot sweeps up anything still hidden after a timeout.
 -------------------------------------------------------------------------- */
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .plate-in {
-      animation: plate-in linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 62%;
-    }
 
-  }
+/* Artwork frames clip their own reveal; the resting clip is fully open. */
+[data-anim='plate'] {
+  clip-path: inset(0 0 0 0);
 }
 
-/* The artwork settles into place: it is always present and always legible —
-   the un-entered state is a soft, slightly over-scaled version of the image,
-   never an empty frame. A render that never scrolls still shows the work. */
-@keyframes plate-in {
-  from {
-    opacity: 0.72;
-    transform: scale(1.028);
-    filter: blur(3px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-    filter: none;
-  }
+[data-anim='lines'],
+[data-anim='rise'],
+[data-anim='stagger'],
+[data-anim='plate'] {
+  will-change: transform, opacity, filter, clip-path;
 }
 
-/* Artwork never animates away to nothing — a non-scrolling render (print, a
-   crawler, a screenshot service) still shows the plate. */
+/* SplitText line masks must not clip descenders. */
+[data-anim='lines'] .split-line {
+  padding-bottom: 0.14em;
+}
+
+/* Anything that never scrolls — print, a crawler, a screenshot service — gets
+   the finished state rather than a half-played one. */
 @media print {
-  .plate-in {
-    animation: none !important;
+  [data-anim],
+  [data-anim] * {
     opacity: 1 !important;
     filter: none !important;
     transform: none !important;
+    clip-path: none !important;
   }
 }
 

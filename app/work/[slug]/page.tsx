@@ -47,19 +47,23 @@ export default async function ProjectPage({ params }: Params) {
       <article>
         <header className="pt-32 sm:pt-40">
           <div className="shell">
-            <h1 className="max-w-[18ch] font-display text-[clamp(2.4rem,7vw,5.5rem)] leading-[0.92] tracking-[-0.04em]">
+            <h1
+              data-anim="lines"
+              className="max-w-[18ch] font-display text-[clamp(2.4rem,7vw,5.5rem)] leading-[0.92] tracking-[-0.04em]">
               {project.title}
             </h1>
             {project.subtitle && (
-              <p className="mt-4 max-w-[34ch] font-display text-[clamp(1.2rem,2.6vw,1.9rem)] tracking-[-0.03em] text-ink-faint">
+              <p data-anim="rise" className="mt-4 max-w-[34ch] font-display text-[clamp(1.2rem,2.6vw,1.9rem)] tracking-[-0.03em] text-ink-faint">
                 {project.subtitle}
               </p>
             )}
-            <p className="mt-7 max-w-[58ch] text-[1.08rem] text-ink-muted">{project.summary}</p>
+            <p data-anim="rise" className="mt-7 max-w-[58ch] text-[1.08rem] text-ink-muted">
+              {project.summary}
+            </p>
           </div>
 
           <figure className="shell mt-14">
-            <div className="mx-auto max-w-6xl overflow-hidden bg-ground-2">
+            <div data-anim="plate" className="mx-auto max-w-6xl overflow-hidden bg-ground-2">
               <Image
                 src={project.cover}
                 alt={project.coverAlt}
@@ -76,19 +80,17 @@ export default async function ProjectPage({ params }: Params) {
         <section className="section pt-16">
           <div className="shell grid gap-x-12 gap-y-14 lg:grid-cols-12">
             <div className="lg:col-span-7">
-              <Reveal>
-                <div className="prose text-[1.06rem]">
-                  {project.body.map((para, i) => (
-                    <p key={i} className={i === 0 ? 'text-ink' : 'text-ink-muted'}>
-                      {para}
-                    </p>
-                  ))}
-                </div>
-              </Reveal>
+              <div data-anim="stagger" className="prose text-[1.06rem]">
+                {project.body.map((para, i) => (
+                  <p key={i} className={i === 0 ? 'text-ink' : 'text-ink-muted'}>
+                    {para}
+                  </p>
+                ))}
+              </div>
             </div>
 
             <div className="lg:col-span-4 lg:col-start-9">
-              <Reveal>
+              <Reveal anim="stagger">
                 <dl className="border-t border-line">
                   {facts.map((f) => (
                     <div key={f.label} className="flex flex-col gap-1 border-b border-line py-4">
@@ -114,7 +116,7 @@ export default async function ProjectPage({ params }: Params) {
               <ul className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
                 {project.marks.map((m) => (
                   <li key={m.src}>
-                    <Reveal>
+                    <Reveal anim="stagger">
                       <div className="relative aspect-[16/10] overflow-hidden bg-ink">
                         <Image
                           src={m.src}
@@ -148,17 +150,21 @@ export default async function ProjectPage({ params }: Params) {
                   key={item.src}
                   className={cn(wide && 'sm:col-span-2')}
                 >
-                  <Reveal>
+                  <div data-anim="plate" className="overflow-hidden bg-ground-2">
                     <Image
                       src={item.src}
                       alt={item.alt}
                       width={size.width}
                       height={size.height}
                       sizes={wide ? '(max-width: 640px) 100vw, 88rem' : '(max-width: 640px) 100vw, 44rem'}
-                      className="plate-in h-auto w-full bg-ground-2"
+                      className="h-auto w-full"
                     />
-                    {item.caption && <figcaption className="meta mt-3">{item.caption}</figcaption>}
-                  </Reveal>
+                  </div>
+                  {item.caption && (
+                    <figcaption data-anim="meta" className="meta mt-3">
+                      {item.caption}
+                    </figcaption>
+                  )}
                 </figure>
                 )
               })}
@@ -171,6 +177,7 @@ export default async function ProjectPage({ params }: Params) {
         <div className="shell">
           <Link
             href={`/work/${next.slug}`}
+            data-anim="stagger"
             className="group flex flex-col gap-2 border-t border-line pt-8"
           >
             <span className="meta">Next project</span>

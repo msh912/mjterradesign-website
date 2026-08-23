@@ -15,5 +15,18 @@ export const EASE = {
   inOut: 'power2.inOut',
 } as const
 
+export const isMobile = () =>
+  typeof window !== 'undefined' && window.matchMedia('(max-width: 680px)').matches
+
 /** Lenis on wheel only; pinned mobile ScrollTriggers need catch-up scrub. */
-export const scrubFor = (isMobile: boolean) => (isMobile ? 1 : true)
+export const scrubFor = (mobile: boolean) => (mobile ? 1 : true)
+
+/**
+ * How long to wait before force-revealing anything an animation left hidden.
+ *
+ * Two earlier reveal implementations shipped blank sections because they set an
+ * invisible start state and then depended on an event that never arrived. Any
+ * JS-driven reveal here is backed by this failsafe so that failure mode cannot
+ * return.
+ */
+export const FAILSAFE_MS = 5000

@@ -24,6 +24,7 @@ the site moved to the white gallery ground. Safe to uninstall.
 app/            routes: / · /work · /work/[slug] · /about · /contact · not-found
 components/
   layout/       SmoothScroll (Lenis↔GSAP), SiteHeader, SiteFooter
+  motion/       MotionRoot — wires every scroll animation from data-anim
   sections/     Hero, Statement, WorkIndex, PageHeading, ContactCta
   ScrambleText.tsx (currently unused), Reveal.tsx
 content/        site.ts · projects.ts (the archive) · profile.ts (the CV)
@@ -50,12 +51,28 @@ means adding an entry to `content/projects.ts`, not writing a new page.
   Mono — used only for genuine structural metadata (location, year, studio),
   never as a decorative label. Note `ui-ux-pro-max` recommends Space Grotesk for
   this brief; it is on the transfer doc's reject-list, so the doc wins.
-- **Motion.** One authored moment: `.plate-in`, a scroll-driven CSS
-  `animation-timeline: view()` reveal on artwork, behind both a
-  `prefers-reduced-motion` guard and an `@supports` guard. Everything else is a
-  hover transition. `expo.out` / `power3.out` only, no bounce.
-  Every reveal *enhances* an already-painted default, so a headless render never
-  ships blank.
+- **Motion.** Driven by `components/motion/MotionRoot.tsx` — one client
+  component in the layout wires every scroll animation, so pages stay server
+  components. Sections opt in declaratively with `data-anim`:
+
+  | value | what it does |
+  |---|---|
+  | `lines` | GSAP SplitText line masks; lines rise out from behind their own edge |
+  | `rise` | block lifts in through a shallow focus pull (blur → sharp) |
+  | `stagger` | direct children follow one another |
+  | `plate` | clip-path curtain opens while the image settles back from overscale, then drifts on scrub |
+  | `meta` | small mono metadata ticks in per character |
+  | `rule` | hairline drawn from the left |
+
+  `expo.out` / `power3.out` only, no bounce. GSAP 3.15 includes SplitText.
+
+  **The rule that matters:** the resting state in CSS is always the *visible*
+  state; a hidden start state only ever exists inside a `gsap.from()`, which
+  creates the tween in the same call. Reduced motion skips the system entirely,
+  `@media print` forces the finished state, and a `FAILSAFE_MS` sweep reveals
+  anything still hidden. Two earlier reveal implementations shipped blank
+  sections — see the comments in `Reveal.tsx` — so `scratchpad` verification
+  checks three guarantees: scrolled, never-scrolled, and reduced-motion.
 - **Bans in force** (impeccable craft-floor): gradient text, eyebrows/kickers
   above headings, `01/02/03` scaffolding, identical icon+heading card grids,
   hero-metric templates, side-stripe accents, decorative glassmorphism,
@@ -114,8 +131,18 @@ his own books, with 59 cropped images published.
 2. **Proof `content/profile.ts`** — the CV, transcribed from a printed page.
 3. **Decide the production domain.** `content/site.ts` carries a provisional
    `mjterradesign.com`.
-4. `git remote set-url origin https://github.com/msh912/MjTerraDesign_website.git`
-   — the account moved from `mjshoori`; pushes still work via redirect.
-5. `gh auth login` — installed, not authenticated. Only matters for repos/PRs.
-6. Google Drive connector is unauthorized. Only worth doing if original design
+4. `gh auth login` — installed, not authenticated. Only matters for repos/PRs.
+5. Google Drive connector is unauthorized. Only worth doing if original design
    files exist; MJ said the Behance set is all there is.
+
+## The remote
+
+`origin` is **`https://github.com/msh912/mjterradesign-website.git`**, which
+Vercel deploys from. MJ is a collaborator, not the owner.
+
+That repo was created through `vercel.com/new` as a *squashed snapshot* of the
+old scaffold, so it shared **no history** with this clone. It was joined with
+`git merge -s ours newrepo/main --allow-unrelated-histories`, which keeps this
+tree byte-for-byte and makes pushes ordinary fast-forwards. **Never force-push
+here** — it is not MJ's repo and Vercel builds from it. The previous URL is kept
+as the remote `old-mjshoori`.
