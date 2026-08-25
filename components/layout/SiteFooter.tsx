@@ -8,7 +8,7 @@ export default function SiteFooter() {
         <div className="lg:col-span-2">
           <p className="font-display text-2xl font-semibold tracking-[-0.035em]">{site.name}</p>
           <p className="mt-3 max-w-sm text-ink-muted">
-            {site.person} — {site.role.toLowerCase()} in {site.location}. {site.availability}.
+            {site.person}, {site.role.toLowerCase()} in {site.location}. {site.availability}.
           </p>
           <a
             href={`mailto:${site.email}`}

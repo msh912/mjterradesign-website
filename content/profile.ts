@@ -2,25 +2,25 @@
  * MJ's CV, transcribed from the CV spread inside the 2025 Landscape
  * Architecture portfolio (the architecture-led, more recent of his two books).
  *
- * UNVERIFIED — read off a printed page. MJ must proof this before it is treated
+ * UNVERIFIED. Read off a printed page. MJ must proof this before it is treated
  * as final. See CONTENT-INVENTORY.md section D for the conflict with the older
  * graphic-book CV.
  */
 
 export const bio = [
   'I have a background in architecture and have gained experience working in various architecture firms. Alongside that I have freelanced in graphic design. Throughout my career I have tried to embody the qualities of an architect, an artist, and a meticulous engineer.',
-  'My involvement in environmental conservation is what pushed me toward a master’s in landscape architecture — I wanted to deepen my understanding of environmental protection and design rather than treat it as a specialism someone else handles.',
+  'My involvement in environmental conservation is what pushed me toward a master’s in landscape architecture. I wanted to deepen my understanding of environmental protection and design rather than treat it as a specialism someone else handles.',
   'In practice that means I do not hand a project over between disciplines. The site analysis, the masterplan, the diagrams that explain it and the identity that presents it are made in the same place, by the same person, which is why they tend to agree with each other.',
 ]
 
 export const education = [
   {
-    degree: 'M.Arch — Landscape Architecture, Land Landscape Heritage',
+    degree: 'M.Arch in Landscape Architecture, Land Landscape Heritage',
     school: 'Politecnico di Milano',
     place: 'Italy',
   },
   {
-    degree: 'B.Sc — Architecture Engineering',
+    degree: 'B.Sc in Architecture Engineering',
     school: 'Pars University of Art and Architecture',
     place: 'Tehran, Iran',
   },
@@ -29,7 +29,7 @@ export const education = [
 export const experience = [
   {
     role: 'Junior Architect',
-    org: 'Ar.de.a. — Arturo Montanelli Studio Design',
+    org: 'Ar.de.a. Arturo Montanelli Studio Design',
     place: 'Lecco, Italy',
     dates: 'Sep 2024 – Feb 2025',
     work: 'Drawing assistant · Landscape design · Interior design',
@@ -49,7 +49,7 @@ export const experience = [
     work: 'Playground design · Interior design · Brand book · Logo · Catalogue',
   },
   {
-    role: 'Junior Architect — apprenticeship',
+    role: 'Junior Architect (apprenticeship)',
     org: 'Hajizadeh & Associates',
     place: 'Iran',
     dates: 'Jan 2020',
@@ -80,9 +80,9 @@ export const experience = [
 
 export const workshops = [
   { title: '21st Century Architecture Kaleidoscope seminar', date: 'Oct 2018' },
-  { title: 'Architecture of Illusion — fantasy in architecture and its psychological impact', date: 'Sep 2020' },
-  { title: 'Dialogues on Milan: City as a Common Resource — lecture by Alejandro Aravena', date: 'Apr 2024' },
-  { title: 'Anatomy of Public Space — public space and the human body', date: 'May 2024' },
+  { title: 'Architecture of Illusion: fantasy in architecture and its psychological impact', date: 'Sep 2020' },
+  { title: 'Dialogues on Milan: City as a Common Resource, with a lecture by Alejandro Aravena', date: 'Apr 2024' },
+  { title: 'Anatomy of Public Space: public space and the human body', date: 'May 2024' },
 ]
 
 export const tools = [

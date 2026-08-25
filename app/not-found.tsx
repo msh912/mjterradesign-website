@@ -11,7 +11,7 @@ export default function NotFound() {
           Not here
         </h1>
         <p data-anim="rise" className="mt-6 max-w-[46ch] text-ink-muted">
-          That page does not exist — it may have been renamed or retired.
+          That page does not exist. It may have been renamed or retired.
         </p>
         <Link
           href="/work"

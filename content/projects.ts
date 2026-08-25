@@ -1,7 +1,7 @@
 /**
  * The archive.
  *
- * Every entry below was transcribed from MJ's own printed portfolios — see
+ * Every entry below was transcribed from MJ's own printed portfolios. See
  * CONTENT-INVENTORY.md for the spread-by-spread source of each fact. Nothing
  * here is invented: no clients that did not exist, no outcomes that were not
  * printed, no awards. Academic work is labelled as academic.
@@ -42,7 +42,7 @@ export type Project = {
   /** Studio and semester for academic work; the client for professional work. */
   context?: string
   professors?: string[]
-  /** e.g. 'Group project'. Stated plainly — never implied to be solo. */
+  /** e.g. 'Group project'. Stated plainly, never implied to be solo. */
   collaboration?: string
   academic?: boolean
   role: string[]
@@ -75,10 +75,10 @@ export const projects: Project[] = [
     role: ['Concept design', 'Masterplan', 'Diagrams', 'Render'],
     tools: ['Rhino', 'Illustrator', 'Photoshop', 'QGIS'],
     body: [
-      'The Rotterdam–Mediterranean freight corridor has to get through the Alps, and the Alps do not make that easy. The Alptransit projects — the Gotthard and Ceneri base tunnels — solved the topography by going under it, and in doing so produced an enormous quantity of excavated mineral waste.',
+      'The Rotterdam–Mediterranean freight corridor has to get through the Alps, and the Alps do not make that easy. The Alptransit projects, the Gotthard and Ceneri base tunnels, solved the topography by going under it, and in doing so produced an enormous quantity of excavated mineral waste.',
       'The studio took that waste as its starting material. If the mountain has already been moved, where should it go, and what could it become in a climate that is shifting and a lake system that is losing biodiversity?',
-      'We worked across five distinct areas, each with its own conditions, tailoring the approach to every site rather than repeating one gesture. The central move is to purify water using landforms set at different levels and across different zones — an intervention that filters as a matter of geometry rather than machinery, and that reads as landscape rather than infrastructure.',
-      'The waterfront is resolved as three separate states of walkway: a sidewalk built for people to meet on, a pathway for cars, and a third walkway meant only for staying and resting. Along the shore, the design names its moments — an informal garden, the harbours, a renovated parking structure, the junction, and the street sides, each detailed as a small piece of the larger system.',
+      'We worked across five distinct areas, each with its own conditions, tailoring the approach to every site rather than repeating one gesture. The central move is to purify water using landforms set at different levels and across different zones: an intervention that filters as a matter of geometry rather than machinery, and that reads as landscape rather than infrastructure.',
+      'The waterfront is resolved as three separate states of walkway: a sidewalk built for people to meet on, a pathway for cars, and a third walkway meant only for staying and resting. Along the shore, the design names its moments: an informal garden, the harbours, a renovated parking structure, the junction, and the street sides, each detailed as a small piece of the larger system.',
     ],
     cover: '/images/purification-movement/masterplan.jpg',
     coverAlt:
@@ -87,22 +87,22 @@ export const projects: Project[] = [
       {
         src: '/images/purification-movement/concept.jpg',
         alt: 'Concept drawing: fine black linework over a magenta and blue wash, mapping the corridor through the Alpine valley.',
-        caption: 'Concept — the corridor read as a single line through the valley',
+        caption: 'Concept: the corridor read as a single line through the valley',
       },
       {
         src: '/images/purification-movement/manifest.jpg',
         alt: 'Dense drawing of the valley in overlapping grey contour lines with a magenta boundary tracing the intervention area.',
-        caption: 'Manifest — five areas, one water strategy',
+        caption: 'Manifest: five areas, one water strategy',
       },
       {
         src: '/images/purification-movement/site-analysis.jpg',
         alt: 'Site analysis: a gridded plan of the contaminated riverside, with sectional terrain models exploded to the right.',
-        caption: 'Site analysis — the most polluted and neglected stretch',
+        caption: 'Site analysis: the most polluted and neglected stretch',
       },
       {
         src: '/images/purification-movement/ecology.jpg',
         alt: 'Ecology study: six circular vignettes for woodlands, hedges, canals and rivers, meadows, deep lake water and wetlands, above a row of tree elevations.',
-        caption: 'Ecology — habitats and species surveyed before designing',
+        caption: 'Ecology: habitats and species surveyed before designing',
       },
       {
         src: '/images/purification-movement/walkway-states.jpg',
@@ -134,10 +134,10 @@ export const projects: Project[] = [
     role: ['Concept design', 'Masterplan', 'Render'],
     tools: ['Rhino', 'Illustrator', 'Photoshop', 'QGIS', 'Twinmotion'],
     body: [
-      'Since the beginning of the twentieth century, and with rising intensity after the Second World War, large parts of the Apennines have lost their population. Cultivated land and productive woods were abandoned and the forest came back on its own. The rural economies that held the place together — agriculture, livestock, crafts — declined, and only seasonal recreation in the highlands partly replaced them.',
+      'Since the beginning of the twentieth century, and with rising intensity after the Second World War, large parts of the Apennines have lost their population. Cultivated land and productive woods were abandoned and the forest came back on its own. The rural economies that held the place together (agriculture, livestock, crafts) declined, and only seasonal recreation in the highlands partly replaced them.',
       'The project reads Monte Cimone through what is left: ski runs, lifts and trails laid over topography and vegetation, and a mountain whose morphology is best understood by comparing its slopes against each other.',
-      'The strategy delineates four distinct paths to the peak, each with its own character — we called them the four fingers. One is a land-art route. One is a bike path. Two are walking routes at different gradients, so the climb can be chosen rather than endured.',
-      'The built elements are deliberately light. Shelters were templated to behave differently at different heights while keeping the least possible contact with the ground — better flexibility for capturing light, and less damage to what is already growing there. Where the ski run once had its station, we kept the platform and structure instead of demolishing it, and turned it into a gallery for nature-based art.',
+      'The strategy delineates four distinct paths to the peak, each with its own character, and we called them the four fingers. One is a land-art route. One is a bike path. Two are walking routes at different gradients, so the climb can be chosen rather than endured.',
+      'The built elements are deliberately light. Shelters were templated to behave differently at different heights while keeping the least possible contact with the ground, for better flexibility for capturing light, and less damage to what is already growing there. Where the ski run once had its station, we kept the platform and structure instead of demolishing it, and turned it into a gallery for nature-based art.',
     ],
     cover: '/images/hidden-illusion-of-bygone-landscape/cemetery-pathway.jpg',
     coverAlt:
@@ -151,7 +151,7 @@ export const projects: Project[] = [
       {
         src: '/images/hidden-illusion-of-bygone-landscape/territorial-exploration.jpg',
         alt: 'Territorial analysis of Monte Cimone: a sectional diagram of peak elevations above a coloured map of ski runs, lifts and trails.',
-        caption: 'Territorial exploration — runs, lifts, trails, elevations',
+        caption: 'Territorial exploration: runs, lifts, trails, elevations',
       },
       {
         src: '/images/hidden-illusion-of-bygone-landscape/four-fingers-strategy.jpg',
@@ -160,8 +160,8 @@ export const projects: Project[] = [
       },
       {
         src: '/images/hidden-illusion-of-bygone-landscape/echoes-of-the-land.jpg',
-        alt: 'Slope comparison drawings — layered terrain profiles and a west-view elevation study of the mountain.',
-        caption: 'Echoes of the land — comparing the slopes',
+        alt: 'Slope comparison drawings: layered terrain profiles and a west-view elevation study of the mountain.',
+        caption: 'Echoes of the land: comparing the slopes',
       },
       {
         src: '/images/hidden-illusion-of-bygone-landscape/masterplan.jpg',
@@ -195,8 +195,8 @@ export const projects: Project[] = [
     body: [
       'Magenta sits in the heart of Italy with a deep-rooted historic centre and a set of very contemporary problems: air pollution, inefficient waste management, and congestion produced by rapid urbanisation pressing against a town that was not built for it. The Ticino runs nearby, and the town has largely stopped using it.',
       'The work is about getting back to the river. It builds a circulation system that makes the riverside reachable from the urban centre, and it treats the farmland in between as part of the design rather than as the gap between two destinations.',
-      'The centrepiece is a table we called The Chess — a seasonal landscape programme mapping farmers, ranchers, students, the general public, livestock, winter and spring crops, floral meadows, rice, grass and water across the whole year. It let us align every intervention with the rhythm the place already has, so the landscape stays occupied in February as well as July.',
-      'Two structures carry the design. A tower, because the site is flat and the tallest things in it are trees, elevates the view far enough to take in the river on one side and the fields on the other. A bridge crosses a riverbed that is dry for half the year, so it is designed to work wet and dry — less a crossing than an active piece of the terrain.',
+      'The centrepiece is a table we called The Chess, a seasonal landscape programme mapping farmers, ranchers, students, the general public, livestock, winter and spring crops, floral meadows, rice, grass and water across the whole year. It let us align every intervention with the rhythm the place already has, so the landscape stays occupied in February as well as July.',
+      'Two structures carry the design. A tower, because the site is flat and the tallest things in it are trees, elevates the view far enough to take in the river on one side and the fields on the other. A bridge crosses a riverbed that is dry for half the year, so it is designed to work wet and dry, less a crossing than an active piece of the terrain.',
       'Before any of it, we made postcards on site: Gridded Memories, a set of drawings recording light, smell and temperature, because the first impression of a place is usually the most accurate one and the easiest to lose.',
     ],
     cover: '/images/to-the-river-and-back/if-we-were-the-creator.jpg',
@@ -206,12 +206,12 @@ export const projects: Project[] = [
       {
         src: '/images/to-the-river-and-back/concept.jpg',
         alt: 'Concept drawing: black linework tracing the river corridor with a red spine and a blue wash where the water widens.',
-        caption: 'Concept — the river as a spine',
+        caption: 'Concept: the river as a spine',
       },
       {
         src: '/images/to-the-river-and-back/existing-landscape.jpg',
         alt: 'Five stacked section drawings of the existing landscape, naming cypress, poplar, willow and the crop fields between them.',
-        caption: 'Existing landscape — the species already there',
+        caption: 'Existing landscape: the species already there',
       },
       {
         src: '/images/to-the-river-and-back/landscape-strategy.jpg',
@@ -221,7 +221,7 @@ export const projects: Project[] = [
       {
         src: '/images/to-the-river-and-back/the-chess.jpg',
         alt: 'Large seasonal programme table charting farmers, ranchers, students, public, livestock, crops, blooms and water month by month across the year.',
-        caption: 'The Chess — the landscape programme',
+        caption: 'The Chess: the landscape programme',
       },
       {
         src: '/images/to-the-river-and-back/the-tower.jpg',
@@ -231,7 +231,7 @@ export const projects: Project[] = [
       {
         src: '/images/to-the-river-and-back/the-bridge.jpg',
         alt: 'Long elevation of a timber and steel bridge spanning a dry riverbed, with figures wading in the shallow water below.',
-        caption: 'The bridge — built for a riverbed dry half the year',
+        caption: 'The bridge: built for a riverbed dry half the year',
       },
       {
         src: '/images/to-the-river-and-back/masterplan.jpg',
@@ -241,7 +241,7 @@ export const projects: Project[] = [
       {
         src: '/images/to-the-river-and-back/gridded-memories.jpg',
         alt: 'Eight gridded postcard drawings of roads, tree lines, fields and buildings recording first impressions of the site.',
-        caption: 'Gridded Memories — fragments of place and space',
+        caption: 'Gridded Memories: fragments of place and space',
       },
     ],
     featured: true,
@@ -263,10 +263,10 @@ export const projects: Project[] = [
     role: ['Concept design', 'Masterplan'],
     tools: ['Rhino', 'Illustrator', 'Photoshop', 'QGIS', 'Twinmotion'],
     body: [
-      'European territory is being reshaped by two things at once: urbanisation concentrating in metropolitan regions, and large infrastructure networks expanding across everything else. The usual reading of that is a polarisation — the major cities on one side, the overlooked periphery and the bypassed countryside on the other.',
-      'The project argues against the reading. Villages and small towns, whatever their rural origins, often share built forms and urbanisation patterns with metropolitan peripheries; the boundary is far less clear-cut than the diagram suggests. What is actually there is a network of interconnected landscapes, and the interesting relationships are between infrastructure, environmental resources, settlement patterns and emerging activities — tourism among them — that drive social and economic change.',
+      'European territory is being reshaped by two things at once: urbanisation concentrating in metropolitan regions, and large infrastructure networks expanding across everything else. The usual reading of that is a polarisation: the major cities on one side, the overlooked periphery and the bypassed countryside on the other.',
+      'The project argues against the reading. Villages and small towns, whatever their rural origins, often share built forms and urbanisation patterns with metropolitan peripheries; the boundary is far less clear-cut than the diagram suggests. What is actually there is a network of interconnected landscapes, and the interesting relationships are between infrastructure, environmental resources, settlement patterns and emerging activities, tourism among them, that drive social and economic change.',
       'The case study runs across the Po plain between the Chiese and the Oglio, from the first relief of the Pre-Alps in the north to the Apennines in the south, focusing on the stretch between the southern edge of Lake Garda and the Oglio river.',
-      'The strategy organises the territory around four fingers: a structure of corridors and nodes where movement axes and key intervention areas are set against each other. Four urban-scale moves carry it into the town — reshaping the waterway, expanding green networks, a pathway to nature, and a reflected canopy that brings trees into the plaza. The final line runs north to south through the gathering space, and the lake is restored.',
+      'The strategy organises the territory around four fingers: a structure of corridors and nodes where movement axes and key intervention areas are set against each other. Four urban-scale moves carry it into the town: reshaping the waterway, expanding green networks, a pathway to nature, and a reflected canopy that brings trees into the plaza. The final line runs north to south through the gathering space, and the lake is restored.',
     ],
     cover: '/images/to-the-lake-and-back/harmony-of-nature-and-design.jpg',
     coverAlt:
@@ -280,12 +280,12 @@ export const projects: Project[] = [
       {
         src: '/images/to-the-lake-and-back/strategy.jpg',
         alt: 'Territorial strategy map with black infrastructural axes running north to south and orange bikeway and walkway routes.',
-        caption: 'Strategy — the importance of the north–south connection',
+        caption: 'Strategy: the importance of the north–south connection',
       },
       {
         src: '/images/to-the-lake-and-back/four-fingers.jpg',
         alt: 'Strategic vision map: circular intervention zones linked by thick black movement axes over a historic survey map.',
-        caption: 'Four fingers — a strategic vision for territorial organisation',
+        caption: 'Four fingers: a strategic vision for territorial organisation',
       },
       {
         src: '/images/to-the-lake-and-back/urban-isometrics.jpg',
@@ -320,13 +320,13 @@ export const projects: Project[] = [
     role: ['Design'],
     tools: ['Rhino', 'Illustrator', 'Photoshop', 'Twinmotion'],
     body: [
-      'The aim was to fix the relationship between children and the facilities a city offers them — to make somewhere children feel safe enough to play freely, and to treat that as an urban question rather than an equipment question.',
+      'The aim was to fix the relationship between children and the facilities a city offers them, to make somewhere children feel safe enough to play freely, and to treat that as an urban question rather than an equipment question.',
       'The design uses traditional and locally sourced materials, and shapes architectural form rather than installing play structures. Play is handled as an integrated spatial experience: walls, levels, ramps and openings that can be used in more than one way, instead of a fixed set of predefined activities.',
-      'A single red element runs through the middle of the plan. It is the heart of the project and also its main circulation — the thing you move along and the thing you play on are the same object.',
+      'A single red element runs through the middle of the plan. It is the heart of the project and also its main circulation, so the thing you move along and the thing you play on are the same object.',
     ],
     cover: '/images/elahie-urban-playground/isometric.jpg',
     coverAlt:
-      'Isometric render of a playground in terracotta and yellow — curved walls, ramps, steps and circular openings threaded through with trees and planting.',
+      'Isometric render of a playground in terracotta and yellow: curved walls, ramps, steps and circular openings threaded through with trees and planting.',
     gallery: [
       {
         src: '/images/elahie-urban-playground/concept-sketch.jpg',
@@ -358,7 +358,7 @@ export const projects: Project[] = [
     ],
     cover: '/images/roboteos/identity.jpg',
     coverAlt:
-      'Roboteos brand identity laid out in orange and white — logo construction grid, envelope, business cards, letterhead, signage and a black service van.',
+      'Roboteos brand identity laid out in orange and white: logo construction grid, envelope, business cards, letterhead, signage and a black service van.',
     gallery: [
       {
         src: '/images/roboteos/ui-and-website.jpg',
@@ -389,7 +389,7 @@ export const projects: Project[] = [
     tools: ['Illustrator', 'Photoshop', 'InDesign'],
     body: [
       'Heliotrope 1.0 is Roboteos’ solar tracking system for RVs and camper vans. The campaign had to sell an engineering idea to people whose interest is the trip, not the hardware.',
-      'The answer was to draw the trip. A flat isometric desert — highway, power line, cacti, a van parked on the shoulder with the array open — puts the product where it is used rather than on a white studio sweep.',
+      'The answer was to draw the trip. A flat isometric desert (highway, power line, cacti, a van parked on the shoulder with the array open) puts the product where it is used rather than on a white studio sweep.',
       'The catalogue then does the technical work: specifications, peak power, extension and rotation ranges, and mounting, laid out so the numbers stay findable inside a document that is still recognisably part of the campaign.',
     ],
     cover: '/images/heliotrope/campaign.jpg',
@@ -408,7 +408,7 @@ export const projects: Project[] = [
     slug: 'four-and-seven',
     title: 'Four and Seven',
     summary:
-      'An identity for an architecture practice that builds for children — sharp colour, held to an architectural grid.',
+      'An identity for an architecture practice that builds for children: sharp colour, held to an architectural grid.',
     year: 2023,
     yearLabel: '2021–2025',
     location: 'Iran',
@@ -419,13 +419,13 @@ export const projects: Project[] = [
     role: ['Logo', 'Brand book', 'Stationery', 'Interior design'],
     tools: ['Illustrator', 'Photoshop', 'InDesign', 'Rhino'],
     body: [
-      'Four and Seven is an architecture and construction company specialising in children’s architecture. The brief was to stay sensitive to sharp colour while keeping a creative, minimal and architectural approach — playful without becoming a toy.',
+      'Four and Seven is an architecture and construction company specialising in children’s architecture. The brief was to stay sensitive to sharp colour while keeping a creative, minimal and architectural approach, playful without becoming a toy.',
       'The mark is drawn on a construction grid and resolves into a form that works at signage size and on a business card. Green does the talking; the geometry keeps it disciplined.',
-      'The work did not stop at the identity. The same projects run from sketch to built interior — a drawing of a play space and a photograph of the finished room, arches, colour and joinery included.',
+      'The work did not stop at the identity. The same projects run from sketch to built interior: a drawing of a play space and a photograph of the finished room, arches, colour and joinery included.',
     ],
     cover: '/images/four-and-seven/identity.jpg',
     coverAlt:
-      'Four and Seven identity in green and white — logo construction grid, envelope, business cards, letterhead and a looping brand illustration.',
+      'Four and Seven identity in green and white: logo construction grid, envelope, business cards, letterhead and a looping brand illustration.',
     gallery: [
       {
         src: '/images/four-and-seven/concept-to-built-form.jpg',
@@ -440,7 +440,7 @@ export const projects: Project[] = [
     slug: 'logofolio',
     title: 'Logofolio',
     summary:
-      'Eleven marks across seven years — construction, sport, publishing, food, recreation.',
+      'Eleven marks across seven years: construction, sport, publishing, food, recreation.',
     year: 2022,
     yearLabel: '2018–2022',
     location: 'Iran',
@@ -450,12 +450,12 @@ export const projects: Project[] = [
     role: ['Logo design'],
     tools: ['Illustrator', 'CorelDraw'],
     body: [
-      'A collection of identity marks drawn between 2018 and 2022 for clients across construction, sport, publishing, retail and recreation — including the identity for the 8th Asian Men’s Beach Handball Championship held in Iran in 2022.',
+      'A collection of identity marks drawn between 2018 and 2022 for clients across construction, sport, publishing, retail and recreation, including the identity for the 8th Asian Men’s Beach Handball Championship held in Iran in 2022.',
       'Several are bilingual, resolving a Persian wordmark and a Latin one into the same geometry rather than setting one beside the other.',
     ],
     cover: '/images/logofolio/asian-beach-handball.jpg',
     coverAlt:
-      'Logo for the 8th Asian Men’s Beach Handball Championship — a faceted figure mid-leap throwing a ball, built from angular planes in grey, olive and coral.',
+      'Logo for the 8th Asian Men’s Beach Handball Championship: a faceted figure mid-leap throwing a ball, built from angular planes in grey, olive and coral.',
     gallery: [],
     marks: [
       {
@@ -482,7 +482,7 @@ export const projects: Project[] = [
     slug: 'architectural-graphics',
     title: 'Architectural Graphics',
     summary:
-      'The drawings that carry an architectural argument — exploded axonometrics, competition boards, postcards.',
+      'The drawings that carry an architectural argument: exploded axonometrics, competition boards, postcards.',
     year: 2024,
     yearLabel: '2019–2025',
     location: 'Milan, Italy',
@@ -493,12 +493,12 @@ export const projects: Project[] = [
     tools: ['Illustrator', 'Photoshop', 'InDesign', 'Rhino'],
     body: [
       'This is the seam the rest of the portfolio runs along: architectural thinking presented as graphic design, by the same hand that did the architecture.',
-      'The exploded axonometric diagrams take a multi-layered approach to spatial design. One side works through landscape transformation — topography, water management, ecological integration. The other works through architectural and urban space — public space, interior programming, functional relationships. Pulling the layers apart is what makes the composition legible.',
+      'The exploded axonometric diagrams take a multi-layered approach to spatial design. One side works through landscape transformation: topography, water management, ecological integration. The other works through architectural and urban space: public space, interior programming, functional relationships. Pulling the layers apart is what makes the composition legible.',
       'The competition and studio boards were made in the role of the group’s graphic designer during university: large-format sheets that have to hold a masterplan, a programme table, sections and photographs in one readable field.',
     ],
     cover: '/images/architectural-graphics/exploded-diagrams.jpg',
     coverAlt:
-      'Exploded axonometric diagrams — stacked landscape strata on one side and a coloured children’s play interior pulled apart into layers on the other.',
+      'Exploded axonometric diagrams: stacked landscape strata on one side and a coloured children’s play interior pulled apart into layers on the other.',
     gallery: [
       {
         src: '/images/architectural-graphics/posters.jpg',
@@ -531,12 +531,12 @@ export const projects: Project[] = [
     role: ['Drawing'],
     tools: ['Pen', 'Pencil'],
     body: [
-      'Drawing is how the rest of the work starts. These are selected sheets from 2022 to 2024 — mountain ranges and rock stacks, hill towns and a monastery, gnarled wood and bare winter trees, a viaduct cut into a cliff.',
+      'Drawing is how the rest of the work starts. These are selected sheets from 2022 to 2024: mountain ranges and rock stacks, hill towns and a monastery, gnarled wood and bare winter trees, a viaduct cut into a cliff.',
       'They are included because they are the most direct evidence of how the projects are thought through before any software is opened.',
     ],
     cover: '/images/selected-sketches/sketches.jpg',
     coverAlt:
-      'A loose grid of pen and pencil sketches — mountain ranges, rock formations, a hill town, twisting wood grain, bare trees and a cliffside viaduct.',
+      'A loose grid of pen and pencil sketches: mountain ranges, rock formations, a hill town, twisting wood grain, bare trees and a cliffside viaduct.',
     gallery: [
       {
         src: '/images/selected-sketches/sketches-left.jpg',

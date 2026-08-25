@@ -2,11 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { sizeOf } from '@/content/image-sizes'
 
-/** The hero plate. Landscape format — the render is 4:3. */
+/** The hero plate. Landscape format, because the render is 4:3. */
 const HERO = {
   src: '/images/healing-garden/pavilion.jpg',
-  alt: 'Axonometric render of a garden pavilion — slender posts carrying pale fabric sail canopies over raised timber planting beds, boardwalks threading between them, people tending the beds and sitting on the planter edges in an orchard of young trees.',
-  // UNCONFIRMED — taken from MJ's own folder and file names, not yet proofed.
+  alt: 'Axonometric render of a garden pavilion: slender posts carrying pale fabric sail canopies over raised timber planting beds, boardwalks threading between them, people tending the beds and sitting on the planter edges in an orchard of young trees.',
+  // UNCONFIRMED. Taken from MJ's own folder and file names, not yet proofed.
   title: 'Healing Garden',
   place: 'Collegno, Italy',
 }
@@ -30,7 +30,7 @@ export default function Hero() {
           </h1>
 
           <p data-anim="rise" className="mt-8 max-w-[46ch] text-ink-muted">
-            I&rsquo;m Mohamadjavad Shoori — an architect and graphic designer in Milan.
+            I&rsquo;m Mohamadjavad Shoori, an architect and graphic designer in Milan.
             The masterplan, the diagrams, the boards and the identity are one
             continuous piece of work, not four handoffs.
           </p>

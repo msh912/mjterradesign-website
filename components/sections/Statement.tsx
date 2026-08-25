@@ -21,7 +21,7 @@ export default function Statement() {
             <p>
               I hold an M.Arch in Landscape Architecture from Politecnico di
               Milano and have spent roughly seven years working as a graphic
-              designer alongside architecture practice — brand books, catalogues
+              designer alongside architecture practice: brand books, catalogues
               and interfaces in the same weeks as masterplans and site analysis.
             </p>
             <p>

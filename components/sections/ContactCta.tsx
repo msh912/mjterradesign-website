@@ -27,7 +27,7 @@ export default function ContactCta() {
         </div>
 
         <p data-anim="meta" className="meta mt-8">
-          {site.location} — {site.availability}
+          {site.location}. {site.availability}
         </p>
       </div>
     </section>

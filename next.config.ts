@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  // Required — three/r3f ship untranspiled ESM and the build breaks without this.
+  // Required: three/r3f ship untranspiled ESM and the build breaks without this.
   transpilePackages: [
     'three',
     '@react-three/fiber',

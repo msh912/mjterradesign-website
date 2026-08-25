@@ -98,7 +98,7 @@ export default function MotionRoot() {
             gsap.set(img, { scale: OVERSCALE })
             tl.from(img, { scale: 1.16, duration: 1.7, ease: EASE.out }, 0)
 
-            // Continuous drift — the flow between sections. GSAP tracks
+            // Continuous drift, the flow between sections. GSAP tracks
             // transform components separately, so this never fights the scale
             // above, and being pure translation it cannot hide anything.
             gsap.fromTo(

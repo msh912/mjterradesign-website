@@ -32,7 +32,7 @@ export default function WorkIndex({
           </div>
         )}
 
-        {/* Plates keep their own proportions — a gallery does not crop the work. */}
+        {/* Plates keep their own proportions, because a gallery does not crop the work. */}
         <ul className="grid items-start gap-x-12 gap-y-20 sm:grid-cols-2 lg:gap-y-28">
           {projects.map((p, i) => {
             const size = sizeOf(p.cover)

@@ -74,7 +74,7 @@ export default function AboutPage() {
                     <span className="meta tnum">{e.dates}</span>
                   </div>
                   <p className="mt-1 text-[0.98rem] text-ink-muted">
-                    {e.org} — {e.place}
+                    {e.org}, {e.place}
                   </p>
                   <p className="mt-2 text-[0.9rem] text-ink-faint">{e.work}</p>
                 </li>

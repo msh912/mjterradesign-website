@@ -1,7 +1,7 @@
 /**
  * Intrinsic dimensions of every published image.
  *
- * GENERATED — do not edit by hand. Regenerate after adding artwork.
+ * GENERATED. Do not edit by hand. Regenerate after adding artwork.
  * `next.config.ts` sets `images.unoptimized`, so next/image cannot infer
  * these itself, and guessing one aspect ratio per slot crops wide spreads.
  */

@@ -1,6 +1,6 @@
 /**
  * Site-level facts. Contact details are transcribed from MJ's own printed
- * portfolios, where both books agree — see CONTENT-INVENTORY.md.
+ * portfolios, where both books agree. See CONTENT-INVENTORY.md.
  */
 export const site = {
   name: 'MJ Terra Design',
@@ -9,7 +9,7 @@ export const site = {
   role: 'Architect and graphic designer',
   tagline: 'Landscape architecture and the drawings that argue for it',
   description:
-    'The portfolio of MJ Terra Design — landscape architecture, architecture and graphic design by Mohamadjavad Shoori, based in Milan.',
+    'The portfolio of MJ Terra Design: landscape architecture, architecture and graphic design by Mohamadjavad Shoori, based in Milan.',
   // PROVISIONAL: the production domain is not decided yet.
   url: 'https://mjterradesign.com',
   email: 'mjshoori.arch@gmail.com',

@@ -1,14 +1,14 @@
-# Content inventory — the real archive
+# Content inventory, the real archive
 
 Mined from all 49 source spreads on 2026-08-23. **This is the source of truth for
-`content/projects.ts`.** MJ must proof it — see "Needs your correction" at the end.
+`content/projects.ts`.** MJ must proof it, see "Needs your correction" at the end.
 
 Every fact below was read off the artwork itself, not inferred. Where two sources
 inside MJ's own books disagree, both readings are recorded and flagged.
 
 ---
 
-## A. Landscape Architecture — 4 academic projects + 1 professional + sketches
+## A. Landscape Architecture, 4 academic projects + 1 professional + sketches
 
 Source: `assets/behance-hires/landscape/` (26 spreads, 2550×1966).
 Book: *Portfolio | Landscape Architecture | MohamadJavad Shoori | 2025 | Selected Works*.
@@ -26,11 +26,11 @@ page reads `Portfolio | 2024`.
 - **Abstract:** Waste reuse from underground urbanisation and the creation of new
   ecologies against climate change and biodiversity loss. Studies the Rotterdam–
   Mediterranean transport corridor through the Alps, where the Alptransit Gotthard
-  and Ceneri base tunnels generated enormous mineral waste — asking how that
+  and Ceneri base tunnels generated enormous mineral waste, asking how that
   material could become new ground.
 - **Named moves:** five distinct areas, water purified by landforms at varying
   levels; three states of walkway (sidewalk / car path / rest walkway);
-  signature moments — Informal garden, Harbors, Renovation of parking,
+  signature moments, Informal garden, Harbors, Renovation of parking,
   The junction, Street sides.
 - **Best images:** 07 masterplan (whole-spread aerial, strongest hero candidate),
   06 ecology wheels + tree elevations, 08 isometric moments.
@@ -45,22 +45,22 @@ page reads `Portfolio | 2024`.
   11 (Strategy · Echoes of the Land), 12 (Detail · Masterplan),
   13 (Bicycle station · Art gallery · Cemetery pathway)
 - **Abstract:** Since the early 20th century and intensifying after WWII, the
-  Apennines have depopulated — abandonment and spontaneous reforestation of
+  Apennines have depopulated, abandonment and spontaneous reforestation of
   cultivated land and productive woods, the decline of rural economies only
   partly offset by seasonal recreation.
-- **Named moves:** the "four fingers" — four paths to the peak, one a Land-art
+- **Named moves:** the "four fingers", four paths to the peak, one a Land-art
   route, one a bike path, two walking routes of differing slope; shelters that
   touch the ground as little as possible; "Sanctuary to Rest"; "Spaces to Flow";
   the ski-run station preserved and converted into an art gallery for
   nature-based arts.
-- **Best images:** 13 right page (cemetery pathway render, full-bleed forest —
+- **Best images:** 13 right page (cemetery pathway render, full-bleed forest,
   strong hero), 12 masterplan, 13 art gallery isometric.
 
 ### L3 · To the River and Back
 - **Location:** Magenta, Italy
 - **Studio:** Built Environment & Landscape Design Studio · **Semester 2** · Group project
-  — *the contents page instead says "Open Space System & Parks Design Studio,
-  Sem 02". Conflict, see flags.*
+  *(The contents page instead says "Open Space System & Parks Design Studio,
+  Sem 02". Conflict, see flags.)*
 - **Professor:** Darco Pandakovic
 - **Role:** Concept Design, Masterplan, Render, Strategy
 - **Software:** Rhino, Illustrator, Photoshop, QGIS, Twinmotion, V-Ray for Rhino
@@ -70,19 +70,19 @@ page reads `Portfolio | 2024`.
 - **Abstract:** Magenta faces air pollution, inefficient waste management and
   urban congestion as rapid urbanisation collides with a deep-rooted historic
   centre; the work seeks connectivity between the Ticino river and the town.
-- **Named moves:** **"The Chess"** — a seasonal landscape-programme table mapping
+- **Named moves:** **"The Chess"**: a seasonal landscape-programme table mapping
   farmers, ranchers, students, public, livestock, crops and water across the
   year; a tower framing river and fields; a bridge over a riverbed dry half the
-  year; **"Gridded Memories: Fragments of Place and Space"** — postcards made on
+  year; **"Gridded Memories: Fragments of Place and Space"**: postcards made on
   site to preserve first impressions.
 - **Best images:** 19 right page ("If we were the creator", full-bleed
-  illustrated render — the most charming image in the whole archive),
+  illustrated render, the most charming image in the whole archive),
   16 The Chess table (extraordinary information design), 18 masterplan.
 
 ### L4 · To the Lake and Back
 - **Location:** Desenzano del Garda, Italy *(printed "Desensano Del Garda")*
 - **Studio:** Built Environment & Landscape Design Studio · **Semester 1** · Group project
-  — *contents page says "Landscape and Infrastructure design studio, Sem 01"*
+  *(Contents page says "Landscape and Infrastructure design studio, Sem 01".)*
 - **Professor:** Secchi Mariadessandra
 - **Role:** Concept Design, Masterplan
 - **Software:** Rhino, Illustrator, Photoshop, QGIS, Twinmotion
@@ -102,9 +102,9 @@ page reads `Portfolio | 2024`.
 - **Best images:** 23 top render (park with water and pathways), 22 masterplan,
   23 red structural intervention.
 
-### L5 · Elahie Urban Playground — professional work
+### L5 · Elahie Urban Playground, professional work
 - **Location:** Tehran, Iran
-- **Status:** Under construction — 2023
+- **Status:** Under construction, 2023
 - **Numbered "06" on its own section page; the contents page lists it as "05".**
 - **Spreads:** 24
 - **Description:** Integrating the relationship between children and urban
@@ -112,24 +112,24 @@ page reads `Portfolio | 2024`.
   sourced materials, architectural forms shaping play as an integrated spatial
   experience rather than a set of predefined facilities. A central red element is
   both the heart of the project and its main circulation.
-- **Best images:** 24 right page (isometric render — warm, distinctive, and the
+- **Best images:** 24 right page (isometric render, warm, distinctive, and the
   only *built* project in the archive, which makes it disproportionately valuable
   to a prospective client).
 
 ### L6 · Selected Sketches 2022–2024
-- **Spreads:** 25 — pen and pencil: mountains, trees, gnarled wood, hill towns,
+- **Spreads:** 25, pen and pencil: mountains, trees, gnarled wood, hill towns,
   a viaduct, isometric studies.
 - Not a project; a strong texture/atmosphere source and a credible "About" asset.
 
 ---
 
-## B. Graphic Design — brand identities and print
+## B. Graphic Design, brand identities and print
 
 Source: `assets/behance-hires/graphic/` (11 spreads, 6405×2712).
 Book: *Graphic Designing Portfolio | MohamadJavad Shoori | 2019–2025*.
 Contents: Logos p02 · Projects p03 · Book covers p09 · Architectural Graphics p11.
 
-### G1 · Roboteos — brand identity
+### G1 · Roboteos, brand identity
 - **Client:** Roboteos Inc., a tech company in smart robotic solutions. Main
   product **Heliotrope 1.0**, a solar tracking system for RVs that raises energy
   efficiency by following the sun.
@@ -140,13 +140,13 @@ Contents: Logos p02 · Projects p03 · Book covers p09 · Architectural Graphics
 - **Employment link:** matches "Graphic Designer at Roboteos Inc. Solar Panel
   Company, Sep 2023 – 2024" on the CV.
 
-### G2 · Heliotrope — product campaign / catalogue
+### G2 · Heliotrope, product campaign / catalogue
 - Isometric desert illustration, "Introducing a revolutionary solar tracking
   system for RVs, camper vans and more!", trifold catalogue, black product
   brochure "Power up your adventure!".
-- **Spreads:** 05. Arguably part of G1 — could be one project or two.
+- **Spreads:** 05. Arguably part of G1, could be one project or two.
 
-### G3 · Four and Seven — brand identity
+### G3 · Four and Seven, brand identity
 - **Client:** Four and Seven, an architecture and construction company
   specialising in **children's architecture**.
 - **Brief as written:** "sensitive to sharp colors while maintaining a creative,
@@ -159,7 +159,7 @@ Contents: Logos p02 · Projects p03 · Book covers p09 · Architectural Graphics
 
 ### G4 · Book covers
 - Roboteos Brand Book 2023–2025 · Four and Seven "Creating childlike connection"
-  brand book 2023 · Urban Playground Design Proposal (Persian) · IRAS —
+  brand book 2023 · Urban Playground Design Proposal (Persian) · IRAS,
   The Institute for Iran & Eurasia Studies.
 - **Spreads:** 07
 
@@ -170,7 +170,7 @@ Contents: Logos p02 · Projects p03 · Book covers p09 · Architectural Graphics
 - **Spreads:** 08
 
 ### G6 · From design concept to built form
-- Sketch-to-built-interior sequence for children's play spaces — the sketch and
+- Sketch-to-built-interior sequence for children's play spaces, the sketch and
   the photograph of the finished room side by side. **This is proof of built
   work** and is one of the most persuasive spreads in the archive.
 - **Spreads:** 09 (left)
@@ -178,11 +178,11 @@ Contents: Logos p02 · Projects p03 · Book covers p09 · Architectural Graphics
 ### G7 · Architectural posters
 - "A collection of my works during university, created in my role as the graphic
   designer of the group." Large-format competition/studio boards.
-- **Spreads:** 09 (right), 10 (left — including "A DIALOGUE WITH WATER" masterplan
+- **Spreads:** 09 (right), 10 (left, including "A DIALOGUE WITH WATER" masterplan
   board and The Chess board, which tie back to L3)
 
 ### G8 · Postcards
-- Eight gridded postcard illustrations — the same "Gridded Memories" series as L3.
+- Eight gridded postcard illustrations, the same "Gridded Memories" series as L3.
 - **Spreads:** 10 (right)
 
 ### G9 · Page layout
@@ -192,10 +192,10 @@ Contents: Logos p02 · Projects p03 · Book covers p09 · Architectural Graphics
 
 ---
 
-## C. Logofolio — 11 marks, 2018–2022
+## C. Logofolio, 11 marks, 2018–2022
 
 Source: `assets/behance-hires/logofolio/` (12 images, 3952×2150). Clean full-bleed
-artwork on near-black — **no cropping needed**, but they are dark-ground and the
+artwork on near-black, **no cropping needed**, but they are dark-ground and the
 site is white-ground, so they need either inversion or a dark section of their own.
 
 Titled *LOGOFOLIO · 2018–2022 · collection 1*, each page marked "part one".
@@ -209,19 +209,19 @@ Titled *LOGOFOLIO · 2018–2022 · collection 1*, each page marked "part one".
 | 05 | `06.jpg` | **Traffic PC Store** | Online shop | 2022 |
 | 06 | `07.jpg` | **JABE** | Podcast | 2019 |
 | 07 | `08.jpg` | **DORAN** (دوران) | Architecture office | 2022 |
-| 08 | `09.jpg` | **ROSHAN** — *wordmark reads KAROSHAN* | Amusement park | 2021 |
+| 08 | `09.jpg` | **ROSHAN**: *wordmark reads KAROSHAN* | Amusement park | 2021 |
 | 09 | `10.jpg` | **ROPES LAND** | Amusement park | 2020 |
 | 10 | `11.jpg` | **CURRYMO** (کاری‌مو) | Spice shop | 2019 |
 | 11 | `12.jpg` | **ADELIA** | Foodstuff store | 2020 |
 
-The graphic book's logo grid (spread 03) shows **18** marks — seven more than the
+The graphic book's logo grid (spread 03) shows **18** marks, seven more than the
 logofolio: POWER GAME (gym), ISEAM (start-up), KAROSHAN (architecture office),
 DANA (book shop), SHAHR-E ROSHAN / شهر روشن (recreation), an adventure park, and
 a hotel. Artwork for those seven exists only as thumbnails in that grid.
 
 ---
 
-## D. The CV conflict — two different résumés
+## D. The CV conflict, two different résumés
 
 `assets/PROFILE-EXTRACTED.md` was transcribed from the **graphic** book (spread
 02) and is graphic-design-led. The **landscape** book (spread 02) carries a
@@ -238,7 +238,7 @@ environmental conservation initiatives prompted me to pursue a master's degree i
 landscape architecture. This decision was driven by my desire to deepen my
 understanding and expertise in environmental protection and design."
 
-**Roles (landscape CV — note this is seven roles, not six):**
+**Roles (landscape CV, note this is seven roles, not six):**
 
 | Role | Organisation | Dates |
 |---|---|---|
@@ -273,18 +273,18 @@ These are real conflicts inside your own two books. I have **not** guessed:
    says *Sem 04*. Which?
 2. **To the River and Back studio.** Title page says *Built Environment & Landscape
    Design Studio, Semester 2*; contents says *Open Space System & Parks Design
-   Studio, Sem 02*. Both list Semester 2 — but which studio name?
+   Studio, Sem 02*. Both list Semester 2, but which studio name?
 3. **To the Lake and Back studio.** Title page says *Built Environment & Landscape
    Design Studio, Sem 1*; contents says *Landscape and Infrastructure design
    studio*. Which?
 4. **Hidden Illusion semester.** Title page *Semester 2*; contents *Sem 03*.
-5. **Logofolio #08** — caption says ROSHAN, wordmark reads KAROSHAN. Which is the
+5. **Logofolio #08**: caption says ROSHAN, wordmark reads KAROSHAN. Which is the
    client, and is it the same Karoshan as the construction company you worked for?
-6. **Which CV is current** — the landscape one (architecture-led, 7 roles) or the
+6. **Which CV is current**: the landscape one (architecture-led, 7 roles) or the
    graphic one (6 roles)? I am using the landscape one.
 7. **Desenzano del Garda** is printed "Desensano" in the book. Typo?
 8. **Are the four academic projects group work you want credited as group work?**
    All four say "Group project". I will state your role honestly on each.
-9. **Heliotrope** — one project with Roboteos, or its own entry?
-10. **Elahie playground** — is it built now, or still "under construction"? It is
+9. **Heliotrope**: one project with Roboteos, or its own entry?
+10. **Elahie playground**: is it built now, or still "under construction"? It is
     your only built project and deserves to be current.

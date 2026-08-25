@@ -1,6 +1,6 @@
 /**
  * Reduced-motion gate. Every animation in this project checks this BEFORE
- * running, and every reveal must enhance an already-visible default — never
+ * running, and every reveal must enhance an already-visible default, never
  * gate visibility on a class transition that can fail headless.
  */
 export function prefersReducedMotion(): boolean {
@@ -8,7 +8,7 @@ export function prefersReducedMotion(): boolean {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
 
-/** House easing — exponential ease-out. No bounce, no elastic. */
+/** House easing: exponential ease-out. No bounce, no elastic. */
 export const EASE = {
   out: 'expo.out',
   outSoft: 'power3.out',

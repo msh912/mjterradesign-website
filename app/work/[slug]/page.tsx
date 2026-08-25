@@ -120,7 +120,7 @@ export default async function ProjectPage({ params }: Params) {
                       <div className="relative aspect-[16/10] overflow-hidden bg-ink">
                         <Image
                           src={m.src}
-                          alt={`${m.name} logo — ${m.category.toLowerCase()}`}
+                          alt={`${m.name} logo, ${m.category.toLowerCase()}`}
                           fill
                           sizes="(max-width: 640px) 100vw, 28rem"
                           className="object-contain"

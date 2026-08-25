@@ -14,7 +14,7 @@ export default function WorkPage() {
     <>
       <PageHeading
         title="Work"
-        lede={`${projects.length} projects — territorial strategy, masterplans and a built playground, then the identities and printed work that came out of the same practice.`}
+        lede={`${projects.length} projects: territorial strategy, masterplans and a built playground, then the identities and printed work that came out of the same practice.`}
       />
 
       <WorkIndex projects={landscape} heading="Landscape and architecture" id="landscape" />
