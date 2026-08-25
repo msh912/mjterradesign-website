@@ -15,7 +15,7 @@ export const imageSizes: Record<string, { width: number; height: number }> = {
   '/images/elahie-urban-playground/isometric.jpg': { width: 934, height: 1364 },
   '/images/four-and-seven/concept-to-built-form.jpg': { width: 1700, height: 1202 },
   '/images/four-and-seven/identity.jpg': { width: 2200, height: 1555 },
-  '/images/healing-garden/pavilion.jpg': { width: 1448, height: 1086 },
+  '/images/healing-garden/concept-sketch.jpg': { width: 1788, height: 2000 },
   '/images/heliotrope/campaign.jpg': { width: 2200, height: 1555 },
   '/images/heliotrope/catalogue.jpg': { width: 1700, height: 1202 },
   '/images/hidden-illusion-of-bygone-landscape/bicycle-station-art-gallery.jpg': { width: 933, height: 1364 },
