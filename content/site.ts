@@ -10,8 +10,9 @@ export const site = {
   tagline: 'Landscape architecture and the drawings that argue for it',
   description:
     'The portfolio of MJ Terra Design: landscape architecture, architecture and graphic design by Mohamadjavad Shoori, based in Milan.',
-  // PROVISIONAL: the production domain is not decided yet.
-  url: 'https://mjterradesign.com',
+  // Live. The apex 308-redirects to www, so www is the canonical host and the
+  // one metadataBase should use, or every crawler takes an extra hop.
+  url: 'https://www.mjterradesign.com',
   email: 'mjshoori.arch@gmail.com',
   phone: '+39 351 886 0362',
   phoneHref: '+393518860362',

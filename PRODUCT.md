@@ -75,7 +75,7 @@ graphic design.
   out of those photographs. Original design files are not available. Some
   projects will therefore be represented by imperfect crops, and no amount of
   processing recovers detail the photograph never had.
-- **Undecided, do not invent:** the production domain; whether MJ Terra Design
+- **Undecided, do not invent:** whether MJ Terra Design
   is a registered entity or a working name; project pricing, availability
   windows, or service tiers.
 

@@ -132,11 +132,16 @@ kept in CONTENT-INVENTORY.md section C and the source art is still under
    bottom of it, all real disagreements between his own two books (semester
    numbers, studio names, one logo caption). Nothing was guessed.
 2. **Proof `content/profile.ts`**: the CV, transcribed from a printed page.
-3. **Decide the production domain.** `content/site.ts` carries a provisional
-   `mjterradesign.com`.
 4. `gh auth login`: installed, not authenticated. Only matters for repos/PRs.
 5. Google Drive connector is unauthorized. Only worth doing if original design
    files exist; MJ said the Behance set is all there is.
+
+## Live
+
+The site is deployed at **https://www.mjterradesign.com** (the apex
+308-redirects to www, so www is canonical and is what `content/site.ts`
+carries). Vercel also serves it at `mjterradesign-website.vercel.app`.
+Every push to `main` deploys automatically.
 
 ## The remote
 
