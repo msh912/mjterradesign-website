@@ -19,13 +19,6 @@ export type Discipline =
 
 export type Field = 'landscape' | 'graphic'
 
-export type Mark = {
-  src: string
-  name: string
-  category: string
-  year: number
-}
-
 export type Project = {
   slug: string
   title: string
@@ -52,8 +45,6 @@ export type Project = {
   cover: string
   coverAlt: string
   gallery: { src: string; alt: string; caption?: string }[]
-  /** Identity collections carry marks instead of a gallery narrative. */
-  marks?: Mark[]
   featured?: boolean
 }
 
@@ -432,48 +423,6 @@ export const projects: Project[] = [
         alt: 'Sketches of children’s play interiors paired with photographs of the finished rooms, showing arches, ramps and colour built as drawn.',
         caption: 'From design concept to built form',
       },
-    ],
-    featured: true,
-  },
-
-  {
-    slug: 'logofolio',
-    title: 'Logofolio',
-    summary:
-      'Eleven marks across seven years: construction, sport, publishing, food, recreation.',
-    year: 2022,
-    yearLabel: '2018–2022',
-    location: 'Iran',
-    field: 'graphic',
-    disciplines: ['Brand Identity', 'Graphic Design'],
-    academic: false,
-    role: ['Logo design'],
-    tools: ['Illustrator', 'CorelDraw'],
-    body: [
-      'A collection of identity marks drawn between 2018 and 2022 for clients across construction, sport, publishing, retail and recreation, including the identity for the 8th Asian Men’s Beach Handball Championship held in Iran in 2022.',
-      'Several are bilingual, resolving a Persian wordmark and a Latin one into the same geometry rather than setting one beside the other.',
-    ],
-    cover: '/images/logofolio/asian-beach-handball.jpg',
-    coverAlt:
-      'Logo for the 8th Asian Men’s Beach Handball Championship: a faceted figure mid-leap throwing a ball, built from angular planes in grey, olive and coral.',
-    gallery: [],
-    marks: [
-      {
-        src: '/images/logofolio/asian-beach-handball.jpg',
-        name: '8th Asian Men’s Beach Handball Championship',
-        category: 'Championship identity',
-        year: 2022,
-      },
-      { src: '/images/logofolio/dejan.jpg', name: 'Dejan', category: 'Construction company', year: 2022 },
-      { src: '/images/logofolio/doran.jpg', name: 'Doran', category: 'Architecture office', year: 2022 },
-      { src: '/images/logofolio/traffic-pc-store.jpg', name: 'Traffic', category: 'PC store', year: 2022 },
-      { src: '/images/logofolio/taravat-skin-care.jpg', name: 'Taravat', category: 'Skin care', year: 2021 },
-      { src: '/images/logofolio/roshan.jpg', name: 'Roshan', category: 'Amusement park', year: 2021 },
-      { src: '/images/logofolio/ropes-land.jpg', name: 'Ropes Land', category: 'Amusement park', year: 2020 },
-      { src: '/images/logofolio/adelia.jpg', name: 'Adelia', category: 'Foodstuff store', year: 2020 },
-      { src: '/images/logofolio/jabe.jpg', name: 'Jabe', category: 'Podcast', year: 2019 },
-      { src: '/images/logofolio/currymo.jpg', name: 'Currymo', category: 'Spice shop', year: 2019 },
-      { src: '/images/logofolio/pars-magazine.jpg', name: 'Pars Magazine', category: 'Magazine', year: 2018 },
     ],
     featured: true,
   },

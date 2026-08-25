@@ -29,7 +29,7 @@ components/
   ScrambleText.tsx (currently unused), Reveal.tsx
 content/        site.ts · projects.ts (the archive) · profile.ts (the CV)
 lib/            gsap.ts, utils.ts, motion.ts
-public/images/  59 published images, cropped out of the book mockups
+public/images/  50 published images, cropped out of the book mockups
 assets/         gitignored source material, see below
 ```
 
@@ -119,8 +119,12 @@ Unused taste-skill variants are in `assets/taste-skill-bundle/`.
 
 ## Status
 
-The site is real. All 11 projects are MJ's actual work, named and described from
-his own books, with 59 cropped images published.
+The site is real. All 10 projects are MJ's actual work, named and described from
+his own books, with 50 images published.
+
+The Logofolio was removed from the site at MJ's request. Its research record is
+kept in CONTENT-INVENTORY.md section C and the source art is still under
+`assets/behance-hires/logofolio/`, so it can be restored if he changes his mind.
 
 **Open, needs MJ:**
 

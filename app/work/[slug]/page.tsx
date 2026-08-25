@@ -110,35 +110,6 @@ export default async function ProjectPage({ params }: Params) {
           </div>
         </section>
 
-        {project.marks && project.marks.length > 0 && (
-          <section className="section pt-0">
-            <div className="shell">
-              <ul className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-                {project.marks.map((m) => (
-                  <li key={m.src}>
-                    <Reveal anim="stagger">
-                      <div className="relative aspect-[16/10] overflow-hidden bg-ink">
-                        <Image
-                          src={m.src}
-                          alt={`${m.name} logo, ${m.category.toLowerCase()}`}
-                          fill
-                          sizes="(max-width: 640px) 100vw, 28rem"
-                          className="object-contain"
-                        />
-                      </div>
-                      <p className="mt-3 text-[0.95rem]">{m.name}</p>
-                      <p className="meta mt-1 flex gap-3">
-                        <span>{m.category}</span>
-                        <span className="tnum">{m.year}</span>
-                      </p>
-                    </Reveal>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        )}
-
         {project.gallery.length > 0 && (
           <section className="section pt-0">
             <div className="shell grid gap-x-10 gap-y-16 sm:grid-cols-2">

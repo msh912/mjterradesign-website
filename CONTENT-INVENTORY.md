@@ -194,6 +194,11 @@ Contents: Logos p02 · Projects p03 · Book covers p09 · Architectural Graphics
 
 ## C. Logofolio, 11 marks, 2018–2022
 
+> **Removed from the site** at MJ's request. This record is kept because the
+> work exists and the research was done; nothing below is published. The
+> source art is still under `assets/behance-hires/logofolio/`, so restoring it
+> is a matter of re-adding the entry and re-running the publish step.
+
 Source: `assets/behance-hires/logofolio/` (12 images, 3952×2150). Clean full-bleed
 artwork on near-black, **no cropping needed**, but they are dark-ground and the
 site is white-ground, so they need either inversion or a dark section of their own.

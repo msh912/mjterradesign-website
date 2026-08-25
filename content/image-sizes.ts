@@ -1,7 +1,7 @@
 /**
  * Intrinsic dimensions of every published image.
  *
- * GENERATED. Do not edit by hand. Regenerate after adding artwork.
+ * GENERATED — do not edit by hand. Regenerate after adding artwork.
  * `next.config.ts` sets `images.unoptimized`, so next/image cannot infer
  * these itself, and guessing one aspect ratio per slot crops wide spreads.
  */
@@ -25,17 +25,6 @@ export const imageSizes: Record<string, { width: number; height: number }> = {
   '/images/hidden-illusion-of-bygone-landscape/masterplan.jpg': { width: 934, height: 1364 },
   '/images/hidden-illusion-of-bygone-landscape/public-space.jpg': { width: 933, height: 1364 },
   '/images/hidden-illusion-of-bygone-landscape/territorial-exploration.jpg': { width: 934, height: 1364 },
-  '/images/logofolio/adelia.jpg': { width: 1200, height: 954 },
-  '/images/logofolio/asian-beach-handball.jpg': { width: 1200, height: 954 },
-  '/images/logofolio/currymo.jpg': { width: 1200, height: 954 },
-  '/images/logofolio/dejan.jpg': { width: 1200, height: 954 },
-  '/images/logofolio/doran.jpg': { width: 1200, height: 954 },
-  '/images/logofolio/jabe.jpg': { width: 1200, height: 954 },
-  '/images/logofolio/pars-magazine.jpg': { width: 1200, height: 954 },
-  '/images/logofolio/ropes-land.jpg': { width: 1200, height: 954 },
-  '/images/logofolio/roshan.jpg': { width: 1200, height: 954 },
-  '/images/logofolio/taravat-skin-care.jpg': { width: 1200, height: 954 },
-  '/images/logofolio/traffic-pc-store.jpg': { width: 1200, height: 955 },
   '/images/portrait.jpg': { width: 1024, height: 1024 },
   '/images/purification-movement/concept.jpg': { width: 934, height: 1364 },
   '/images/purification-movement/ecology.jpg': { width: 934, height: 1364 },
