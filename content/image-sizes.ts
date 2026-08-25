@@ -36,6 +36,7 @@ export const imageSizes: Record<string, { width: number; height: number }> = {
   '/images/logofolio/roshan.jpg': { width: 1200, height: 954 },
   '/images/logofolio/taravat-skin-care.jpg': { width: 1200, height: 954 },
   '/images/logofolio/traffic-pc-store.jpg': { width: 1200, height: 955 },
+  '/images/portrait.jpg': { width: 1024, height: 1024 },
   '/images/purification-movement/concept.jpg': { width: 934, height: 1364 },
   '/images/purification-movement/ecology.jpg': { width: 934, height: 1364 },
   '/images/purification-movement/manifest.jpg': { width: 934, height: 1364 },

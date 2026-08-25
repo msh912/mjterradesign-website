@@ -21,6 +21,10 @@ export default function AboutPage() {
       <PageHeading
         title="Mohamadjavad Shoori"
         lede={`${site.role} in ${site.location}. ${site.availability}.`}
+        portrait={{
+          src: '/images/portrait.jpg',
+          alt: 'Mohamadjavad Shoori, photographed against a plain grey wall.',
+        }}
       />
 
       <section className="section pt-12">
