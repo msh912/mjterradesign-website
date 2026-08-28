@@ -5,6 +5,17 @@ export default function Statement() {
     <section className="section border-t border-line">
       <div className="shell grid gap-x-12 gap-y-10 lg:grid-cols-12">
         <div className="lg:col-span-6">
+          <div data-anim="rise" className="prose text-ink-muted">
+            <p>
+              I&rsquo;m <strong className="font-semibold text-ink">Mohamadjavad Shoori</strong>,
+              an architect and graphic designer in Milan. The masterplan, the
+              diagrams, the boards and the identity are one continuous piece of
+              work, not four handoffs.
+            </p>
+          </div>
+        </div>
+
+        <div className="lg:col-span-6">
           <div data-anim="stagger" className="prose text-ink-muted">
             <p>
               I hold an M.Arch in Landscape Architecture from Politecnico di

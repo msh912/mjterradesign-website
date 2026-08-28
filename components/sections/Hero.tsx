@@ -3,9 +3,12 @@ import Link from 'next/link'
 
 /**
  * The opening plate runs full bleed, edge to edge and behind the header, and the
- * copy sits inside it rather than under it. The sheet dissolves into the page
+ * headline sits inside it rather than under it. The sheet dissolves into the page
  * ground at its foot, which is what lets the type sit on the drawing and still
  * clear contrast, and is why the copy and the image read as one thing.
+ *
+ * The introduction moved down to Statement, so the opening screen carries the
+ * drawing, the claim and the two ways in, and nothing else.
  */
 const HERO = {
   src: '/images/healing-garden/concept-sketch.jpg',
@@ -58,14 +61,7 @@ export default function Hero() {
             </h1>
 
             <div className="lg:col-span-4 lg:col-start-9 lg:self-end">
-              <p data-anim="rise" className="max-w-[46ch] text-ink-muted">
-                I&rsquo;m <strong className="font-semibold text-ink">Mohamadjavad Shoori</strong>,
-                an architect and graphic designer in Milan. The masterplan, the
-                diagrams, the boards and the identity are one continuous piece of
-                work, not four handoffs.
-              </p>
-
-              <div data-anim="stagger" className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <div data-anim="stagger" className="flex flex-wrap items-center gap-x-8 gap-y-4">
                 <Link
                   href="/work"
                   className="group inline-flex items-center gap-3 border-b border-ink pb-1 text-[0.95rem] transition-colors duration-300 hover:border-accent hover:text-accent"
