@@ -9,19 +9,20 @@ import Link from 'next/link'
  */
 const HERO = {
   src: '/images/healing-garden/concept-sketch.jpg',
-  alt: 'Hand-drawn concept plan in pencil and ink: overlaid sheets of a site layout with tree canopies, hatched terraces, planting beds and circulation lines, and a small red grid study to one side.',
+  alt: 'Hand-drawn concept plan in pencil and ink, drawn wide across overlaid sheets: site layout with tree canopies, hatched terraces, planting beds and circulation lines, with a red grid study set into the middle of the sheet.',
 }
 
 export default function Hero() {
   return (
     <section className="relative">
       <div className="relative w-full">
-        {/* Below lg the sheet keeps its own proportions so nothing is cropped on
-            a phone. From lg up it fills the opening screen and is cropped from
-            the top and bottom margins, which are bare paper. */}
+        {/* The sheet is wide, so at its own proportions it would be a thin band
+            on a phone. It gets a share of the screen instead and is cropped to
+            its middle, where the plan and the red grid study sit. From lg up it
+            fills the opening screen and loses only the bare paper margins. */}
         <div
           data-anim="plate"
-          className="relative aspect-[2000/1788] w-full overflow-hidden bg-ground lg:aspect-auto lg:h-[92svh] lg:min-h-[560px]"
+          className="relative h-[46svh] min-h-[260px] w-full overflow-hidden bg-ground lg:h-[92svh] lg:min-h-[560px]"
         >
           <Image
             src={HERO.src}
@@ -32,11 +33,18 @@ export default function Hero() {
             className="object-cover object-center"
           />
 
-          {/* The drawing fades into the page so the headline can live in it.
+          {/* The sheet dissolves into the page at the head so the nav always
+              clears the pencil work beneath it, whatever the crop lands on. */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-ground via-ground/70 to-transparent"
+          />
+
+          {/* And at the foot, so the headline can live in the drawing.
               Only from lg up, where the copy is actually overlaid. */}
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-[58%] bg-gradient-to-t from-ground via-ground/88 to-transparent lg:block"
+            className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-[42%] bg-gradient-to-t from-ground via-ground/70 to-transparent lg:block"
           />
         </div>
 
@@ -51,9 +59,10 @@ export default function Hero() {
 
             <div className="lg:col-span-4 lg:col-start-9 lg:self-end">
               <p data-anim="rise" className="max-w-[46ch] text-ink-muted">
-                I&rsquo;m Mohamadjavad Shoori, an architect and graphic designer in
-                Milan. The masterplan, the diagrams, the boards and the identity
-                are one continuous piece of work, not four handoffs.
+                I&rsquo;m <strong className="font-semibold text-ink">Mohamadjavad Shoori</strong>,
+                an architect and graphic designer in Milan. The masterplan, the
+                diagrams, the boards and the identity are one continuous piece of
+                work, not four handoffs.
               </p>
 
               <div data-anim="stagger" className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-4">
