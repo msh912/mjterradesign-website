@@ -4,7 +4,7 @@ import ContactCta from '@/components/sections/ContactCta'
 import PageHeading from '@/components/sections/PageHeading'
 import { byField, projects } from '@/content/projects'
 
-export const metadata: Metadata = { title: 'Work' }
+export const metadata: Metadata = { title: 'Work', alternates: { canonical: '/work' } }
 
 export default function WorkPage() {
   const landscape = byField('landscape')

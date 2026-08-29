@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "og": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/make-og.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",

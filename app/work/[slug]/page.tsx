@@ -1,3 +1,5 @@
+import { existsSync } from 'node:fs'
+import path from 'node:path'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
@@ -18,7 +20,33 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params
   const project = getProject(slug)
   if (!project) return { title: 'Not found' }
-  return { title: project.title, description: project.summary }
+
+  // Every project shares as its own drawing, hung on the gallery ground at
+  // 1200x630 under `public/og/`. Generated from the cover by `npm run og`,
+  // contained rather than cropped, because a portrait board cropped to 1.91:1
+  // shows only a sliver. If the card was never generated, fall back to the cover
+  // itself rather than pointing a crawler at a 404.
+  const card = `/og/${project.slug}.jpg`
+  const hasCard = existsSync(path.join(process.cwd(), 'public', card))
+  const image = {
+    url: hasCard ? card : project.cover,
+    ...(hasCard ? { width: 1200, height: 630 } : sizeOf(project.cover)),
+    alt: project.coverAlt,
+  }
+
+  return {
+    title: project.title,
+    description: project.summary,
+    alternates: { canonical: `/work/${project.slug}` },
+    openGraph: {
+      title: `${project.title}${project.subtitle ? `. ${project.subtitle}` : ''}`,
+      description: project.summary,
+      url: `/work/${project.slug}`,
+      type: 'article',
+      images: [image],
+    },
+    twitter: { card: 'summary_large_image', images: [image] },
+  }
 }
 
 export default async function ProjectPage({ params }: Params) {

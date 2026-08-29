@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="MJ Terra Design">
+  <!-- A landform section in MJ's own printed brick red: one ridge, with a single
+       contour line stepped below it. No letterforms, so nothing depends on a
+       webfont the favicon slot cannot load, and a filled silhouette still carries
+       at 16px, where nested contour rings collapse into a bullseye. -->
+  <rect width="32" height="32" fill="#903d35"/>
+  <path d="M0 24.5C4.5 24.5 6 20 9.5 20C12 20 12.8 22 14.5 22C17 22 18.5 8 22.5 8C26 8 28 14.5 32 16.5L32 32L0 32Z"
+        fill="#fafafa"/>
+  <path d="M2 29.5C5.5 29.5 7 26 10 26C12.2 26 13 27.6 14.5 27.6C16.6 27.6 18 17 21.5 17C24.5 17 26.5 22 30 23.6"
+        fill="none" stroke="#903d35" stroke-width="1.7" stroke-linecap="round"/>
+</svg>

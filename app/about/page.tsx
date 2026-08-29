@@ -13,7 +13,7 @@ import {
   workshops,
 } from '@/content/profile'
 
-export const metadata: Metadata = { title: 'About' }
+export const metadata: Metadata = { title: 'About', alternates: { canonical: '/about' } }
 
 export default function AboutPage() {
   return (

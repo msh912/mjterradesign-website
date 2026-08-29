@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import PageHeading from '@/components/sections/PageHeading'
 import { site, socials } from '@/content/site'
 
-export const metadata: Metadata = { title: 'Contact' }
+export const metadata: Metadata = { title: 'Contact', alternates: { canonical: '/contact' } }
 
 export default function ContactPage() {
   return (

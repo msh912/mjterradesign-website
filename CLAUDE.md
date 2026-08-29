@@ -22,6 +22,9 @@ the site moved to the white gallery ground. Safe to uninstall.
 
 ```
 app/            routes: / · /work · /work/[slug] · /about · /contact · not-found
+  icon.svg · apple-icon.png     the contour mark, no letterforms
+  opengraph-image.jpg           site share card, plus .alt.txt
+  sitemap.ts · robots.ts        built from content/, canonical www host
 components/
   layout/       SmoothScroll (Lenis↔GSAP), SiteHeader, SiteFooter
   motion/       MotionRoot, wires every scroll animation from data-anim
@@ -30,11 +33,14 @@ components/
 content/        site.ts · projects.ts (the archive) · profile.ts (the CV)
 lib/            gsap.ts, utils.ts, motion.ts
 public/images/  50 published images, cropped out of the book mockups
+public/og/      one 1200x630 share card per project, generated from its cover
 assets/         gitignored source material, see below
 ```
 
 **All portfolio content lives in `content/`.** Pages read from it, adding work
-means adding an entry to `content/projects.ts`, not writing a new page.
+means adding an entry to `content/projects.ts`, not writing a new page. Then run
+`npm run og` to build that project's share card; without it the page falls back
+to sharing the raw cover, which is usually the wrong shape.
 
 ## The design world (current, implemented)
 
