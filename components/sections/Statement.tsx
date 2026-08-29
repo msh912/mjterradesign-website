@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import NamePortrait from '@/components/NamePortrait'
 
 export default function Statement() {
   return (
@@ -7,7 +8,7 @@ export default function Statement() {
         <div className="lg:col-span-6">
           <div data-anim="rise" className="prose text-ink-muted">
             <p>
-              I&rsquo;m <strong className="font-semibold text-ink">Mohamadjavad Shoori</strong>,
+              I&rsquo;m <NamePortrait>Mohamadjavad Shoori</NamePortrait>,
               an architect and graphic designer in Milan. The masterplan, the
               diagrams, the boards and the identity are one continuous piece of
               work, not four handoffs.

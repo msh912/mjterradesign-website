@@ -30,6 +30,9 @@ components/
   motion/       MotionRoot, wires every scroll animation from data-anim
   sections/     Hero, Statement, WorkIndex, PageHeading, ContactCta
   ScrambleText.tsx (currently unused), Reveal.tsx
+  NamePortrait.tsx  MJ's name on the home page, portrait riding the cursor on
+                    hover. Portalled to <body> because `rise` leaves a transform
+                    on its block, which would trap a position:fixed child
 content/        site.ts · projects.ts (the archive) · profile.ts (the CV)
 lib/            gsap.ts, utils.ts, motion.ts
 public/images/  50 published images, cropped out of the book mockups
