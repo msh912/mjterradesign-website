@@ -1,10 +1,10 @@
 /**
- * MJ's CV, transcribed from the CV spread inside the 2025 Landscape
- * Architecture portfolio (the architecture-led, more recent of his two books).
+ * MJ's CV.
  *
- * UNVERIFIED. Read off a printed page. MJ must proof this before it is treated
- * as final. See CONTENT-INVENTORY.md section D for the conflict with the older
- * graphic-book CV.
+ * Transcribed from the CV spread of `assets/press/landscape-portfolio-2026.pdf`,
+ * the press file for his current book, which MJ supplied himself and named as
+ * the reference. That supersedes the 2025 Behance transcription and the older
+ * graphic-book CV in CONTENT-INVENTORY.md section D.
  */
 
 export const bio = [
@@ -18,15 +18,31 @@ export const education = [
     degree: 'M.Arch in Landscape Architecture, Land Landscape Heritage',
     school: 'Politecnico di Milano',
     place: 'Italy',
+    dates: 'Sep 2022 – Oct 2025',
   },
   {
     degree: 'B.Sc in Architecture Engineering',
     school: 'Pars University of Art and Architecture',
     place: 'Tehran, Iran',
+    dates: 'Sep 2015 – Sep 2019',
   },
 ]
 
 export const experience = [
+  {
+    role: 'Interior Designer',
+    org: 'GN Architetti',
+    place: 'Milan, Italy',
+    dates: 'Jan 2026 – Feb 2026',
+    work: 'Project based · Drawing assistant · Architectural presentation · Interior design',
+  },
+  {
+    role: 'Architect',
+    org: 'Cognition Architecture Studio',
+    place: 'Milan, Italy, remote',
+    dates: 'Nov 2025 – Jan 2026',
+    work: 'Drawing assistant · Landscape design · Architectural presentation',
+  },
   {
     role: 'Junior Architect',
     org: 'Ar.de.a. Arturo Montanelli Studio Design',

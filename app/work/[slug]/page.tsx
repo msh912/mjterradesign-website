@@ -61,7 +61,14 @@ export default async function ProjectPage({ params }: Params) {
   const facts: { label: string; value: string }[] = [
     { label: 'Location', value: project.location },
     { label: 'Year', value: project.yearLabel ?? String(project.year) },
-    ...(project.context ? [{ label: project.academic ? 'Studio' : 'Client', value: project.context }] : []),
+    ...(project.context
+      ? [
+          {
+            label: project.contextLabel ?? (project.academic ? 'Studio' : 'Client'),
+            value: project.context,
+          },
+        ]
+      : []),
     ...(project.professors?.length
       ? [{ label: project.professors.length > 1 ? 'Professors' : 'Professor', value: project.professors.join(' · ') }]
       : []),
@@ -129,8 +136,9 @@ export default async function ProjectPage({ params }: Params) {
                 </dl>
                 {project.academic && (
                   <p className="mt-5 text-[0.85rem] text-ink-muted">
-                    Academic work. My contribution is listed above; the rest of the
-                    studio group did the rest.
+                    {project.collaboration === 'Group project'
+                      ? 'Academic work. My contribution is listed above; the rest of the studio group did the rest.'
+                      : 'Academic work, and mine end to end.'}
                   </p>
                 )}
               </Reveal>

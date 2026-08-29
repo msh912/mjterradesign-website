@@ -110,6 +110,7 @@ export default function AboutPage() {
                     <p className="mt-1 text-[0.9rem] text-ink-muted">
                       {e.school}, {e.place}
                     </p>
+                    <p className="meta tnum mt-1.5">{e.dates}</p>
                   </li>
                 ))}
               </ul>

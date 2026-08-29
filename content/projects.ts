@@ -34,6 +34,8 @@ export type Project = {
   disciplines: Discipline[]
   /** Studio and semester for academic work; the client for professional work. */
   context?: string
+  /** Overrides the 'Studio' / 'Client' label, e.g. a thesis is neither. */
+  contextLabel?: string
   professors?: string[]
   /** e.g. 'Group project'. Stated plainly, never implied to be solo. */
   collaboration?: string
@@ -49,6 +51,83 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'scars-of-extraction-seeds-of-renewal',
+    title: 'Scars of Extraction, Seeds of Renewal',
+    subtitle: 'Landscape of the Niger Delta',
+    summary:
+      'A community-led cleanup for Ogoniland, where recycled oil-field hardware and mangrove nurseries do the remediation.',
+    year: 2025,
+    location: 'Ogoniland, Niger Delta, Nigeria',
+    field: 'landscape',
+    disciplines: ['Landscape Architecture', 'Architecture'],
+    context: 'Final exam · Politecnico di Milano',
+    contextLabel: 'Thesis',
+    professors: ['Laura Daglio, supervisor', 'Fyneface Dumnamene Fyneface, co-supervisor'],
+    collaboration: 'Individual thesis',
+    academic: true,
+    role: ['Research', 'Concept design', 'Strategy', 'Masterplan', 'Detail design', 'Drawings and render'],
+    tools: ['Rhino', 'Illustrator', 'Photoshop', 'QGIS', 'Twinmotion', 'V-Ray'],
+    body: [
+      'Oil extraction in the Niger Delta, and particularly in Ogoniland, has produced environmental destruction, social injustice and conflict rather than development. Spills, gas flaring and deforestation have damaged the mangrove ecosystems, threatened the livelihoods built on them, and harmed both health and food security.',
+      'The thesis frames that through the resource curse, petro-violence and ecological colonialism, then tests it against the ground: GIS and the Terrestrial Environmental Sensitivity Index show how much of the coastline is highly vulnerable to spills. Phytoremediation and mangrove restoration offer a route back, but the research is explicit that meaningful restoration depends on transparency, accountability and community participation, not on technique alone.',
+      'So the proposal replaces slow top-down cleanup with a community-led one. Youth, groups and farmers are trained to run nurseries, to plant and maintain remediation species, to test soil and water with simple kits and to handle contaminated biomass safely. The materials are what the industry left behind: tanks, pipes and scaffolds from abandoned oil facilities, with bamboo, palm fronds, clay and recycled drums, made up into planting beds, floating rafts, fencing and mobile remediation units.',
+      'The remediation cycle runs reclaim, plant, monitor, then phase into production. It begins with non-food crops, introduces low-risk food crops as the soil improves, and ends in diversified agriculture and horticulture, so that jobs, food and income fund the next site rather than waiting on a budget. Replanting avoids monoculture: red mangrove at the creek fringe, then black, white and buttonwood landward, raised in nurseries rather than planted directly, and set out in zigzag at 1.2 to 1.5 metre spacing.',
+      'Nine pieces are designed and detailed for the site. A work shade and a shade pavilion, a floating filtration unit and a field shower for the people doing the work. A growth frame protecting new planting, propagules bagged into sediment-filled polybags, reclaimed materials, and a seeds hub lifted clear of flooding and contamination. Then filtration, where the mangrove roots themselves take the heavy metals and hydrocarbons up into plant tissue, which is the whole argument of the project in one detail.',
+    ],
+    cover: '/images/scars-of-extraction-seeds-of-renewal/oil-sheen-aerial.jpg',
+    coverAlt:
+      'Aerial view of the remediation site: timber platforms, drying racks and scaffolds spread across tidal flats, an oil sheen breaking into rainbow colour across the blue and orange water, and small groups of people working between the structures.',
+    gallery: [
+      {
+        src: '/images/scars-of-extraction-seeds-of-renewal/abstract.jpg',
+        alt: 'Title page: a collage of green, ochre and yellow bands over sketched scaffold lines, with a black gradient block and small photographs of timber structures.',
+        caption: 'Thesis title and abstract',
+      },
+      {
+        src: '/images/scars-of-extraction-seeds-of-renewal/spill-effects.jpg',
+        alt: 'Grey isometric drawing of an oil facility: storage tanks, pipe racks, a flare stack burning, a spherical vessel, dead animals on the ground and workers in yellow suits at the waterline.',
+        caption: 'Spill effects: what the industry does to soil, water and animals',
+      },
+      {
+        src: '/images/scars-of-extraction-seeds-of-renewal/strategy.jpg',
+        alt: 'Phased strategy map of the delta: waterways in pale teal, mangrove vegetation hatched in pink, wells marked in violet, and four numbered phases of intervention across the creeks.',
+        caption: 'Strategy: four phases across the creeks',
+      },
+      {
+        src: '/images/scars-of-extraction-seeds-of-renewal/remediation-model.jpg',
+        alt: 'Manifest page setting out the community-led cleanup, with a render of a bamboo and timber platform standing over dark contaminated water beside a bare tree.',
+        caption: 'The model: local skills, recycled materials, protected plots',
+      },
+      {
+        src: '/images/scars-of-extraction-seeds-of-renewal/mangrove-nursery.jpg',
+        alt: 'Magenta line diagrams of a mangrove propagule in a Reef Ball and Riley Tube, read backwards along a timeline from mature tree to the day it was planted.',
+        caption: 'From propagule to mature tree, read backwards',
+      },
+      {
+        src: '/images/scars-of-extraction-seeds-of-renewal/mangrove-ecology.jpg',
+        alt: 'Purple mangrove diagram layered from soil contamination through phyto-extraction to cleanup, above a circular section of mangrove roots underwater labelled with a grey heron, mangrove firefly, mud crab and green sea turtle.',
+        caption: 'What comes back when the mangroves do',
+      },
+      {
+        src: '/images/scars-of-extraction-seeds-of-renewal/design-management.jpg',
+        alt: 'Dark navy board of the nine site structures drawn as pale isometrics: work shade, shade pavilion, floating filtration, field shower, growth frame, propagules, reclaimed materials, seeds hub and filtration.',
+        caption: 'Design management: the nine pieces, and the order they arrive in',
+      },
+      {
+        src: '/images/scars-of-extraction-seeds-of-renewal/village-perspective.jpg',
+        alt: 'Render of a delta village: brick and corrugated houses on green ground, a conical silo, and a bamboo scaffold walkway carried over the water on stilts.',
+        caption: 'The walkway meeting the existing village',
+      },
+      {
+        src: '/images/scars-of-extraction-seeds-of-renewal/benefits.jpg',
+        alt: 'Benefits and long-term vision page, with small renders of the timber structures in use and a long panoramic section through the restored shoreline.',
+        caption: 'Long-term vision: clean the soil, then keep it healthy',
+      },
+    ],
+    featured: true,
+  },
+
   {
     slug: 'purification-movement',
     title: 'Purification Movement',

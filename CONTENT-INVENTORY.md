@@ -279,11 +279,15 @@ born 10/10/1996 Tehran, now Milan.
 
 ---
 
-## E. The thesis, in the 2026 press file only, NOT on the site
+## E. The thesis, PUBLISHED 2026-08-29
 
-Read off `assets/press/landscape-portfolio-2026.pdf` pages 4–10 on 2026-08-29.
-This is the one piece of work in the book that the site has never carried, and it
-is the only landscape project **not** labelled a group project.
+Read off `assets/press/landscape-portfolio-2026.pdf` pages 4–10 on 2026-08-29,
+and published the same day at `/work/scars-of-extraction-seeds-of-renewal`, on
+MJ's instruction. It leads the landscape work, and it is the only project in the
+archive **not** labelled a group project.
+
+Nine images published from pages 4–10, cover is the oil-sheen aerial off p08
+right. The site spells the title **extraction**; see the printed typo below.
 
 ### E1 · Scars of Extraction, Seeds of Renewal: landscape of The Niger Delta
 - **Location:** Nigeria, the Niger Delta, specifically Ogoniland
@@ -353,8 +357,9 @@ the same places, so a newer source has not settled them. Numbers 11 and 12 are n
 10. **Elahie playground**: is it built now, or still "under construction"? It is
     your only built project and deserves to be current.
 
-11. **The thesis, section E.** It is your final project, your only solo landscape
-    work, and it is not on the site. Should it lead the work index?
+11. ~~**The thesis, section E.**~~ **Answered 2026-08-29: yes.** Published and
+    leading the landscape work. Still worth your eye on the body copy, which was
+    written from the boards rather than from your thesis text.
 12. **`assets/press/professional-works-2026.pdf`**, *Selected Works 2023-2026*, is
     a second book the site knows nothing about: Terraviva Punta Bianca competition,
     GN Architetti (nail salon, three residential, Villa Lezhe), 4&7 Studio Design

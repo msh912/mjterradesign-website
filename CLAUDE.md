@@ -145,8 +145,11 @@ Unused taste-skill variants are in `assets/taste-skill-bundle/`.
 
 ## Status
 
-The site is real. All 10 projects are MJ's actual work, named and described from
-his own books, with 50 images published.
+The site is real. All 11 projects are MJ's actual work, named and described from
+his own books, with 60 images published. The M.Arch thesis,
+`scars-of-extraction-seeds-of-renewal`, leads the landscape work: it is the only
+project in the archive that is not group work, and its `contextLabel` is what the
+field on `Project` exists for, because a thesis is neither a studio nor a client.
 
 The Logofolio was removed from the site at MJ's request. Its research record is
 kept in CONTENT-INVENTORY.md section C and the source art is still under
@@ -154,13 +157,22 @@ kept in CONTENT-INVENTORY.md section C and the source art is still under
 
 **Open, needs MJ:**
 
-1. **Proof `CONTENT-INVENTORY.md`.** Ten specific conflicts are listed at the
-   bottom of it, all real disagreements between his own two books (semester
-   numbers, studio names, one logo caption). Nothing was guessed.
-2. **Proof `content/profile.ts`**: the CV, transcribed from a printed page.
+1. **Proof `CONTENT-INVENTORY.md`.** Twelve conflicts and questions are listed at
+   the bottom of it. Conflicts 1 to 4 are real disagreements between the contents
+   page and the title pages of his own books about semesters and studio names,
+   and the 2026 press file did **not** settle them. Nothing was guessed.
+2. **The graphic-design book has no press file here.** Its 17 images are still
+   Behance crops of a photographed book, unlike the 43 landscape ones. Ask MJ for
+   that PDF and rerun the same swap.
+3. **`assets/press/professional-works-2026.pdf`** is a whole second book, MJ's
+   office work 2023 to 2026, that the site does not carry at all. See inventory
+   question 12.
 4. `gh auth login`: installed, not authenticated. Only matters for repos/PRs.
 5. Google Drive connector is unauthorized. Only worth doing if original design
    files exist; MJ said the Behance set is all there is.
+
+`content/profile.ts` is **no longer** open: MJ named the 2026 press file as the
+reference on 2026-08-29 and the CV was rebuilt from its own CV spread.
 
 ## Live
 
