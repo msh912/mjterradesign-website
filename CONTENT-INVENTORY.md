@@ -10,10 +10,19 @@ inside MJ's own books disagree, both readings are recorded and flagged.
 
 ## A. Landscape Architecture, 4 academic projects + 1 professional + sketches
 
-Source: `assets/behance-hires/landscape/` (26 spreads, 2550×1966).
+Source, since 2026-08-29: **`assets/press/landscape-portfolio-2026.pdf`**, MJ's
+own press file, 31 pages, flat, no book mockup. It supersedes
+`assets/behance-hires/landscape/` (26 spreads, 2550×1966) for every image.
 Book: *Portfolio | Landscape Architecture | MohamadJavad Shoori | 2025 | Selected Works*.
-Back cover dates the body of work **2021–2025**. Running header on every project
-page reads `Portfolio | 2024`.
+Back cover dates the body of work **2021–2025**. The Behance book's running header
+read `Portfolio | 2024`; the press file reads **`Portfolio | 2026`**, and it renumbers
+every project, because a thesis was inserted ahead of them as 01.
+
+**The press file adds a project the site does not have:** *Scars of Extraction,
+Seeds of Renewal: landscape of The Niger Delta*, the M.Arch thesis and final exam.
+See section E below. It also carries a **newer CV** than section D, and it does
+**not** settle conflicts 1–4: the contents page and the title pages still disagree
+about semesters and studio names, exactly as they did in the 2024 book.
 
 ### L1 · Purification Movement: From waste to living shore
 - **Location:** Lugano, Switzerland
@@ -270,9 +279,56 @@ born 10/10/1996 Tehran, now Milan.
 
 ---
 
+## E. The thesis, in the 2026 press file only, NOT on the site
+
+Read off `assets/press/landscape-portfolio-2026.pdf` pages 4–10 on 2026-08-29.
+This is the one piece of work in the book that the site has never carried, and it
+is the only landscape project **not** labelled a group project.
+
+### E1 · Scars of Extraction, Seeds of Renewal: landscape of The Niger Delta
+- **Location:** Nigeria, the Niger Delta, specifically Ogoniland
+- **Format:** M.Arch **thesis and final exam**, Politecnico di Milano. No group credit
+- **Supervisor:** Laura Daglio · **Co-supervisor:** Fyneface Dumnamene Fyneface
+- **Software:** Rhino, Illustrator, Photoshop, QGIS, Twinmotion, V-Ray for Rhino
+- **Numbered:** 01 in the book, pages 01–12, ahead of all four studio projects
+- **Spreads:** p04 (title + abstract, single page), p05 (Manifest · Spill Effects),
+  p06 (strategy map, phased), p07 (beyond the mangroves · nursery guidance),
+  p08 (two perspectives), p09 (Design Management, the dark blue board),
+  p10 left (Benefits · Long-term vision)
+- **Abstract:** Oil extraction in the Niger Delta has produced environmental
+  destruction, social injustice and conflict rather than development. Spills, gas
+  flaring and deforestation have damaged mangrove ecosystems and harmed health and
+  food security. Framed through the *resource curse*, *petro-violence* and
+  *ecological colonialism*, the study uses GIS and the Terrestrial Environmental
+  Sensitivity Index to show how much of the coastline is vulnerable. Phytoremediation
+  and mangrove restoration offer recovery, but meaningful restoration depends on
+  transparency, accountability and community participation. Proposes low-cost,
+  recycled-material structures to support workers and improve the coast.
+- **Named moves:** a community-led cleanup model replacing slow top-down remediation;
+  a phytoremediation cycle (reclaim → plant remediation species → monitor → phase
+  into production, non-food crops first); nurseries raising red *Rhizophora*, black
+  *Avicennia*, white *Laguncularia* and buttonwood rather than monoculture; Reef Ball
+  and Riley Tube planting; and nine built pieces, **Work Shade, Shade Pavilion,
+  Floating Filtration, Field Shower, Growth Frame, Propagules, Reclaimed Materials,
+  Seeds Hub, Filtration**, made from repurposed tanks, pipes, scaffolds, bamboo,
+  palm fronds, clay and recycled drums.
+- **Long-term vision:** legume-based farming (cowpea, groundnut, African yam bean)
+  anchoring the transition into agroforestry.
+- **Best images:** p09 Design Management (the dark blue axonometric board, the
+  single strongest drawing in the book), p06 phased strategy map, p08 right
+  (the oil-sheen aerial), p07 right (the mangrove ecology circle).
+- **Note the printed typo:** both the title page and the contents read
+  "Scars of **exraction**". Correct spelling is *extraction*.
+
+---
+
 ## Needs your correction, MJ
 
-These are real conflicts inside your own two books. I have **not** guessed:
+These are real conflicts inside your own two books. I have **not** guessed.
+
+**Checked again against the 2026 press file on 2026-08-29: conflicts 1–4 are still
+live.** The new book's contents page and its project title pages disagree in exactly
+the same places, so a newer source has not settled them. Numbers 11 and 12 are new.
 
 1. **Purification Movement semester.** Title page says *Semester 3*; contents page
    says *Sem 04*. Which?
@@ -288,8 +344,20 @@ These are real conflicts inside your own two books. I have **not** guessed:
 6. **Which CV is current**: the landscape one (architecture-led, 7 roles) or the
    graphic one (6 roles)? I am using the landscape one.
 7. **Desenzano del Garda** is printed "Desensano" in the book. Typo?
+   *(The 2026 press file spells it correctly on the contents page and still
+   "Desensano" on the project page, so this reads as a settled typo. The site
+   already uses the correct spelling.)*
 8. **Are the four academic projects group work you want credited as group work?**
    All four say "Group project". I will state your role honestly on each.
 9. **Heliotrope**: one project with Roboteos, or its own entry?
 10. **Elahie playground**: is it built now, or still "under construction"? It is
     your only built project and deserves to be current.
+
+11. **The thesis, section E.** It is your final project, your only solo landscape
+    work, and it is not on the site. Should it lead the work index?
+12. **`assets/press/professional-works-2026.pdf`**, *Selected Works 2023-2026*, is
+    a second book the site knows nothing about: Terraviva Punta Bianca competition,
+    GN Architetti (nail salon, three residential, Villa Lezhe), 4&7 Studio Design
+    (urban playground, two indoor playgrounds, boutique), Karoshan (Roshano
+    amusement park). That is professional practice work, which the archive is
+    thin on. Do you want it published, and under what names?

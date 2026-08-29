@@ -97,13 +97,33 @@ to sharing the raw cover, which is usually the wrong shape.
 
 | Path | What |
 |---|---|
+| `assets/press/landscape-portfolio-2026.pdf` | **the source of every landscape image on the site.** MJ's own press file for the 2026 landscape book, 31 pages |
+| `assets/press/pages-2026/` | those 31 pages extracted at native resolution, `p01`–`p31` |
+| `assets/press/professional-works-2026.pdf` | *Selected Works 2023-2026*, the **office** book (GN Architetti, 4&7, Karoshan, Terraviva). Nothing from it is on the site yet |
 | `assets/behance/` | the original 49 downloads (landscape only 1400px, superseded) |
-| `assets/behance-hires/` | **the good set**: same 49 re-pulled from Behance's `source` module: landscape 2550px, graphic 6405px, logofolio 3952px |
+| `assets/behance-hires/` | same 49 re-pulled from Behance's `source` module. **Still the source for the graphic-design work only**: the landscape half is superseded by the press PDF |
 | `assets/cropped/` | 111 page crops, backdrop and shadow removed |
-| `assets/PROFILE-EXTRACTED.md` | the **older, graphic-led** CV. Superseded by `content/profile.ts` |
+| `assets/PROFILE-EXTRACTED.md` | the **older, graphic-led** CV. Superseded by `content/profile.ts`, which is itself now behind the 2026 book's CV page |
+
+**The landscape artwork is not photographed any more.** Until 2026-08-29 every
+image on the site was a Behance render of MJ's printed book: page curl, drop
+shadow, grey backdrop and a curved gutter baked into the crop. The press PDF is
+the file behind that book, so each spread is one flat raster. `p13` is
+`purification-movement/masterplan.jpg`, and so on: the map lives in the commit
+that made the swap. Halves are cut clear of the hairline ruled down the gutter.
+Each page is a single flattened image with **no text layer**, so extracting the
+XObject natively is the resolution ceiling; rendering at higher DPI only upscales.
+
+The 33 landscape images came from that PDF. The other 17 (`architectural-graphics`,
+`elahie-urban-playground`, `four-and-seven`, `healing-garden`, `heliotrope`,
+`roboteos`, `studio`, `portrait`) are still Behance book crops, because the
+graphic-design book has no press file here.
 
 Behance serves larger originals off the same hash, `project_modules/source/<hash>.jpg`
 rather than `project_modules/1400/<hash>.jpg`. That is where the hi-res set came from.
+
+`npm run sizes` regenerates `content/image-sizes.ts` from whatever is on disk;
+`npm run og` rebuilds the share cards. Run both after touching artwork.
 
 ## Workflow
 
