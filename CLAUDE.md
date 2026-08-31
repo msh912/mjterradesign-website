@@ -28,7 +28,11 @@ app/            routes: / · /work · /work/[slug] · /about · /contact · not-
 components/
   layout/       SmoothScroll (Lenis↔GSAP), SiteHeader, SiteFooter
   motion/       MotionRoot, wires every scroll animation from data-anim
-  sections/     Hero, Statement, WorkIndex, PageHeading, ContactCta
+  sections/     Hero, Statement, Practice, Fields, WorkIndex, PageHeading,
+                ContactCta. The home page is three texts (Hero, Statement,
+                Practice) then Fields, the three circles into each field
+  HashScroll.tsx    lands /work#<field> on its section; Lenis and the browser's
+                    native hash jump otherwise disagree about where the page is
   ScrambleText.tsx (currently unused), Reveal.tsx
   NamePortrait.tsx  MJ's name on the home page, portrait riding the cursor on
                     hover. Portalled to <body> because `rise` leaves a transform
@@ -39,6 +43,13 @@ public/images/  50 published images, cropped out of the book mockups
 public/og/      one 1200x630 share card per project, generated from its cover
 assets/         gitignored source material, see below
 ```
+
+**Three fields, one of them empty.** `Field` is `landscape | architecture |
+graphic`. Nothing carries `architecture` yet: MJ is supplying it. Every surface
+that lists the fields derives from `byField`, so the circle on the home page and
+the section on `/work` both come alive the moment a project claims that field,
+with no page to edit. Until then the circle says "In preparation" and is not a
+link, because sending someone to an empty section is worse than saying so.
 
 **All portfolio content lives in `content/`.** Pages read from it, adding work
 means adding an entry to `content/projects.ts`, not writing a new page. Then run

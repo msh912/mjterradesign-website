@@ -16,7 +16,7 @@ export default function WorkIndex({
   if (!projects.length) return null
 
   return (
-    <section className="section" id={id}>
+    <section className={cn('section', id && 'scroll-mt-28')} id={id}>
       <div className="shell">
         {heading && (
           <div className="mb-14 flex items-baseline justify-between gap-6 border-b border-line pb-5">

@@ -17,7 +17,13 @@ export type Discipline =
   | 'Brand Identity'
   | 'Drawing'
 
-export type Field = 'landscape' | 'graphic'
+/**
+ * The three fields the home page offers as a way in. `architecture` has no work
+ * in it yet: every surface that lists it derives from `byField`, so the moment a
+ * project carries this field the circle on the home page and the section on
+ * /work both come alive with nothing else to change.
+ */
+export type Field = 'landscape' | 'architecture' | 'graphic'
 
 export type Project = {
   slug: string
