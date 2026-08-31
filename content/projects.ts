@@ -53,6 +53,7 @@ export type Project = {
   cover: string
   coverAlt: string
   gallery: { src: string; alt: string; caption?: string }[]
+  /** Curation only. Nothing renders it right now: see `featuredProjects`. */
   featured?: boolean
 }
 
@@ -586,6 +587,12 @@ export const projects: Project[] = [
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug)
 
+/**
+ * DORMANT. Nothing renders this: the home page offers the three field circles
+ * instead of a selected-work run, so setting `featured: true` on a project has
+ * no visible effect today. The flags are kept because they record which work MJ
+ * put forward, and a future selected strip would want them.
+ */
 export const featuredProjects = () => projects.filter((p) => p.featured)
 
 export const byField = (field: Field) => projects.filter((p) => p.field === field)
