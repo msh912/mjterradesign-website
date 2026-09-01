@@ -13,6 +13,7 @@ export type Discipline =
   | 'Landscape Architecture'
   | 'Architecture'
   | 'Urban Design'
+  | 'Interior Design'
   | 'Graphic Design'
   | 'Brand Identity'
   | 'Drawing'
@@ -383,6 +384,50 @@ export const projects: Project[] = [
   },
 
   {
+    slug: 'punta-bianca',
+    title: 'Punta Bianca',
+    subtitle: 'A customs house returned to the coast',
+    summary:
+      'A competition entry that keeps the ruin and adds only what is obviously new: a glass stair, a light roof, and water running down the corridor.',
+    year: 2025,
+    yearLabel: '2023–2026',
+    location: 'Sicily, Italy',
+    field: 'architecture',
+    disciplines: ['Architecture'],
+    context: 'Terraviva',
+    contextLabel: 'Competition',
+    academic: false,
+    role: ['Concept', 'Presentation'],
+    tools: ['Rhino', 'Illustrator', 'Photoshop'],
+    body: [
+      'The competition asked what to do with the former customs house at Punta Bianca, standing on the white rock of the Sicilian coast. The building had stopped being a landmark. The proposal returns it to that job: a point of reference read from the sea, and somewhere worth the walk for anyone arriving by land.',
+      'The shell is kept and worked with rather than replaced. A glazed stair volume is set against the stone and a light steel and glass roof is laid over the open top floor, so everything added reads as plainly new against masonry left as it is.',
+      'The ground floor takes an exhibition space and an art installation space, an entrance, changing rooms and a bar and restaurant. The floor above holds the kitchen and payment counter, a book store, a reception and ticket area, a seating and lounge area, and an ocean view point at the end of the corridor.',
+      'Two moves do the work outside. The main entrance is a surface that collects and absorbs water during heavy rain or a surge, rather than shedding it. And the approach corridor runs with water down both sides with the Punta Bianca rock left overhead, so you arrive through the thing the building is there to be looked at from.',
+    ],
+    cover: '/images/punta-bianca/customs-house.jpg',
+    coverAlt:
+      'Aerial render at sunset: a two-storey stone customs house on white layered rock above the sea, with a glazed stair volume set against it and a light glass roof over the open top floor.',
+    gallery: [
+      {
+        src: '/images/punta-bianca/concept-exploded.jpg',
+        alt: 'Large exploded axonometric of the customs house, with slabs, stairs, screens and the roof structure pulled apart, and four smaller massing studies at the left in pink and grey.',
+        caption: 'Concept, and the building taken apart',
+      },
+      {
+        src: '/images/punta-bianca/technical-drawings.jpg',
+        alt: 'Ground and first floor plans with numbered rooms, section marks, and a long site section running through the rock terraces below the building.',
+        caption: 'Plans and the section through the rock',
+      },
+      {
+        src: '/images/punta-bianca/renders.jpg',
+        alt: 'Three interior renders: a cutaway of the exhibition floors with the stair and mesh screens, and two views of the corridor with water running at the sides and rock overhead.',
+        caption: 'Inside, and the corridor with water at the sides',
+      },
+    ],
+  },
+
+  {
     slug: 'elahie-urban-playground',
     title: 'Elahie Urban Playground',
     summary:
@@ -390,7 +435,7 @@ export const projects: Project[] = [
     year: 2023,
     yearLabel: '2023 · under construction',
     location: 'Tehran, Iran',
-    field: 'landscape',
+    field: 'architecture',
     disciplines: ['Architecture', 'Landscape Architecture'],
     context: 'Professional work',
     academic: false,
@@ -412,6 +457,129 @@ export const projects: Project[] = [
       },
     ],
     featured: true,
+  },
+
+
+  {
+    slug: 'milan-interiors',
+    title: 'Milan Interiors',
+    subtitle: 'Four commissions for GN Architetti',
+    summary:
+      'Presentation drawings made to settle a decision with a client: two flats, a nail salon and a villa, each drawn to be read by whoever is paying for it.',
+    year: 2026,
+    yearLabel: 'Jan–Feb 2026',
+    location: 'Milan, Italy',
+    field: 'architecture',
+    disciplines: ['Interior Design', 'Architecture'],
+    context: 'GN Architetti',
+    academic: false,
+    role: ['Presentation', 'Interior design', 'Drawing'],
+    tools: ['Illustrator', 'Photoshop', 'Rhino', 'AutoCAD'],
+    body: [
+      'Four commissions in the same Milan office, each drawn to be understood by a client rather than by another architect. That is the whole brief in this kind of work: make the decision legible before anyone builds it.',
+      'The nail salon is a pair of cutaway isometrics, the same room from two sides, so the arched joinery and the seating line can be read against the plan they sit in.',
+      'For the first residential house the concept was two clear corridors with long sightlines into the living room: unnecessary walls removed, kitchen and living integrated, contrasting materials marking the zones, and wasted space turned into built-in closets. A before and after plan carries it, with new furniture, pavement and concept picked out in three colours, and two isometrics take the same flat from opposite corners.',
+      'The Gegè Miao flat came down to a small room and a hard constraint: the dollhouse needed a home and the drawer had to stay. The shelving was worked until both fitted. Villa Lezhe is a single isometric of the villa, its layout and its outdoor spaces, made for client review.',
+      'These took between two and eight hours each. That is what presentation work is, and it is listed here as presentation work.',
+    ],
+    cover: '/images/gn-architetti/villa-lezhe.jpg',
+    coverAlt:
+      'Isometric illustration of a three-storey villa in sand and olive tones, with a roof terrace, a pool, planted garden and a road running past between drawn trees.',
+    gallery: [
+      {
+        src: '/images/gn-architetti/nail-salon.jpg',
+        alt: 'Two cutaway isometrics of a nail salon on a tan ground, showing arched joinery, a curved counter and seating from opposite corners.',
+        caption: 'Nail salon, the same room from two sides',
+      },
+      {
+        src: '/images/gn-architetti/residential-concept.jpg',
+        alt: 'Isometric of a flat with two olive-toned volumes lifted away above the plan on dotted lines, showing the corridors the concept opens up.',
+        caption: 'Two corridors, and the walls that had to go',
+      },
+      {
+        src: '/images/gn-architetti/plans-before-after.jpg',
+        alt: 'Current and proposed plans side by side on a grey ground, with new furniture, pavement and concept keyed in violet, ochre and olive.',
+        caption: 'Current situation, and the solution',
+      },
+      {
+        src: '/images/gn-architetti/residential-isometrics.jpg',
+        alt: 'Two wireframe isometrics of the same flat from opposite corners, with solid dark ceiling beams over an otherwise transparent shell.',
+        caption: 'The flat from both corners',
+      },
+      {
+        src: '/images/gn-architetti/gege-miao-shelves.jpg',
+        alt: 'Interior render of a living room: a stepped stone-veneer shelving unit holding books and plants, beside a pale door and a blue built-in bench.',
+        caption: 'Gegè Miao: shelving worked until it fitted',
+      },
+      {
+        src: '/images/gn-architetti/small-room.jpg',
+        alt: 'Render of a small room with a wall-mounted dollhouse, floating shelves, a pale chest of drawers and a desk against a blue built-in bed.',
+        caption: 'The dollhouse found a home and the drawer stayed',
+      },
+    ],
+  },
+
+  {
+    slug: 'four-and-seven-interiors',
+    title: 'Indoor Playgrounds and a Boutique',
+    subtitle: 'Design and presentation for 4&7',
+    summary:
+      'Three interiors drawn as cutaway isometrics, where the drawing has to design the space and sell it at the same time.',
+    year: 2025,
+    yearLabel: '2021–2025',
+    location: 'Tehran, Iran',
+    field: 'architecture',
+    disciplines: ['Interior Design', 'Architecture'],
+    context: '4&7 Studio Design',
+    academic: false,
+    role: ['Design', 'Presentation'],
+    tools: ['Rhino', 'Illustrator', 'Photoshop', 'Twinmotion'],
+    body: [
+      'Three interiors for the same studio, all drawn the same way: the building cut open at an angle so the whole thing can be taken in at once. In this kind of work the drawing is doing two jobs, designing the space and selling it, and the second job is why it is cut open at all.',
+      'The first indoor playground stacks nets, stairs, tube slides and mezzanines into a section of a building, in teal, ochre and terracotta, with a small white key isometric alongside placing the play volume inside the shell.',
+      'The boutique is drawn by exactly the same method and reads nothing like it: pale stone, vaulted display bays, arched mirrors and a deep green shopfront, with the same key isometric locating it in plan.',
+      'The second playground is denser and more sectional, a climbing frame with rope bridges, a maze wall and a slide tower set against a glazed roof. Role on all three was design and presentation.',
+    ],
+    cover: '/images/four-and-seven-interiors/indoor-playground.jpg',
+    coverAlt:
+      'Cutaway isometric of an indoor playground in teal, ochre and terracotta: circular nets, spiral stairs, tube slides and mezzanine walkways stacked through several levels.',
+    gallery: [
+      {
+        src: '/images/four-and-seven-interiors/boutique.jpg',
+        alt: 'Cutaway isometric of a boutique in pale stone and violet, with vaulted display bays, arched mirrors and a green shopfront, and a small key isometric at the right.',
+        caption: 'The same method, a very different room',
+      },
+      {
+        src: '/images/four-and-seven-interiors/indoor-playground-two.jpg',
+        alt: 'Cutaway isometric of a second indoor playground: a rope climbing frame, a maze wall, a slide tower and a cafe terrace under a glazed roof.',
+        caption: 'Denser, and more sectional',
+      },
+    ],
+  },
+
+  {
+    slug: 'roshano-land',
+    title: 'Roshano Land',
+    subtitle: 'An amusement park in the Chamran Complex',
+    summary:
+      'Eleven hundred square metres of movement and skill-based playground, sketched, detailed and built.',
+    year: 2021,
+    location: 'Chamran Complex, Iran',
+    field: 'architecture',
+    disciplines: ['Architecture', 'Interior Design'],
+    context: 'Karoshan Studio',
+    academic: false,
+    role: ['Presentation'],
+    tools: ['Rhino', 'Illustrator', 'Photoshop', 'Twinmotion'],
+    body: [
+      'An amusement park of 1,100 square metres in the Chamran Complex, designed in 2021 and built. A movement and skill-based playground rather than a themed one: what is on offer is what a body can do, not a story it is asked to believe.',
+      'The board pairs sketch with render twice over. A hand drawing of the entrance masses sits beside the finished space in orange, green and yellow; a line perspective of the long hall sits beside the same view built. Putting them next to each other is the argument, that the drawing and the room are the same thing at two moments.',
+      'My part was the presentation.',
+    ],
+    cover: '/images/roshano-land/sketch-to-space.jpg',
+    coverAlt:
+      'A strip of four images alternating hand sketch and finished render: entrance masses in line, then the same space in orange and green, then a line perspective of the long hall, then the built hall.',
+    gallery: [],
   },
 
   {

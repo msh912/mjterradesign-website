@@ -72,7 +72,10 @@ export default function Fields() {
   return (
     <section className="section border-t border-line">
       <div className="shell">
-        <ul data-anim="stagger" className="grid grid-cols-3 gap-x-4 sm:gap-x-10">
+        <ul
+          data-anim="stagger"
+          className="mx-auto grid max-w-3xl grid-cols-3 gap-x-6 text-center sm:gap-x-14"
+        >
           {FIELDS.map(({ field, label, Mark }) => {
             const count = byField(field).length
             const ready = count > 0
@@ -81,7 +84,7 @@ export default function Fields() {
               <>
                 <span
                   className={cn(
-                    'grid aspect-square w-full max-w-[11rem] place-items-center rounded-full ring-1 transition-[color,box-shadow,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
+                    'mx-auto grid aspect-square w-full max-w-[11rem] place-items-center rounded-full ring-1 transition-[color,box-shadow,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
                     ready
                       ? 'text-ink ring-line group-hover:scale-[1.03] group-hover:text-accent group-hover:ring-accent'
                       : 'text-ink-faint ring-line/70',

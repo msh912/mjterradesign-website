@@ -326,6 +326,56 @@ right. The site spells the title **extraction**; see the printed typo below.
 
 ---
 
+## F. The office book, PUBLISHED 2026-08-29
+
+`assets/press/professional-works-2026.pdf`, *Portfolio | Javad Shoori | Selected
+Works 2023-2026*, 20 pages, a real text layer. MJ supplied it and named it as the
+content for the **architecture** field, which until then was deliberately empty.
+
+His own framing, page 2: *"Here is a selection of artworks produced in different
+office contexts. My responsibilities varied by project: in some cases, I
+represented the creative direction and communicated the concept to clients; in
+others, I developed the design ideas and delivered the presentations."* The site
+says presentation work is presentation work, because he does.
+
+The book numbers ten works. They are published as **four** projects, grouped by
+office, because ten entries of two to eight hours each would read as ten projects
+and they are not:
+
+| Book | Work | Published as |
+|---|---|---|
+| #1 | Terraviva Competition, Punta Bianca, Sicilia | `punta-bianca` |
+| #2 | GN Architetti, Nail Artist Salon | `milan-interiors` |
+| #3 | GN Architetti, Residential house | `milan-interiors` |
+| #4 | GN Architetti, Gege Miao Abitazione | `milan-interiors` |
+| #5 | GN Architetti, Villa Lezhe | `milan-interiors` (cover) |
+| #6 | 4&7 Studio Design, Urban Playground | **already on the site** as `elahie-urban-playground` |
+| #7 | 4&7 Studio Design, Indoor Playground | `four-and-seven-interiors` (cover) |
+| #8 | 4&7 Studio Design, Boutique | `four-and-seven-interiors` |
+| #9 | 4&7 Studio Design, Indoor Playground | `four-and-seven-interiors` |
+| #10 | Karoshan Studio, Roshano Land | `roshano-land` |
+
+**#6 is not a new project.** It is the same brick-and-yellow isometric and the
+same red circulation diagram as `elahie-urban-playground`, which has been on the
+site since the first build, sourced from the landscape book. It was not published
+twice. Because it appears in the book MJ designated as architecture,
+`elahie-urban-playground` was **moved** from `landscape` to `architecture`, which
+also settles the question flagged when the fields were built.
+
+**Dates.** The book dates the selection 2023-2026 and dates only Roshano Land
+(2021) individually. GN Architetti is dated from MJ's CV (Jan-Feb 2026) and 4&7
+from his CV (Dec 2021 - 2025). Punta Bianca has no source at all: see question 13.
+
+**Roshano Land facts, printed:** Design in 2021, area 1,100 square metres,
+location Chamran Complex, function movement and skill-based playground.
+
+**Punta Bianca rooms, printed:** ground floor, exhibition space, art installation
+space, entrance, toilet and changing room, bar and restaurant; first floor,
+kitchen with payment counter and bar, book store, entrance, ocean view point,
+elevator, reception and ticket area, seating and lounge area, corridor.
+
+---
+
 ## Needs your correction, MJ
 
 These are real conflicts inside your own two books. I have **not** guessed.
@@ -360,9 +410,13 @@ the same places, so a newer source has not settled them. Numbers 11 and 12 are n
 11. ~~**The thesis, section E.**~~ **Answered 2026-08-29: yes.** Published and
     leading the landscape work. Still worth your eye on the body copy, which was
     written from the boards rather than from your thesis text.
-12. **`assets/press/professional-works-2026.pdf`**, *Selected Works 2023-2026*, is
-    a second book the site knows nothing about: Terraviva Punta Bianca competition,
-    GN Architetti (nail salon, three residential, Villa Lezhe), 4&7 Studio Design
-    (urban playground, two indoor playgrounds, boutique), Karoshan (Roshano
-    amusement park). That is professional practice work, which the archive is
-    thin on. Do you want it published, and under what names?
+12. ~~**`assets/press/professional-works-2026.pdf`**~~ **Answered 2026-08-29:
+    published**, as the architecture field. See section F for how the ten works
+    were grouped into four projects and why #6 was not published twice.
+13. **Punta Bianca has no date anywhere.** The book dates the selection 2023-2026
+    and dates nothing individually except Roshano Land. Every other office project
+    is dated from your CV, but Terraviva is a competition you entered outside any
+    job, so the page currently shows "2023-2026" as its year. What year was it?
+14. **Elahie Urban Playground moved to Architecture**, because it is #6 in the
+    office book. It is also still labelled "under construction" from 2023. Is it
+    finished now?

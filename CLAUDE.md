@@ -44,12 +44,13 @@ public/og/      one 1200x630 share card per project, generated from its cover
 assets/         gitignored source material, see below
 ```
 
-**Three fields, one of them empty.** `Field` is `landscape | architecture |
-graphic`. Nothing carries `architecture` yet: MJ is supplying it. Every surface
-that lists the fields derives from `byField`, so the circle on the home page and
-the section on `/work` both come alive the moment a project claims that field,
-with no page to edit. Until then the circle says "In preparation" and is not a
-link, because sending someone to an empty section is worse than saying so.
+**Three fields.** `Field` is `landscape | architecture | graphic`. Every surface
+that lists them derives from `byField`, so a circle on the home page and its
+section on `/work` come alive purely from content: a field with no work in it
+renders as "In preparation" and is deliberately not a link, because sending
+someone to an empty section is worse than saying so. Architecture was empty until
+2026-08-29, when MJ supplied the office book; that path is proven and is how any
+fourth field would arrive.
 
 **All portfolio content lives in `content/`.** Pages read from it, adding work
 means adding an entry to `content/projects.ts`, not writing a new page. Then run
@@ -113,7 +114,8 @@ to sharing the raw cover, which is usually the wrong shape.
 |---|---|
 | `assets/press/landscape-portfolio-2026.pdf` | **the source of every landscape image on the site.** MJ's own press file for the 2026 landscape book, 31 pages |
 | `assets/press/pages-2026/` | those 31 pages extracted at native resolution, `p01`–`p31` |
-| `assets/press/professional-works-2026.pdf` | *Selected Works 2023-2026*, the **office** book (GN Architetti, 4&7, Karoshan, Terraviva). Nothing from it is on the site yet |
+| `assets/press/professional-works-2026.pdf` | *Selected Works 2023-2026*, the **office** book (GN Architetti, 4&7, Karoshan, Terraviva). **The source of the architecture field.** Unlike the landscape book this one has a real text layer and composed vector art, so pages are *rendered* at 200dpi, not stripped of XObjects, which would drop every label |
+| `assets/press/office-pages-2026/` | those 20 pages rendered, `o01`-`o20` |
 | `assets/behance/` | the original 49 downloads (landscape only 1400px, superseded) |
 | `assets/behance-hires/` | same 49 re-pulled from Behance's `source` module. **Still the source for the graphic-design work only**: the landscape half is superseded by the press PDF |
 | `assets/cropped/` | 111 page crops, backdrop and shadow removed |
@@ -159,8 +161,8 @@ Unused taste-skill variants are in `assets/taste-skill-bundle/`.
 
 ## Status
 
-The site is real. All 11 projects are MJ's actual work, named and described from
-his own books, with 60 images published. The M.Arch thesis,
+The site is real. All 15 projects are MJ's actual work, named and described from
+his own books, with 75 images published. The M.Arch thesis,
 `scars-of-extraction-seeds-of-renewal`, leads the landscape work: it is the only
 project in the archive that is not group work, and its `contextLabel` is what the
 field on `Project` exists for, because a thesis is neither a studio nor a client.
@@ -175,12 +177,14 @@ kept in CONTENT-INVENTORY.md section C and the source art is still under
    the bottom of it. Conflicts 1 to 4 are real disagreements between the contents
    page and the title pages of his own books about semesters and studio names,
    and the 2026 press file did **not** settle them. Nothing was guessed.
-2. **The graphic-design book has no press file here.** Its 17 images are still
-   Behance crops of a photographed book, unlike the 43 landscape ones. Ask MJ for
-   that PDF and rerun the same swap.
-3. **`assets/press/professional-works-2026.pdf`** is a whole second book, MJ's
-   office work 2023 to 2026, that the site does not carry at all. See inventory
-   question 12.
+2. **The graphic-design book has no press file here.** Its 16 images are still
+   Behance crops of a photographed book, unlike the landscape and office ones.
+   Ask MJ for that PDF and rerun the same swap.
+3. **Punta Bianca has no date.** The office book dates the whole selection
+   2023-2026 and dates no individual work except Roshano Land (2021). Every other
+   office project is dated from MJ's CV instead; Punta Bianca is a competition he
+   entered outside any job, so its `yearLabel` currently shows the book's range.
+   See inventory question 13.
 4. `gh auth login`: installed, not authenticated. Only matters for repos/PRs.
 5. Google Drive connector is unauthorized. Only worth doing if original design
    files exist; MJ said the Behance set is all there is.
