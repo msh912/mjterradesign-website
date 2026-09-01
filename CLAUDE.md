@@ -41,6 +41,7 @@ content/        site.ts · projects.ts (the archive) · profile.ts (the CV)
 lib/            gsap.ts, utils.ts, motion.ts
 public/images/  50 published images, cropped out of the book mockups
 public/og/      one 1200x630 share card per project, generated from its cover
+public/thumbs/  one 640x640 round-index crop per project, same generator
 assets/         gitignored source material, see below
 ```
 
@@ -59,6 +60,16 @@ to sharing the raw cover, which is usually the wrong shape.
 
 ## The design world (current, implemented)
 
+- **The circle is the navigation.** The home page offers the three fields as
+  circles; opening one hands you the same shape again, once per project, as a
+  wrapping row on `/work`. Detail pages keep full plates, because the circle is
+  a way in and not a way to look at a drawing. Index circles are served from
+  `public/thumbs/`, **not** the covers: `images.unoptimized` means a cover would
+  ship several hundred KB to draw a coin, and /work went 4243KB -> 879KB when
+  they were introduced. A square crop keeps the short side whole, so `thumbFocus`
+  (`left`/`right`) only bites on a landscape cover and (`top`/`bottom`) only on a
+  portrait one. Six projects set it, judged off a round contact sheet: sharp's
+  `attention` strategy chases contrast and crops book pages onto their body type.
 - **Gallery.** Near-white ground, black type, hairline rules, and the artwork
   supplying every colour on the page. Impeccable mode: **Experience**: the work
   leads from the first viewport and the interface recedes.

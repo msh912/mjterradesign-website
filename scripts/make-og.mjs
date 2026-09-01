@@ -1,12 +1,18 @@
 /**
- * Builds the share cards.
+ * Builds everything derived from a project's cover.
  *
- * Every project's cover is hung on the gallery ground at 1200x630, contained
- * rather than cropped: cropping a portrait board to a 1.91:1 slot shows a sliver
- * of a drawing and nothing else. The site card is the drawing the home page
- * opens on, and the Apple touch icon is rasterised from `app/icon.svg`.
+ * 1. The share card, 1200x630. The cover is hung on the gallery ground and
+ *    contained rather than cropped: cropping a portrait board to a 1.91:1 slot
+ *    shows a sliver of a drawing and nothing else.
+ * 2. The index thumb, 640x640. `/work` shows each project as a circle about
+ *    240px across, and `next.config.ts` sets `images.unoptimized`, so without
+ *    these the page would pull down every full-size cover, several hundred KB
+ *    each, to draw them the size of a coin.
  *
- * Run `npm run og` after adding work to `content/projects.ts`. Cards already on
+ * Also the site card, from the drawing the home page opens on, and the Apple
+ * touch icon rasterised from `app/icon.svg`.
+ *
+ * Run `npm run og` after adding work to `content/projects.ts`. Files already on
  * disk are left alone unless --force is passed.
  *
  * Node 24 strips the types out of the .ts import, so the archive is read from
@@ -43,13 +49,42 @@ async function card(srcRel, outAbs) {
   return true
 }
 
+/**
+ * A square crop for the circular index.
+ *
+ * Centre by default, and a project can name a different region with
+ * `thumbFocus`. Sharp's `attention` strategy was tried first and is wrong for
+ * this archive: it chases contrast, so on a book page it locks onto the column
+ * of body type and crops the drawing off. These pages put the artwork in
+ * different places and no heuristic finds it, so the choice is made by eye and
+ * written down.
+ *
+ * Note the axis: a square crop keeps the short side whole, so `left`/`right`
+ * only bite on a landscape cover and `top`/`bottom` only on a portrait one.
+ * The other axis is a no-op, which is why not every off-centre board has an
+ * override: some of them cannot have one.
+ */
+async function thumb(srcRel, outAbs, focus) {
+  if (!FORCE && (await exists(outAbs))) return false
+  await sharp(path.join(ROOT, 'public', srcRel))
+    .resize(640, 640, { fit: 'cover', position: focus ?? 'centre' })
+    .jpeg({ quality: 80, chromaSubsampling: '4:2:0', mozjpeg: true })
+    .toFile(outAbs)
+  return true
+}
+
 await mkdir(path.join(ROOT, 'public', 'og'), { recursive: true })
+await mkdir(path.join(ROOT, 'public', 'thumbs'), { recursive: true })
 
 let made = 0
 for (const p of projects) {
   if (await card(p.cover, path.join(ROOT, 'public', 'og', `${p.slug}.jpg`))) {
     made += 1
     console.log('og    ', p.slug)
+  }
+  if (await thumb(p.cover, path.join(ROOT, 'public', 'thumbs', `${p.slug}.jpg`), p.thumbFocus)) {
+    made += 1
+    console.log('thumb ', p.slug)
   }
 }
 

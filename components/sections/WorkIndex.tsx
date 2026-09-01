@@ -1,9 +1,24 @@
+import { existsSync } from 'node:fs'
+import path from 'node:path'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Project } from '@/content/projects'
-import { sizeOf } from '@/content/image-sizes'
 import { cn } from '@/lib/utils'
 
+/**
+ * A field's work, as a row of circles.
+ *
+ * The circle is the site's way of naming a body of work: the home page offers
+ * the three fields as circles, and opening one hands you the same shape again,
+ * once per project. The row wraps rather than scrolling sideways, so nothing is
+ * hidden off the edge of a phone.
+ *
+ * Each circle is a square centre crop built by `npm run og` into `public/thumbs`,
+ * not the cover itself. `next.config.ts` sets `images.unoptimized`, so pointing
+ * these at the covers would pull several hundred KB per project to draw it the
+ * size of a coin. The full plate is on the project page, which is where the work
+ * is actually meant to be looked at.
+ */
 export default function WorkIndex({
   projects,
   heading,
@@ -19,7 +34,7 @@ export default function WorkIndex({
     <section className={cn('section', id && 'scroll-mt-28')} id={id}>
       <div className="shell">
         {heading && (
-          <div className="mb-14 flex items-baseline justify-between gap-6 border-b border-line pb-5">
+          <div className="mb-16 flex items-baseline justify-between gap-6 border-b border-line pb-5">
             <h2
               data-anim="lines"
               className="font-display text-[clamp(1.6rem,3.2vw,2.4rem)] tracking-[-0.035em]"
@@ -32,64 +47,43 @@ export default function WorkIndex({
           </div>
         )}
 
-        {/* Plates keep their own proportions, because a gallery does not crop the work. */}
-        <ul className="grid items-start gap-x-12 gap-y-20 sm:grid-cols-2 lg:gap-y-28">
+        <ul
+          data-anim="stagger"
+          className="grid grid-cols-2 gap-x-8 gap-y-14 sm:grid-cols-3 sm:gap-x-10 lg:grid-cols-4 lg:gap-x-12"
+        >
           {projects.map((p, i) => {
-            const size = sizeOf(p.cover)
-            // The artwork sets the rhythm: landscape spreads take the full
-            // measure, upright pages sit in a column so they stay readable.
-            const wide = size.width / size.height >= 1.35
+            // A missing thumb would draw a broken circle, which is worse than a
+            // heavy one, so fall back to the cover rather than trusting the file.
+            const thumb = `/thumbs/${p.slug}.jpg`
+            const src = existsSync(path.join(process.cwd(), 'public', thumb)) ? thumb : p.cover
+
             return (
-              <li key={p.slug} className={cn(wide && 'sm:col-span-2')}>
-                <Link href={`/work/${p.slug}`} className="group block">
-                  <div
-                    data-anim="plate"
-                    className={cn('overflow-hidden bg-ground-2', wide && 'mx-auto max-w-5xl')}
-                  >
+              <li key={p.slug}>
+                <Link href={`/work/${p.slug}`} className="group block text-center">
+                  <span className="relative mx-auto block aspect-square w-full max-w-[15rem] overflow-hidden rounded-full bg-ground-2 ring-1 ring-line transition-[box-shadow,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03] group-hover:ring-accent">
                     <Image
-                      src={p.cover}
+                      src={src}
                       alt={p.coverAlt}
-                      width={size.width}
-                      height={size.height}
+                      fill
                       priority={i === 0}
-                      sizes={wide ? '(max-width: 640px) 100vw, 64rem' : '(max-width: 640px) 100vw, 40rem'}
-                      className="h-auto w-full transition-[filter] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:brightness-[1.04]"
+                      sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 15rem"
+                      className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
                     />
-                  </div>
+                  </span>
 
-                  <div data-anim="stagger" className={cn('mt-5', wide && 'mx-auto max-w-5xl')}>
-                    <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                      <h3
-                        className={cn(
-                          'font-display tracking-[-0.035em] transition-colors duration-300 group-hover:text-accent',
-                          wide
-                            ? 'text-[clamp(1.6rem,3.4vw,2.6rem)]'
-                            : 'text-[clamp(1.35rem,2.4vw,1.8rem)]',
-                        )}
-                      >
-                        {p.title}
-                      </h3>
-                      {p.subtitle && <span className="text-ink-faint">{p.subtitle}</span>}
-                    </div>
+                  <span className="mt-6 block">
+                    <span className="block font-display text-[clamp(1.05rem,1.7vw,1.35rem)] leading-[1.12] tracking-[-0.03em] transition-colors duration-300 group-hover:text-accent">
+                      {p.title}
+                    </span>
 
-                    <p className="mt-2 max-w-[58ch] text-ink-muted">{p.summary}</p>
-
-                    <p className="meta mt-3 flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <span className="meta mt-2.5 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
                       <span>{p.location}</span>
                       <span aria-hidden className="text-line-strong">
                         /
                       </span>
                       <span className="tnum">{p.yearLabel ?? p.year}</span>
-                      {p.academic && (
-                        <>
-                          <span aria-hidden className="text-line-strong">
-                            /
-                          </span>
-                          <span>Academic</span>
-                        </>
-                      )}
-                    </p>
-                  </div>
+                    </span>
+                  </span>
                 </Link>
               </li>
             )

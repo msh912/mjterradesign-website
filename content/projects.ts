@@ -53,6 +53,12 @@ export type Project = {
   body: string[]
   cover: string
   coverAlt: string
+  /**
+   * Which part of the cover the round index thumb should keep. Centre unless
+   * said otherwise; sharp's own position strings, e.g. 'left', 'right top'.
+   * Set it when the centre of a book page is the gutter or a column of type.
+   */
+  thumbFocus?: string
   gallery: { src: string; alt: string; caption?: string }[]
   /** Curation only. Nothing renders it right now: see `featuredProjects`. */
   featured?: boolean
@@ -349,6 +355,7 @@ export const projects: Project[] = [
     cover: '/images/to-the-lake-and-back/harmony-of-nature-and-design.jpg',
     coverAlt:
       'Render of a park with mown lawns, mature trees, a still water basin and paved paths, with people sitting and walking through it.',
+    thumbFocus: 'top',
     gallery: [
       {
         src: '/images/to-the-lake-and-back/concept.jpg',
@@ -449,6 +456,7 @@ export const projects: Project[] = [
     cover: '/images/elahie-urban-playground/isometric.jpg',
     coverAlt:
       'Isometric render of a playground in terracotta and yellow: curved walls, ramps, steps and circular openings threaded through with trees and planting.',
+    thumbFocus: 'bottom',
     gallery: [
       {
         src: '/images/elahie-urban-playground/concept-sketch.jpg',
@@ -485,6 +493,7 @@ export const projects: Project[] = [
     cover: '/images/gn-architetti/villa-lezhe.jpg',
     coverAlt:
       'Isometric illustration of a three-storey villa in sand and olive tones, with a roof terrace, a pool, planted garden and a road running past between drawn trees.',
+    thumbFocus: 'left',
     gallery: [
       {
         src: '/images/gn-architetti/nail-salon.jpg',
@@ -543,6 +552,7 @@ export const projects: Project[] = [
     cover: '/images/four-and-seven-interiors/indoor-playground.jpg',
     coverAlt:
       'Cutaway isometric of an indoor playground in teal, ochre and terracotta: circular nets, spiral stairs, tube slides and mezzanine walkways stacked through several levels.',
+    thumbFocus: 'left',
     gallery: [
       {
         src: '/images/four-and-seven-interiors/boutique.jpg',
@@ -702,6 +712,7 @@ export const projects: Project[] = [
     cover: '/images/architectural-graphics/exploded-diagrams.jpg',
     coverAlt:
       'Exploded axonometric diagrams: stacked landscape strata on one side and a coloured children’s play interior pulled apart into layers on the other.',
+    thumbFocus: 'right',
     gallery: [
       {
         src: '/images/architectural-graphics/posters.jpg',
