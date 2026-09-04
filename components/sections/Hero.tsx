@@ -57,7 +57,7 @@ export default function Hero() {
               data-anim="lines"
               className="font-display text-[clamp(2.5rem,5.4vw,4.6rem)] leading-[0.95] tracking-[-0.04em] lg:col-span-7"
             >
-              Landscape architecture, drawn by the hand that designed it.
+              Designing spaces that matter.
             </h1>
 
             <div className="lg:col-span-4 lg:col-start-9 lg:self-end">
