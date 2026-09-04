@@ -42,6 +42,9 @@ lib/            gsap.ts, utils.ts, motion.ts
 public/images/  50 published images, cropped out of the book mockups
 public/og/      one 1200x630 share card per project, generated from its cover
 public/thumbs/  one 640x640 round-index crop per project, same generator
+public/images/fields/   the three home-page field marks, MJ's line drawings.
+                Corners masked to alpha: the ground is #fafafa, so a white
+                square would print a brighter tile behind each one
 assets/         gitignored source material, see below
 ```
 
